@@ -1,0 +1,84 @@
+@import colors
+
+nav
+  width: 100%
+  display: flex
+  position: fixed;
+  justify-content: space-between
+  align-items: stretch;
+  background-color: rgba(0,0,0,0);
+  color: white-color;
+  z-index: 10
+
+  h1
+    font-size: 1.3em
+
+  #hamburger
+    display: none
+
+  .logo
+    margin: 0px 16px
+
+  ul
+    display: flex
+    min-width: 50%
+    margin: 0
+    padding: 0
+
+    li
+      flex-grow: 1
+      transition: background-color 0.1s
+
+      a
+        display: block
+        text-align: center
+        color: inherit;
+        padding: 16px 0px
+
+    li:hover
+      background-color: white-color
+      color: theme-color
+
+  .centerhelper
+    display: none
+    visibility: hidden;
+    text-align: center;
+    padding: 16px 0px;
+
+nav.solid
+  background-color: theme-color
+
+@media (max-width: 44em)
+  nav
+
+    #hamburger
+      display: flex;
+      padding: 0px 8px
+
+      svg
+        display: block;
+        fill: white-color;
+
+    .centerhelper
+      display: block;
+
+    ul.responsivemenu
+      visibility: hidden;
+      display: block;
+      position: fixed;
+      transform: translate(-50px);
+      opacity: 0;
+      left: 0;
+      top: 0;
+      min-width: 0
+      background-color: black-color;
+      transition: transform 0.2s, opacity 0.1s;
+      height: 100vh;
+
+      li > a:not(.centerhelper)
+        padding: 16px 24px
+
+    ul.visible
+      visibility: visible
+      opacity: 1;
+      transform: none;

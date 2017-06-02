@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  #hero.vcentercontainer
+    h1.bottomdivider
+      | master 
+      span.themecolor#buzzword {{ currentBuzzword }}
+    button.cta Get Involved
+  .maincontainer
+    #mainexpl.stack.hpadded.msquare.cc
+      h2.center The sexiest job of the 21st century
+      .divider5
+      p.center According to Harvard Business review
+    .flexcontainer.stack.scaledpadded.msquare.cc
+      h2 What we do
+      p Data Science at UCSB is a university club founded and organized by students for students. Working closely with UCSB’s Statistics and Applied Probability Department, we aim to get Gauchos on the path to a successful career in data science and analytics through group projects, peer education, and presentations from industry leaders. Our members learn the tools of the trade, such as Python, R and SQL, while bolstering soft skills like public speaking, teamwork, and delegation. ​
+    .flexcontainer.horizontal.scaledpadded
+      h3 more content coming soon
+
+block scripts
+  script(src="/javascripts/index.js")
+  script.
+    function getPosition(el) {
+      var xPos = 0;
+      var yPos = 0;
+      while (el) {
+        if (el.tagName == "BODY") {
+          // deal with browser quirks with body/window/document and page scroll
+          var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+          var yScroll = el.scrollTop || document.documentElement.scrollTop;
+          xPos += (el.offsetLeft - xScroll + el.clientLeft);
+          yPos += (el.offsetTop - yScroll + el.clientTop);
+        } else {
+          // for all other non-BODY elements
+          xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+          yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+        }
+        el = el.offsetParent;
+      }
+      return {
+        x: xPos,
+        y: yPos
+      };
+    }
+    app.trackPos();
+    window.addEventListener("scroll", app.trackPos, false);
+    window.addEventListener("resize", app.trackPos, false);
+block styles
+  link(rel='stylesheet', href='/stylesheets/home.css')

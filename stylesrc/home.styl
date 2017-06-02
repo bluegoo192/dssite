@@ -1,0 +1,66 @@
+@import colors
+
+a
+  text-decoration: none
+
+button.cta
+  background-color: highlight-color;
+  color: white-color;
+  border: none;
+  padding: 12px;
+  font-size: 1.1em;
+
+button.cta:hover
+  background-color: highlight-dark;
+
+#hero
+  height: 75vh
+  color: white-color;
+  background-image: url('https://tctechcrunch2011.files.wordpress.com/2016/12/electron-blockchain.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+
+h1
+  font-size: 2em;
+  transition: width 0.5s
+
+#buzzword
+  animation-name: slideout
+  display: inline-block;
+  animation-duration: 3s
+  animation-iteration-count: infinite;
+  z-index: 0
+
+#mainexpl
+  padding: 5em 5em
+  background-color: theme-color
+  color: white-color
+
+@media (max-width: 35em)
+
+  h1
+    font-size: 1.5em;
+
+  #hero
+    height: 100vw;
+
+  #mainexpl
+    padding: 4em 4em
+
+@keyframes slideout
+    0%  {
+      transform: translate(0px, -70px);
+      opacity: 0;
+    }
+    15%   {
+            transform: translate(0px, 0px);
+            opacity: 1;
+          }
+    85%   {
+            transform: translate(0px, 0px);
+            opacity: 1;
+          }
+    100% {
+            transform: translate(0px, 70px);
+            opacity: 0;
+          }

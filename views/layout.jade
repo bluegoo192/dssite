@@ -1,0 +1,62 @@
+doctype html
+html
+  head
+    title UCSB Data Science
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet") 
+    link(rel='stylesheet', href='/stylesheets/gen.css')
+    link(rel='stylesheet', href='/stylesheets/nav.css')
+    meta(name="viewport" content="width=device-width")
+    block styles
+  body
+    #app
+      nav(:class="{ solid: solidNav }")
+        nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
+        .logo.vcentercontainer
+          h1 DS
+        ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
+          nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
+          li
+            a(href="#") About
+          li
+            a(href="#") People
+          li
+            a(href="#") Events
+          li
+            a(href="#") Projects
+          li
+            a(href="#") Data Talks
+      
+      block content
+      
+      footer
+        .flexcontainer.spaced
+          .logo
+            h3 Data Science at UCSB
+          ul
+            li
+              h4 Upcoming
+            li Meetings
+            li Mixers
+            li Talks
+            li Projects
+            li Retreats
+          ul
+            li
+              h4 Services
+            li Consulting
+            li Research
+            li Education
+          ul
+            li
+              h4 Organization
+            li About
+            li Leadership
+            li Teams
+            li FAQ
+            li Join
+        .center
+          p Website by Arthur Silverstein
+          p Copyright 2017
+    script(src="https://unpkg.com/vue")
+    script(src="/javascripts/simplecomponents.js")
+    block scripts
