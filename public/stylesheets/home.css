@@ -14,7 +14,7 @@ button.cta:hover {
 #hero {
   height: 75vh;
   color: #eeece6;
-  background-image: url("https://tctechcrunch2011.files.wordpress.com/2016/12/electron-blockchain.jpg");
+  background-image: url("/images/hero.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
