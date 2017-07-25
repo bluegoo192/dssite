@@ -23,5 +23,17 @@ When you write a line of code or create a file, that is a *change*, complete wit
 : Use quotes around your commit message(little snippet that tells people what you did in that commit).  Try to be clear and concise, and write in present tense
 
 99% of the time, this is what you'll type to save your work.  It's like a video game checkpoint.  So for example, lets say you just made the 'Back' button look nicer.  Just type `git commit -am "back button looks better"`
- 
+
+When you're ready, `git push` saves your progress to the cloud.  If it's your first push in this branch, use `git push --set-upstream origin head`
+
+Switch branches with `git checkout branch_name`
+
+## Sample workflow: adding a /memes route
+* `git checkout dev`: switch to development
+* `git pull`: update local copy of the project
+* `git checkout -b arthur/memes_page`: create a branch called arthur/memes_page and switch to it
+* Open /routes/index.js and add the code
+* `git commit -am "added route"`: stage and commit your changes
+* `git push --set-upstream origin head`: push changes to github
+* `git checkout dev`: switch back to dev
  
