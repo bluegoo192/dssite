@@ -44,7 +44,7 @@ nav .centerhelper {
   padding: 16px 0px;
 }
 nav.solid {
-  background-color: #3db5e7;
+  background: #3db5e7;
 }
 @media (max-width: 44em) {
   nav #hamburger {

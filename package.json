@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "prestart": "stylus ./stylesrc --out ./public/stylesheets",
+    "prestart": "stylus stylesrc --out ./public/stylesheets",
     "watchcss": "stylus -w ./stylesrc --out ./public/stylesheets"
   },
   "dependencies": {
