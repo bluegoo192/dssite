@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .divider10
+  .divider10
+  h1.center Our officer team
+  .divider5
+  .tilecontainer
+    .tile(v-for="officer in officers")
+      img(:src="getOfficerPath(officer.file)")
+
+block scripts
+  script(src="/javascripts/people.js")
+block styles
+  link(rel='stylesheet', href='/stylesheets/people.css')

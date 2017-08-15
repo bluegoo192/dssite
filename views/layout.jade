@@ -16,15 +16,15 @@ html
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
           nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
           li
-            a(href="#") About
+            a(href="/about") About
           li
-            a(href="#") People
+            a(href="/people") People
           li
-            a(href="#") Events
+            a(href="/events") Events
           li
-            a(href="#") Projects
+            a(href="/projects") Projects
           li
-            a(href="#") Data Talks
+            a(href="/datatalks") Data Talks
       
       block content
       
