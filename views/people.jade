@@ -8,10 +8,11 @@ block content
   .tilecontainer
     .tile(v-for="officer in officers" @click="showDescription(officer)")
       img(:src="getOfficerPath(officer.file)")
-  #popupDescription(v-show="showPopupDescription")
-    h2 {{ currentOfficer.name }}
-    h3 {{ currentOfficer.position }}
-    p {{ currentOfficer.description }}
+  #popupDescription.vcentercontainer(v-show="showPopupDescription" @click="showPopupDescription = false")
+    .content.center
+      h2 {{ currentOfficer.name }}
+      h3 {{ currentOfficer.position }}
+      p {{ currentOfficer.description }}
 
 block scripts
   script(src="/javascripts/people.js")
