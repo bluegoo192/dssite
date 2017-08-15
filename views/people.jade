@@ -6,8 +6,12 @@ block content
   h1.center Our officer team
   .divider5
   .tilecontainer
-    .tile(v-for="officer in officers")
+    .tile(v-for="officer in officers" @click="showDescription(officer)")
       img(:src="getOfficerPath(officer.file)")
+  #popupDescription(v-show="showPopupDescription")
+    h2 {{ currentOfficer.name }}
+    h3 {{ currentOfficer.position }}
+    p {{ currentOfficer.description }}
 
 block scripts
   script(src="/javascripts/people.js")

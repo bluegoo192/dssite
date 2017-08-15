@@ -2,6 +2,8 @@ var app = new Vue({
   el: '#app',
   data: {
     solidNav: true,
+    showPopupDescription: false,
+    currentOfficer: {},
     show: {
       mobilenav: false
     },
@@ -53,6 +55,10 @@ var app = new Vue({
   methods: {
     getOfficerPath: function (filename) {
       return "/images/officers/"+filename
+    },
+    showDescription: function (officer) {
+      this.currentOfficer = officer;
+      this.showPopupDescription = !this.showPopupDescription;
     }
   }
 })
