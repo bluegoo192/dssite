@@ -1,10 +1,11 @@
-white-color = #F5F6F6
-grey-color = #BEC1C2
-grey-color-light = #D9DDDE
-black-color = #263033
-theme-color = #293E7B
-cta-color = #20814A
-cta-color-dark = #005B28
+white-color = #ecf0f1
+white-color-light = #F6FAFB
+grey-color = #7f8c8d
+grey-color-light = #bdc3c7
+black-color = #2c3e50
+theme-color = #65D5FD
+cta-color = #e67e22
+cta-color-dark = #d35400
 
 html, body
   margin: 0
@@ -46,14 +47,30 @@ span.code
 .cta:hover
   background-color: cta-color-dark
 
+.info
+  margin: 48px
+  color: grey-color
+
+  ul
+    margin: 0
+    padding: 0
+
+  li
+    color: grey-color
+    list-style: none
+
 .card
   min-width: 30vw
   max-width: 20vw
   box-shadow: 0px 0px 8px grey-color
   padding: 0
+  background-color: white-color-light
 
   > *
     padding: 16px
+
+  h1
+    letter-spacing: 1px
 
   .colored
     background-color: theme-color
@@ -62,4 +79,4 @@ span.code
     span.code
       background-color: alpha(grey-color, 0.3)
       border: 1px solid grey-color-light
-      opacity: 0.8
+      opacity: 0.9
