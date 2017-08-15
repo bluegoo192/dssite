@@ -5,7 +5,7 @@ nav {
   justify-content: space-between;
   align-items: stretch;
   background-color: rgba(0,0,0,0);
-  color: #eeece6;
+  color: #fafafa;
   z-index: 10;
 }
 nav h1 {
@@ -34,8 +34,8 @@ nav ul li a {
   padding: 16px 0px;
 }
 nav ul li:hover {
-  background-color: #eeece6;
-  color: #3db5e7;
+  background-color: #fafafa;
+  color: #8f8f8f;
 }
 nav .centerhelper {
   display: none;
@@ -44,7 +44,7 @@ nav .centerhelper {
   padding: 16px 0px;
 }
 nav.solid {
-  background: #3db5e7;
+  background: #8f8f8f;
 }
 @media (max-width: 44em) {
   nav #hamburger {
@@ -53,7 +53,7 @@ nav.solid {
   }
   nav #hamburger svg {
     display: block;
-    fill: #eeece6;
+    fill: #fafafa;
   }
   nav .centerhelper {
     display: block;
@@ -67,7 +67,7 @@ nav.solid {
     left: 0;
     top: 0;
     min-width: 0;
-    background-color: #070707;
+    background-color: #424242;
     transition: transform 0.2s, opacity 0.1s;
     height: 100vh;
   }

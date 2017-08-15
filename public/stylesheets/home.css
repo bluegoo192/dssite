@@ -2,18 +2,18 @@ a {
   text-decoration: none;
 }
 button.cta {
-  background-color: #e37c1d;
-  color: #eeece6;
+  background-color: #878787;
+  color: #fafafa;
   border: none;
   padding: 12px;
   font-size: 1.1em;
 }
 button.cta:hover {
-  background-color: #b45d0d;
+  background-color: #666;
 }
 #hero {
   height: 75vh;
-  color: #eeece6;
+  color: #fafafa;
   background-image: url("/images/hero.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -31,8 +31,8 @@ h1 {
 }
 #mainexpl {
   padding: 5em 5em;
-  background-color: #3db5e7;
-  color: #eeece6;
+  background-color: #8f8f8f;
+  color: #fafafa;
 }
 @media (max-width: 35em) {
   h1 {
