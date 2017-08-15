@@ -12,43 +12,50 @@ var app = new Vue({
         name: "Jason Freeberg",
         file: "jason_freeberg.jpg",
         position: "President",
-        description: "JSON"
+        description: "JSON",
+        current: false
       },
       {
         name: "Arthur Silverstein",
         file: "arthur_silverstein.jpg",
         position: "Director of IT",
-        description: "oh dude hell yea!"
+        description: "oh dude hell yea!",
+        current: false
       },
       {
         name: "Timothy Nguyen",
         file: "timothy_nguyen.jpg",
         position: "Bus driver",
-        description: "never wears pants"
+        description: "never wears pants",
+        current: false
       },
       {
         name: "Samantha Lee",
         file: "samantha_lee.jpg",
         position: "Asswipe",
-        description: "Recently turned 21"
+        description: "Recently turned 21",
+        current: false
       },
       {
         name: "Shon SomethingOrOther",
         file: "shon_lastname.jpg",
         position: "Arthur's Assistant",
-        description: "Likes coconuts"
+        description: "Likes coconuts",
+        current: false
       },
       {
         name: "Cindy SomethingOrOther",
         file: "cindy_lastname.jpg",
         position: "Out of town",
-        description: "Codes"
+        description: "Codes",
+        current: false
       },
       {
         name: "Richa SomethingOrOther",
         file: "richa_lastname.jpg",
         position: "I don't know",
-        description: "Works for Invoca!"
+        description: "Works for Invoca!",
+        current: false
       }
     ]
   },
@@ -59,6 +66,7 @@ var app = new Vue({
     showDescription: function (officer) {
       this.currentOfficer = officer;
       this.showPopupDescription = !this.showPopupDescription;
+      officer.current = this.showPopupDescription
     }
   }
 })

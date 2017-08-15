@@ -6,8 +6,13 @@ block content
   h1.center Our officer team
   .divider5
   .tilecontainer
-    .tile(v-for="officer in officers" @click="showDescription(officer)")
-      img(:src="getOfficerPath(officer.file)")
+    .tile.vcentercontainer(v-for="officer in officers" 
+      @click="showDescription(officer)" @mouseover="officer.current = true" 
+      @mouseout="if (!showPopupDescription) officer.current = false"
+      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
+      v-bind:class="{ active: officer.current }")
+      .tile-label
+        h3.center {{ officer.name }}
   .divider5
   h2.center Special thanks to our alumni contributors
   .flexcontainer.fill-h
@@ -19,7 +24,8 @@ block content
       p For your tireless dedication to UCSB Data Science and Inertia 7
   
   #popupDescription.vcentercontainer(v-show="showPopupDescription")
-    #modalBackground(@click="showPopupDescription = false")
+    #modalBackground(
+      @click="showPopupDescription = false; currentOfficer.current = false")
     .content.center
       h2 {{ currentOfficer.name }}
       h3 {{ currentOfficer.position }}
