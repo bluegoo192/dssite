@@ -8,6 +8,16 @@ block content
   .tilecontainer
     .tile(v-for="officer in officers" @click="showDescription(officer)")
       img(:src="getOfficerPath(officer.file)")
+  .divider5
+  h2.center Special thanks to our alumni contributors
+  .flexcontainer.fill-h
+    .credit
+      h3 Raul Eulogio
+      p For your tireless dedication to UCSB Data Science and Inertia 7
+    .credit
+      h3 David Lastname
+      p For your tireless dedication to UCSB Data Science and Inertia 7
+  
   #popupDescription.vcentercontainer(v-show="showPopupDescription")
     #modalBackground(@click="showPopupDescription = false")
     .content.center
