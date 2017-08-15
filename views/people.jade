@@ -8,7 +8,8 @@ block content
   .tilecontainer
     .tile(v-for="officer in officers" @click="showDescription(officer)")
       img(:src="getOfficerPath(officer.file)")
-  #popupDescription.vcentercontainer(v-show="showPopupDescription" @click="showPopupDescription = false")
+  #popupDescription.vcentercontainer(v-show="showPopupDescription")
+    #modalBackground(@click="showPopupDescription = false")
     .content.center
       h2 {{ currentOfficer.name }}
       h3 {{ currentOfficer.position }}
