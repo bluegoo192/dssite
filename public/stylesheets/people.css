@@ -35,6 +35,22 @@
 .tilecontainer .tile.active .tile-label {
   visibility: visible;
 }
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s;
+}
+.modal-enter-active .content,
+.modal-leave-active .content {
+  transition: transform 0.2s;
+}
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
+}
+.modal-enter .content,
+.modal-leave-to .content {
+  transform: translate(0px, 64px);
+}
 #popupDescription {
   position: fixed;
   width: 100%;

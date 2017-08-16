@@ -56,6 +56,13 @@ var app = new Vue({
         position: "I don't know",
         description: "Works for Invoca!",
         current: false
+      },
+      {
+        name: "Calvin Wang",
+        file: "calvin_wang.jpg",
+        position: "Something about marketing",
+        description: "The Wang",
+        current: false
       }
     ]
   },

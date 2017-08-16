@@ -37,6 +37,18 @@
     .tile-label
       visibility: visible
 
+.modal-enter-active, .modal-leave-active
+  transition: opacity 0.3s
+
+  .content
+    transition: transform 0.2s
+
+.modal-enter, .modal-leave-to
+  opacity: 0
+
+  .content
+    transform: translate(0px, 64px)
+
 #popupDescription
   position: fixed
   width: 100%

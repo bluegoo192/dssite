@@ -23,13 +23,14 @@ block content
       h3 David Lastname
       p For your tireless dedication to UCSB Data Science and Inertia 7
   
-  #popupDescription.vcentercontainer(v-show="showPopupDescription")
-    #modalBackground(
-      @click="showPopupDescription = false; currentOfficer.current = false")
-    .content.center
-      h2 {{ currentOfficer.name }}
-      h3 {{ currentOfficer.position }}
-      p {{ currentOfficer.description }}
+  transition(name="modal")
+    #popupDescription.vcentercontainer(v-show="showPopupDescription")
+      #modalBackground(
+        @click="showPopupDescription = false; currentOfficer.current = false")
+      .content.center
+        h2 {{ currentOfficer.name }}
+        h3 {{ currentOfficer.position }}
+        p {{ currentOfficer.description }}
 
 block scripts
   script(src="/javascripts/people.js")
