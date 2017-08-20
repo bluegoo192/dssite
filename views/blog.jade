@@ -4,11 +4,13 @@ block content
   .divider10
   .divider10
   h1 Blog
-  .
-  article(v-for="post in posts")
-    h2 {{ post.title }}
-    p {{ post.content }}
-    p by {{ post.author }} on {{ post.date }}
+  .content.flex
+    article(v-for="post in posts")
+      h2 {{ post.title }}
+      p {{ post.content }}
+      p by {{ post.author }} on {{ post.date }}
   
 block scripts
   script(src="/javascripts/blog.js")
+block styles
+  link(rel='stylesheet', href='/stylesheets/blog.css')
