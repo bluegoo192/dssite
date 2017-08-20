@@ -26,6 +26,10 @@ router.get('/projects', function(req, res, next) {
   res.render('projects', { title: 'Projects' });
 });
 
+router.get('/blog', function(req, res, next) {
+  res.render('blog', { title: 'Blog' });
+});
+
 router.get('/datatalks', function(req, res, next) {
   res.render('datatalks', { title: 'Data Talks' });
 });
