@@ -12,6 +12,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: #8f8f8f;
 }
 h1 {
   margin: 0;
@@ -85,6 +86,7 @@ button {
 footer {
   background-color: #424242;
   color: #fafafa;
+  font-size: 0.9em;
 }
 @media (max-width: 35em) {
   .msquare {

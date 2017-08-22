@@ -2,13 +2,20 @@ extends layout
 
 block content
   .divider10
-  .divider10
-  h1 Blog
-  .content.flex
-    article(v-for="post in posts")
+  .content.flex(v-if="!show.expandedPost")
+    hl The Data Science Blog
+    article.mini(v-for="post in posts")
       h2 {{ post.title }}
-      p {{ post.content }}
-      p by {{ post.author }} on {{ post.date }}
+      p {{ process(post) }} #[a(href='#' @click="expand(post)" v-if="post.long") read more]
+      p.by by #[a(href="#"){{ post.author }}] on {{ post.date }}
+  
+  .content.flex(v-if="show.expandedPost")    
+    button(@click="show.expandedPost = false") Back
+    article#expanded.center(v-if="show.expandedPost")
+      h2 {{ currentPost.title }}
+      p {{ process(currentPost, true) }}
+      p.by by #[a(href="#"){{ currentPost.author }}] on {{ currentPost.date }}
+  
   
 block scripts
   script(src="/javascripts/blog.js")
