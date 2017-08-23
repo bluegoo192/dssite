@@ -73,6 +73,7 @@ h1 {
 }
 #fullpost #expanded article {
   width: 48rem;
+  padding: 12px;
   max-width: calc(100vw - 244px);
 }
 #fullpost:not(.shown) {
