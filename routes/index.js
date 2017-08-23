@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var database = require('../database/mongooseclient.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -34,7 +35,10 @@ router.get('/datatalks', function(req, res, next) {
   res.render('datatalks', { title: 'Data Talks' });
 });
 
-
+router.post('/api/v1/createBlogPost', async function(req, res, next) {
+  var status = await database.createBlogPost(req.body);
+  res.send(status);
+});
 
 
 

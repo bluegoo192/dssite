@@ -12,7 +12,7 @@ html
       nav(:class="{ solid: solidNav }")
         nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
         .logo.vcentercontainer
-          h1 Data Science
+          a(href="/") #[h1 Data Science] 
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
           nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
           li

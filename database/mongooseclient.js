@@ -1,11 +1,9 @@
 var mongoose = require('mongoose');
-var User = require('./models/user.js');
+var Blogpost = require('./models/blogpost.js');
 var Event = require('./models/event.js');
 
 mongoose.connect('mongodb://admin:spaghetti@ds034807.mlab.com:34807/dscontent');
 var client = {}
-
-client.user = User;
 
 client.create = async function(data, model, name, handler) {
   var status = {"success":false};
@@ -26,6 +24,14 @@ client.create = async function(data, model, name, handler) {
     console.log("Successfully created "+name+": "+doc._id);
   });
   return {"success":true,"message":JSON.stringify(doc)};
+}
+
+client.createBlogPost = async function(data) {
+  let status = {};
+  status = await this.create(data, BlogPost, "blog post", function(post) {
+    post.creation_date = new Date();
+  });
+  return status;
 }
 
 client.validateUser = function(user) {
