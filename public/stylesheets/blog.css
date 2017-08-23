@@ -56,7 +56,6 @@ h1 {
   width: 100%;
   left: 0;
   top: 0;
-  transition: opacity 0.5s;
 }
 #fullpost #expanded {
   position: absolute;
@@ -77,6 +76,7 @@ h1 {
 #fullpost.shown {
   visibility: visible;
   opacity: 1;
+  transition: opacity 0.5s;
 }
 #fullpost.shown #expanded {
   transform: translateX(160px);
