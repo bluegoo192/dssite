@@ -9,6 +9,7 @@ h1
 .c-container
   position: relative
   padding-bottom: 64px
+  overflow: hidden
 
 .content
   width: 100%
@@ -67,10 +68,14 @@ h1
     width: 100%
     top: 0
     background-color: white-color
-    box-shadow: 0px 0px 64px black-color
+    box-shadow: 0px 0px 128px black-color
     padding: 64px
     box-sizing: border-box
     transition: transform 0.5s
+
+    article
+      width: 48rem
+      max-width: calc(100vw - 244px)
 
   &:not(.shown)
     transition: visibility 0s linear 0.5s, opacity 0.5s

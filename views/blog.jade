@@ -14,7 +14,7 @@ block content
     #fullpost(:class="{ shown: show.expandedPost }" @click="show.expandedPost = false")
       .divider10
       #expanded
-        article.center(v-if="show.expandedPost" @click.stop)
+        article(v-if="show.expandedPost" @click.stop)
           h2 {{ currentPost.title }}
           p {{ process(currentPost, true) }}
           p.by by #[a(href="#"){{ currentPost.author }}] on {{ currentPost.date }}
