@@ -4,10 +4,15 @@ h1 {
   opacity: 0.3;
   font-weight: bold;
 }
+.c-container {
+  position: relative;
+  padding-bottom: 64px;
+}
 .content {
   width: 100%;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.5s;
 }
 .content article {
   width: 48rem;
@@ -38,11 +43,44 @@ h1 {
   box-shadow: 0px 0px 32px #ccc;
   border-radius: 4px;
 }
-article#expanded {
-  width: 52rem;
+.content.under {
+  transform: translateX(-160px);
+  z-index: -10;
+}
+#fullpost {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: opacity 0.5s;
+}
+#fullpost #expanded {
+  position: absolute;
+  left: 0;
+  transform: translateX(640px);
+  height: 100%;
+  width: 100%;
+  top: 0;
   background-color: #fafafa;
-  padding: 3rem;
+  box-shadow: 0px 0px 64px #424242;
+  padding: 64px;
+  box-sizing: border-box;
+  transition: transform 0.5s;
+}
+#fullpost:not(.shown) {
+  transition: visibility 0s linear 0.5s, opacity 0.5s;
+}
+#fullpost.shown {
+  visibility: visible;
+  opacity: 1;
+}
+#fullpost.shown #expanded {
+  transform: translateX(160px);
 }
 footer {
-  margin-top: 64px;
+  z-index: 10;
 }

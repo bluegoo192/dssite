@@ -39,6 +39,7 @@ var app = new Vue({
       }
     },
     expand: function (post) {
+      console.log("hi")
       this.currentPost = post;
       this.show.expandedPost = true;
     }
