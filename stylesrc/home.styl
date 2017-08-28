@@ -10,6 +10,11 @@ button.cta
   padding: 12px;
   font-size: 1.1em;
 
+.maincontainer
+  display: flex
+  flex-direction: column
+  align-items: center
+
 button.cta:hover
   background-color: accent-dark;
 
@@ -19,6 +24,15 @@ button.cta:hover
   background-image: url('/images/hero.jpg');
   background-size: cover;
   background-attachment: fixed;
+
+article
+  width: 85vw
+  margin-top: 10vh
+  max-width: calc(100% - 32px)
+
+  p
+    width: 46rem
+    min-width: calc(100% - 32px)
 
 h1
   font-size: 2em;
