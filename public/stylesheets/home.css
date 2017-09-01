@@ -28,9 +28,12 @@ article {
   margin-top: 10vh;
   max-width: calc(100% - 32px);
 }
-article p {
-  width: 46rem;
-  min-width: calc(100% - 32px);
+article .content {
+  width: 40rem;
+  min-width: calc(100% -32px);
+}
+article .content p {
+  text-align: center;
 }
 h1 {
   font-size: 2em;
