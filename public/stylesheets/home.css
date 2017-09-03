@@ -26,14 +26,29 @@ button.cta:hover {
 article {
   width: 80vw;
   margin-top: 10vh;
+  margin-bottom: 64px;
   max-width: calc(100% - 32px);
+  font-size: 18px;
+}
+article h1 {
+  margin-bottom: 5vh;
 }
 article .content {
-  width: 40rem;
-  max-width: calc(100% - 32px);
+  max-width: calc(100vw - 32px);
+  justify-content: space-between;
 }
-article .content p {
+article .content p,
+article .content img {
+  max-width: 40%;
+}
+article .content.center {
+  width: 40rem;
+}
+article .center {
   text-align: center;
+}
+article .right {
+  text-align: right;
 }
 h1 {
   font-size: 2em;
