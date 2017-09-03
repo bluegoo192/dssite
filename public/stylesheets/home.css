@@ -30,7 +30,7 @@ article {
 }
 article .content {
   width: 40rem;
-  min-width: calc(100% -32px);
+  max-width: calc(100% - 32px);
 }
 article .content p {
   text-align: center;
