@@ -17,7 +17,7 @@ button.cta:hover {
   background-color: #666;
 }
 #hero {
-  height: 75vh;
+  height: 80vh;
   color: #fafafa;
   background-image: url("/images/hero.jpg");
   background-size: cover;
