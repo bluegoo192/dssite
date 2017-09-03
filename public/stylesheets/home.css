@@ -24,7 +24,7 @@ button.cta:hover {
   background-attachment: fixed;
 }
 article {
-  width: 85vw;
+  width: 80vw;
   margin-top: 10vh;
   max-width: calc(100% - 32px);
 }
