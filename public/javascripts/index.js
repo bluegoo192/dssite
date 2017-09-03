@@ -15,9 +15,11 @@ var app = new Vue({
   },
   methods: {
     trackPos: function() {
-      var el = document.querySelector("#mainexpl");
+      var el = document.querySelector("#end-of-hero");
       var pos = getPosition(el);
-      if (pos.y <= 0) { this.solidNav = true; }
+      var height = document.querySelector("#nav").offsetHeight;
+      console.log(pos.y +" "+height);
+      if (pos.y <= height) { this.solidNav = true; }
       else if (this.solidNav === true) { this.solidNav = false; }
     }
   },

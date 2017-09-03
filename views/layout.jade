@@ -9,7 +9,7 @@ html
     block styles
   body
     #app
-      nav(:class="{ solid: solidNav }")
+      nav#nav(:class="{ solid: solidNav }")
         nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
         .logo.vcentercontainer
           a(href="/") #[h1 Data Science] 
