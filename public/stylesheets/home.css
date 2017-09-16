@@ -48,6 +48,7 @@ article.large p {
 }
 .columns article {
   margin: 16px;
+  box-sizing: border-box;
   max-width: 320px;
 }
 .columns article img {
@@ -74,6 +75,16 @@ article.large p {
   }
   #mainexpl {
     padding: 4em 4em;
+  }
+}
+@media (max-width: 900px) {
+  .columns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .columns article {
+    width: 100%;
+    max-width: none;
   }
 }
 @-moz-keyframes slideout {
