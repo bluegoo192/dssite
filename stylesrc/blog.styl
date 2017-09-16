@@ -61,7 +61,7 @@ h1
   top: 0
 
   #expanded
-    position: absolute
+    position: fixed
     left: 0
     transform: translateX(640px);
     height: 100%
@@ -79,7 +79,7 @@ h1
       max-width: calc(100vw - 244px)
 
   &:not(.shown)
-    transition: visibility 0s linear 0.5s, opacity 0.5s
+    transition: visibility 0s, opacity 0.5s
 
   &.shown
     visibility: visible
