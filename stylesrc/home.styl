@@ -1,8 +1,5 @@
 @import colors
 
-a
-  text-decoration: none
-
 button.cta
   background-color: accent-color;
   color: white-color;
@@ -25,35 +22,38 @@ button.cta:hover
   background-size: cover;
   background-attachment: fixed;
 
-article
-  width: 80vw
-  margin-top: 10vh
-  margin-bottom: 64px
-  max-width: calc(100% - 32px)
-  font-size: 18px
-
-  h1
-    margin-bottom: 5vh
-
-  .content
-    max-width: calc(100vw - 32px)
-    justify-content: space-between
-
-    p, img
-      max-width: 40%
-
-  .content.center
-    width: 40rem
-
-  .center
-    text-align: center
-
-  .right
-    text-align: right
-
 h1
   font-size: 2em;
   transition: width 0.5s
+
+article.large
+  width: 80vw
+  max-width: calc(100% - 32px)
+  margin-top: 14vh
+  font-size: 1.2em
+
+  h1
+    margin-bottom: 5vh
+    font-size: 2.5em
+
+  p
+    max-width: 640px
+
+.columns
+  margin-top: 14vh
+  display: flex
+  justify-content: space-around
+  width: 100%
+  max-width: 1300px
+  padding: 32px
+  box-sizing: border-box
+
+  article
+    margin: 16px
+    max-width: 320px
+
+    img
+      width: 100%
 
 #buzzword
   animation-name: slideout
