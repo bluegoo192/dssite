@@ -1,3 +1,6 @@
 article {
   max-width: 640px;
+  margin: calc(4vw + 12px);
+  border-left: 4px #8f8f8f solid;
+  padding: 4px 16px;
 }
