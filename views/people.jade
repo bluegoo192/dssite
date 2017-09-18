@@ -2,8 +2,7 @@ extends layout
 
 block content
   .divider10
-  .divider10
-  h1.center Our officer team
+  h1.title.center Our officer team
   .divider5
   .tilecontainer
     .tile.vcentercontainer(v-for="officer in officers" 
@@ -13,9 +12,10 @@ block content
       v-bind:class="{ active: officer.current }")
       .tile-label
         h3.center {{ officer.name }}
-  .divider5
+  .divider10
   h2.center Special thanks to our alumni contributors
-  .flexcontainer.fill-h
+  .divider5
+  #alumn.flexcontainer.fill-h
     .credit
       h3 Raul Eulogio
       p For your tireless dedication to UCSB Data Science and Inertia 7
