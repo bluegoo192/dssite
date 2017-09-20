@@ -2,7 +2,7 @@ var app = new Vue({
   el: '#app',
   data: {
     buzzwordCounter: 0,
-    solidNav: false,
+    transparentNav: true,
     buzzwords: [
       "machine learning",
       "data visualization",
@@ -19,8 +19,8 @@ var app = new Vue({
       var pos = getPosition(el);
       var height = document.querySelector("#nav").offsetHeight;
       console.log(pos.y +" "+height);
-      if (pos.y <= height) { this.solidNav = true; }
-      else if (this.solidNav === true) { this.solidNav = false; }
+      if (pos.y <= height) { this.transparentNav = false; }
+      else if (this.transparentNav === false) { this.transparentNav = true; }
     }
   },
   computed: {

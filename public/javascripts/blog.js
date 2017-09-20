@@ -1,7 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
-    solidNav: true,
+    transparentNav: false,
     blogMaxChars: 157,
     posts: [
       {

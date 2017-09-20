@@ -4,7 +4,7 @@ nav {
   position: fixed;
   justify-content: space-between;
   align-items: stretch;
-  background-color: rgba(0,0,0,0);
+  background-color: #8f8f8f;
   color: #fafafa;
   z-index: 10;
   transition: background-color 0.5s;
@@ -45,8 +45,8 @@ nav .centerhelper {
   text-align: center;
   padding: 16px 0px;
 }
-nav.solid {
-  background: #8f8f8f;
+nav.transparent {
+  background: rgba(0,0,0,0);
 }
 @media (max-width: 44em) {
   nav #hamburger {
