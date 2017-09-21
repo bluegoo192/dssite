@@ -60,6 +60,7 @@ article {
 #tab-carousel ul li {
   flex: 0 0 auto;
   padding: 16px;
+  cursor: pointer;
 }
 #tab-carousel li > * {
   display: none;
