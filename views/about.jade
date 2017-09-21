@@ -17,18 +17,10 @@ block content
   h2.center What we do
   #tab-carousel
     ul
-      li Projects
-        p A blurb about our projects
-      li Workshops
-        p A blurb about our workshops
-      li Data Talks
-        p A blurb about our data talks
-      li Networking Events
-        p A blurb about our networking events
-      li Hackathons
-        p A blurb about our hackathons
-      li Consulting
-        p A blurb about our consulting
+      li(v-for="item in whatwedos")
+        button(@click="show.active = item") {{ item.name }}
+    .info
+      p {{ show.active.description }}
 
 block scripts
   script(src="/javascripts/about.js")

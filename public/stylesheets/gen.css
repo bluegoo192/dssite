@@ -25,12 +25,10 @@ h1 {
 }
 button {
   cursor: pointer;
+  letter-spacing: 1px;
 }
 ul li {
   list-style: none;
-}
-button {
-  letter-spacing: 1px;
 }
 .themecolor {
   color: #8f8f8f;
