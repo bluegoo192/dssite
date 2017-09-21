@@ -17,10 +17,12 @@ block content
   h2.center What we do
   #tab-carousel
     ul
-      li(v-for="item in whatwedos")
+      li(:class="{ active: show.active === item }" v-for="item in whatwedos")
         button(@click="show.active = item") {{ item.name }}
+        .arrow-up.center(v-show="show.active === item")
     .info
       p {{ show.active.description }}
+  .divider10
 
 block scripts
   script(src="/javascripts/about.js")

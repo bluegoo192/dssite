@@ -50,16 +50,41 @@ article
     margin-right: 12px
     fill: theme-color
 
+.arrow-up
+  width: 0
+  height: 0
+  border-left: 5px solid transparent
+  border-right: 5px solid transparent
+  border-bottom: 5px solid black-color
+
 #tab-carousel
   width: 100%
 
   ul
     display: flex
     padding: 0
+    margin: 0
     flex-wrap: nowrap
     overflow-x: auto
     justify-content: space-around
+    background-color: white-color
+    margin-bottom: 0
+    padding-bottom: 0
 
     li
       flex: 0 0 auto
-      padding: 16px
+      color: black-color
+
+      button
+        background: none
+        padding: 8px 16px
+        border: none
+        font-size: 1em
+        color: inherit
+
+  .info
+    background-color: black-color
+    color: white-color
+
+    p
+      margin: 0
