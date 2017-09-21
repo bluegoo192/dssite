@@ -51,12 +51,13 @@ article {
 .arrow-up {
   width: 0;
   height: 0;
-  border-left: 5px solid rgba(0,0,0,0);
-  border-right: 5px solid rgba(0,0,0,0);
-  border-bottom: 5px solid #424242;
+  border-left: 8px solid rgba(0,0,0,0);
+  border-right: 8px solid rgba(0,0,0,0);
+  border-bottom: 8px solid #424242;
 }
 #tab-carousel {
   width: 100%;
+  margin: 32px 0px;
 }
 #tab-carousel ul {
   display: flex;
@@ -86,4 +87,11 @@ article {
 }
 #tab-carousel .info p {
   margin: 0;
+  padding: 32px;
+}
+#tab-carousel .info img {
+  width: 100%;
+  height: 25vh;
+  min-height: 140px;
+  object-fit: cover;
 }

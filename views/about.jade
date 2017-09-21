@@ -22,6 +22,7 @@ block content
         .arrow-up.center(v-show="show.active === item")
     .info
       p {{ show.active.description }}
+      img(:src="show.active.image")
   .divider10
 
 block scripts
