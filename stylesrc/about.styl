@@ -3,6 +3,12 @@
 h1
   font-size: 3em
 
+h2
+  font-size: 2em
+
+h3
+  font-size: 1.5em
+
 .banner
   width: 100%
   height: 25vh
@@ -43,3 +49,19 @@ article
   img
     margin-right: 12px
     fill: theme-color
+
+#tab-carousel
+  width: 100%
+
+  ul
+    display: flex
+    flex-wrap: nowrap
+    overflow-x: auto
+    justify-content: space-around
+
+    li
+      flex: 0 0 auto
+      padding: 16px
+
+  li > *
+    display: none
