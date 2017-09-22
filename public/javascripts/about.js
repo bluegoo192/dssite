@@ -26,11 +26,6 @@ var app = new Vue({
         description: "A blurb about our Data Talks"
       },
       {
-        name: "Networking Events",
-        image: "images/graphiq.jpg",
-        description: "A blurb about our Networking Events"
-      },
-      {
         name: "Hackathons",
         image: "images/hackathon.jpg",
         description: "A blurb about our Hackathons"
