@@ -1,6 +1,6 @@
 body {
-  color: #424242;
-  background-color: #fafafa;
+  color: #314155;
+  background-color: #f9fafb;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,7 +12,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #8f8f8f;
+  color: #1476fb;
 }
 a:hover {
   text-decoration: underline;
@@ -31,7 +31,10 @@ ul li {
   list-style: none;
 }
 .themecolor {
-  color: #8f8f8f;
+  color: #1476fb;
+}
+.accent {
+  color: #ff6200;
 }
 .bottomdivider {
   margin-bottom: 3vh;
@@ -85,11 +88,11 @@ ul li {
   display: flex;
 }
 .material {
-  box-shadow: 0px 0px 8px #424242;
+  box-shadow: 0px 0px 8px #314155;
 }
 footer {
-  background-color: #424242;
-  color: #fafafa;
+  background-color: #314155;
+  color: #f9fafb;
   font-size: 0.9em;
 }
 @media (max-width: 35em) {

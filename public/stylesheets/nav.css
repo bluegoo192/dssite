@@ -4,14 +4,14 @@ nav {
   position: fixed;
   justify-content: space-between;
   align-items: stretch;
-  background-color: #8f8f8f;
-  color: #fafafa;
+  background-color: #1476fb;
+  color: #f9fafb;
   z-index: 10;
   transition: background-color 0.5s;
 }
 nav h1 {
   font-size: 1.3em;
-  color: #fafafa;
+  color: #f9fafb;
 }
 nav #hamburger {
   display: none;
@@ -36,8 +36,8 @@ nav ul li a {
   padding: 16px 0px;
 }
 nav ul li:hover {
-  background-color: #fafafa;
-  color: #8f8f8f;
+  background-color: #f9fafb;
+  color: #1476fb;
 }
 nav .centerhelper {
   display: none;
@@ -55,7 +55,7 @@ nav.transparent {
   }
   nav #hamburger svg {
     display: block;
-    fill: #fafafa;
+    fill: #f9fafb;
   }
   nav .centerhelper {
     display: block;
@@ -69,7 +69,7 @@ nav.transparent {
     left: 0;
     top: 0;
     min-width: 0;
-    background-color: #424242;
+    background-color: #314155;
     transition: transform 0.2s, opacity 0.1s;
     height: 100vh;
   }

@@ -1,6 +1,6 @@
 button.cta {
-  background-color: #878787;
-  color: #fafafa;
+  background-color: #ff6200;
+  color: #f9fafb;
   border: none;
   padding: 12px;
   font-size: 1.1em;
@@ -15,7 +15,7 @@ button.cta:hover {
 }
 #hero {
   height: 80vh;
-  color: #fafafa;
+  color: #f9fafb;
   background-image: url("/images/hero.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -68,8 +68,8 @@ article.large p {
 }
 #mainexpl {
   padding: 5em 5em;
-  background-color: #8f8f8f;
-  color: #fafafa;
+  background-color: #1476fb;
+  color: #f9fafb;
 }
 @media (max-width: 35em) {
   h1 {

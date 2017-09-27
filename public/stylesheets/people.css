@@ -20,7 +20,7 @@ h1.title {
 .tilecontainer .tile {
   width: 180px;
   height: 180px;
-  color: #fafafa;
+  color: #f9fafb;
   text-align: center;
   position: relative;
   background-size: 100% 100%;
@@ -39,7 +39,7 @@ h1.title {
   height: 100%;
   opacity: 0.7;
   z-index: -1;
-  background-color: #424242;
+  background-color: #314155;
 }
 .tilecontainer .tile.active {
   background-size: 125% 125%;
@@ -72,13 +72,13 @@ h1.title {
   z-index: 10;
 }
 #popupDescription .content {
-  background-color: #fafafa;
+  background-color: #f9fafb;
   padding: 32px;
   border-radius: 8px;
   z-index: 10;
 }
 #modalBackground {
-  background-color: #424242;
+  background-color: #314155;
   opacity: 0.5;
   position: fixed;
   z-index: 5;
