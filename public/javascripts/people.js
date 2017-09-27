@@ -94,9 +94,9 @@ var app = new Vue({
       },
       {
         name: "Daniel Fields",
-        file: "timothy_nguyen.jpg",
-        position: "Operations",
-        description: "JSON",
+        file: "daniel_fields.jpeg",
+        position: "Officer of Operations",
+        description: "I am a third year Statistical Sciences major. I love to learn about and explore the world. I strive to always be happy, healthy, and helpful.",
         current: false
       },
       {
