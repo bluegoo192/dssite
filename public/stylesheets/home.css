@@ -14,6 +14,10 @@ button.cta {
 button.cta:hover {
   background-color: #666;
 }
+h2 {
+  letter-spacing: 1px;
+  font-size: 2em;
+}
 #hero {
   height: 80vh;
   position: relative;
@@ -40,7 +44,7 @@ h1 {
 article.large {
   width: 80vw;
   max-width: calc(100% - 32px);
-  margin-top: 12vh;
+  margin-top: 10vh;
   font-size: 1.2em;
 }
 article.large h1 {
