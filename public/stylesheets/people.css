@@ -24,11 +24,13 @@ h1.title {
   text-align: center;
   position: relative;
   background-size: 100% 100%;
+  cursor: pointer;
   transition: background-size 0.5s;
 }
 .tilecontainer .tile .tile-label {
   visibility: hidden;
   z-index: 5;
+  letter-spacing: 1px;
 }
 .tilecontainer .tile .tile-label::before {
   content: "";
@@ -74,7 +76,11 @@ h1.title {
 #popupDescription .content {
   background-color: #f9fafb;
   padding: 32px;
-  border-radius: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5vw #314155;
+  width: 80%;
+  max-width: 480px;
   z-index: 10;
 }
 #modalBackground {

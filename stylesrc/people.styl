@@ -26,11 +26,13 @@ h1.title
     text-align: center
     position: relative
     background-size: 100% 100%
+    cursor: pointer
     transition: background-size 0.5s
 
     .tile-label
       visibility: hidden
       z-index: 5
+      letter-spacing: 1px
 
     .tile-label::before
       content: "";
@@ -72,7 +74,11 @@ h1.title
   .content
     background-color: white-color
     padding: 32px
-    border-radius: 8px
+    border-radius: 4px
+    box-sizing: border-box
+    box-shadow: 0px 0px 5vw black-color
+    width: 80%
+    max-width: 480px
     z-index: 10
 
 #modalBackground
