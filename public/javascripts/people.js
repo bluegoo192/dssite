@@ -7,6 +7,14 @@ var app = new Vue({
     show: {
       mobilenav: false
     },
+    featured: [
+      {
+        name: "Fiona Reid"
+      },
+      {
+        name: "Alex Mathgod"
+      }
+    ],
     officers: [
       {
         name: "Jason Freeberg",

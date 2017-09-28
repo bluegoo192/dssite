@@ -5,13 +5,19 @@ block content
   h1.title.center Our officer team
   .divider5
   .tilecontainer
-    .tile.vcentercontainer(v-for="officer in officers" 
+    .tile.vcentercontainer(v-for="officer of officers" 
       @click="showDescription(officer)" @mouseover="officer.current = true" 
       @mouseout="if (!showPopupDescription) officer.current = false"
       v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
       v-bind:class="{ active: officer.current }")
       .tile-label
         h3.center {{ officer.name }}
+  .divider10
+  h1.center Featured members
+  .divider5
+  .flexcontainer.spaced
+    .member(v-for="member of featured")
+      h4.center {{ member.name }}
   .divider10
   h2.center Special thanks to our alumni contributors
   .divider5
