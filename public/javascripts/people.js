@@ -26,7 +26,7 @@ var app = new Vue({
         name: "Samantha Lee",
         file: "samantha_lee.jpg",
         position: "Vice President",
-        description: "Recently turned 21",
+        description: "Hi! I'm a fourth year Statistics major.  In my free time, I like reading Medium, swimming, blogging, and learning. Data is fun!!!!",
         current: false
       },
       {
@@ -38,9 +38,9 @@ var app = new Vue({
       },
       {
         name: "Moritz Droste",
-        file: "shon_lastname.jpg",
-        position: "Finance",
-        description: "JSON",
+        file: "moritz_droste.jpg",
+        position: "Club Accountant",
+        description: "I'm a second-year Economics and Accounting major that also loves programming! I can be a bit quiet and reserved sometimes, but really enjoy talking to people about stuff I'm passionate about.",
         current: false
       },
       {
