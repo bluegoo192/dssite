@@ -26,8 +26,12 @@ block content
       #modalBackground(
         @click="showPopupDescription = false; currentOfficer.current = false")
       .content.center
-        h2 {{ currentOfficer.name }}
-        h3 {{ currentOfficer.position }}
+        img.center(v-bind:src="getOfficerPath(currentOfficer.file)")
+        .divider5
+        h2.center {{ currentOfficer.name }}
+        h3.center {{ currentOfficer.position }}
+        .flexcontainer.spaced
+          a(v-for="(item, type) in currentOfficer.contactinfo" v-bind:href="item" target="_blank") {{ type }}
         p {{ currentOfficer.description }}
 
 block scripts

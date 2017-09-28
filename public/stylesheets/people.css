@@ -84,6 +84,20 @@ h1.title {
   max-width: 480px;
   z-index: 10;
 }
+#popupDescription .content h3 {
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+#popupDescription .content p {
+  margin-top: 4vh;
+}
+#popupDescription .content img {
+  border-radius: 50%;
+  width: 90%;
+  max-width: 160px;
+  border: 8px #fff solid;
+  box-shadow: 0px 0px 4px #314155;
+}
 #modalBackground {
   background-color: #314155;
   opacity: 0.5;
