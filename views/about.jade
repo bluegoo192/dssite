@@ -20,7 +20,7 @@ block content
       li(:class="{ active: show.active === item }" v-for="item in whatwedos")
         button(@click="show.active = item") {{ item.name }}
         .arrow-up.center(v-show="show.active === item")
-    .info
+    .info.flexcontainer.horizontal.spaced
       p {{ show.active.description }}
       img(:src="show.active.image")
   .divider10
