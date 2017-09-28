@@ -1,7 +1,7 @@
 h1.title {
   font-size: 3em;
   margin-top: 2em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 #alumn {
   justify-content: space-around;
@@ -76,7 +76,7 @@ h1.title {
 }
 #popupDescription .content {
   background-color: #f9fafb;
-  padding: 32px;
+  padding: calc(32px + 2vh) 32px;
   border-radius: 4px;
   box-sizing: border-box;
   box-shadow: 0px 0px 5vw #314155;

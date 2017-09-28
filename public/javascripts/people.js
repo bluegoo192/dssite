@@ -138,7 +138,7 @@ var app = new Vue({
         name: "Arthur Silverstein",
         file: "arthur_silverstein.jpg",
         position: "Director of IT",
-        description: "oh dude hell yea!",
+        description: "I'm a third year computer science major who likes hiking, playing piano, and DIY.",
         contactinfo: {
           github: "http://www.github.com/bluegoo192",
           linkedin: "https://www.linkedin.com/in/arthur-silverstein/",
