@@ -4,9 +4,9 @@ html
     title UCSB Data Science
     link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet") 
     link(rel='stylesheet', href='/stylesheets/gen.css')
+    block styles
     link(rel='stylesheet', href='/stylesheets/nav.css')
     meta(name="viewport" content="width=device-width")
-    block styles
   body
     #app
       nav#nav(:class="{ transparent: transparentNav }")
