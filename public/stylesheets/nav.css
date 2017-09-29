@@ -7,6 +7,7 @@ nav {
   align-items: stretch;
   background-color: #1476fb;
   color: #f9fafb;
+  box-sizing: border-box;
   z-index: 10;
   transition: background-color 0.5s;
 }
@@ -75,7 +76,7 @@ nav.transparent {
     height: 100vh;
   }
   nav ul.responsivemenu li > a:not(.centerhelper) {
-    padding: 16px 24px;
+    padding: 16px 48px;
   }
   nav ul.visible {
     visibility: visible;

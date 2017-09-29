@@ -5,7 +5,7 @@ block content
   .c-container
     .content.flex.main(:class="{ under: show.expandedPost }")
       .divider10
-      h1 The Data Science Blog
+      h1.title The Data Science Blog
       article.mini(v-for="post in posts")
         h2 {{ post.title }}
         p {{ process(post) }} #[a(href='#' @click.stop="expand(post)" v-if="post.long") read more]
