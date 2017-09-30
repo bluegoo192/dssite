@@ -70,8 +70,10 @@ article.large p {
   width: 25%;
   max-width: 300px;
 }
-.columns article img {
-  width: 100%;
+.columns article svg {
+  width: 75%;
+  fill: #314155;
+  opacity: 0.8;
 }
 .columns article p {
   font-size: 1.1em;
