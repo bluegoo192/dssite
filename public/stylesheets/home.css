@@ -54,6 +54,26 @@ article.large h1 {
 article.large p {
   max-width: 640px;
 }
+#join {
+  margin-top: 16px;
+  padding-top: 1vh;
+  justify-content: center;
+  align-items: center;
+}
+#join article {
+  width: 40%;
+  max-width: 350px;
+  padding: 0px 24px;
+}
+.fineprint {
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+.white {
+  background-color: #fff;
+  width: 100%;
+  padding: 36px 0px;
+}
 .columns {
   margin-top: 7vh;
   margin-bottom: 7vh;
