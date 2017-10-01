@@ -65,6 +65,24 @@ article.large p {
   max-width: 350px;
   padding: 0px 24px;
 }
+.logos {
+  width: 100%;
+  max-width: 850px;
+  padding: 16px;
+  box-sizing: border-box;
+  margin: 2vh 0;
+  flex-wrap: wrap;
+}
+.logos svg {
+  padding: 16px;
+  width: 120px;
+  fill: #314155 !important;
+  opacity: 0.8;
+}
+.logos svg path {
+  fill: #314155 !important;
+  opacity: 0.8;
+}
 .fineprint {
   font-size: 0.8em;
   opacity: 0.6;
