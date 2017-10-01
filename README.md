@@ -26,6 +26,16 @@ No need to touch anything else in 99% of cases.  See the gitcheetsheet file for 
 
 > Seeing your changes: in general, _frontend_ changes(anything in /public or /views) take effect immediately, so you can just reload the page to see them.  Backend changes(like /routes/index.js) require a server restart to take effect
 
+## Random Tips
+
+### SVG files
+We often want to apply a color filter to an SVG image.  This can be pretty annoying in plain HTML since you need to embed the svg directly, rather than linking it through an `img` tag.  Pug, however, makes it easy!  Just use `include <relative/path/to/image>` (no quotes around the path), and you can apply CSS styles to the `svg` and `path` elements without cluttering the markup.  See index.jade for examples
+
+### Dealing with the nav bar
+When creating a new view, you can put `extends layout` at the top to automatically get a nav bar and other goodies.  However, it comes with some annoying caveats I haven't gotten around to fixing.
+* Restyling the nav bar: you can restyle the nav bar with CSS, even though it isn't directly visible in your view.jade file.  You can also _accidentally_ restyle the nav bar.  Watch out for this
+* Vue file:  **You must have an associated vue app with `show.mobilenav` in its data section**. 
+
 ## Tech Stack (open to suggestions)
 
 Backend:
