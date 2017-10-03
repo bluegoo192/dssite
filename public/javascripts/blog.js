@@ -5,10 +5,10 @@ var app = new Vue({
     blogMaxChars: 157,
     posts: [
       {
-        title: "Test post please ignore",
-        author: "Rick Sanchez",
-        date: "April 20, 1969",
-        content: "blah blah blah this is a sample blog post.  I wrote it on the airplane back from Seoul. Wow writing sucks, can't imagine why anyone does it.  Gonna stop now"
+        title: "UCSB Data Science and FACTOR Host Successful SQL Workshop",
+        author: "Jonathan Hsu",
+        date: "May 24, 1969",
+        content: "tele"
       },
       {
         title: "Another sample post",
