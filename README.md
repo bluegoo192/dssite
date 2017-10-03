@@ -12,6 +12,7 @@ Once those are installed, simply clone the repo, open it up, then cd into the fo
 
 ### Running the project:
 * `npm start`: Launches the server.  Check it out at localhost:3000
+* `npm run-script compile-css`: compile stylus into css files
 * `npm run-script watchcss`: Run this in a separate terminal(also in the project top-level directory) if you plan on doing CSS work.  This command watches for changes in the stylus files and automatically recompiles them to CSS
 
 ### Putting in work
@@ -34,7 +35,7 @@ We often want to apply a color filter to an SVG image.  This can be pretty annoy
 ### Dealing with the nav bar
 When creating a new view, you can put `extends layout` at the top to automatically get a nav bar and other goodies.  However, it comes with some annoying caveats I haven't gotten around to fixing.
 * Restyling the nav bar: you can restyle the nav bar with CSS, even though it isn't directly visible in your view.jade file.  You can also _accidentally_ restyle the nav bar.  Watch out for this
-* Vue file:  **You must have an associated vue app with `show.mobilenav` in its data section**. 
+* Vue file:  **You must have an associated vue app with `show.mobilenav` in its data section**.
 
 ## Tech Stack (open to suggestions)
 
