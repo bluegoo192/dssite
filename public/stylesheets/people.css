@@ -31,6 +31,7 @@ h1.title {
 .tilecontainer .tile .tile-label {
   visibility: hidden;
   z-index: 5;
+  user-select: none;
   letter-spacing: 1px;
 }
 .tilecontainer .tile .tile-label::before {
