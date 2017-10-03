@@ -179,6 +179,17 @@ var app = new Vue({
       return "/images/officers/"+filename
     },
     showDescription: function (officer) {
+      // clear current selection
+      // for some reason, some mobile browsers try to select text when people tap the tile
+      var sel = window.getSelection ? window.getSelection() : document.selection;
+      if (sel) {
+          if (sel.removeAllRanges) {
+              sel.removeAllRanges();
+          } else if (sel.empty) {
+              sel.empty();
+          }
+      }
+
       this.currentOfficer = officer;
       this.showPopupDescription = !this.showPopupDescription;
       officer.current = this.showPopupDescription
