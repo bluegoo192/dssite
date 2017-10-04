@@ -13,19 +13,23 @@ block content
       .tile-label
         h3.center {{ officer.name }}
   .divider10
-  h1.center Featured members
-  .divider5
-  .flexcontainer.spaced
-    .member(v-for="member of featured")
-      h4.center {{ member.name }}
-  .divider10
+  // Featured members section.  We have no featured members at the moment
+  //- h1.center Featured members
+  //- .divider5
+  //- .flexcontainer.spaced
+  //-   .member(v-for="member of featured")
+  //-     h4.center {{ member.name }}
+  //- .divider10
   h2.center Special thanks to our alumni contributors
   .divider5
   #alumn.flexcontainer.fill-h
     .credit
       h3 Raul Eulogio
+      p For countless hours of administrative work, advising, and helping people out with their projects.
     .credit
-      h3 David Lastname
+      h3 David Campos
+      p For morale boosts, speeches, and development/maintenance of Inertia 7.
+  .divider10
   
   transition(name="modal")
     #popupDescription.vcentercontainer(v-show="showPopupDescription")
