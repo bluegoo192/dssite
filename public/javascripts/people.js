@@ -27,9 +27,9 @@ var app = new Vue({
       },
       {
         name: "Raul Eulogio",
-        file: "samantha_lee.jpg",
+        file: "raul_eulogio.jpg",
         position: "Vice President",
-        description: "JSON",
+        description: "I'm an alumni of UCSB, working as a data analyst. An aspiring data jedi with a love for teaching and all things data related. Got that LOUD on deck HMU ",
         contactinfo: {
         },
         current: false
@@ -40,6 +40,8 @@ var app = new Vue({
         position: "Vice President",
         description: "Hi! I'm a fourth year Statistics major.  In my free time, I like reading Medium, swimming, blogging, and learning. Data is fun!!!!",
         contactinfo: {
+          github: "www.github.com/samanthaklee",
+          linkedin: "www.linkedin.com/in/ksamanthalee"
         },
         current: false
       },
@@ -83,16 +85,18 @@ var app = new Vue({
         name: "Timothy Nguyen",
         file: "timothy_nguyen.jpg",
         position: "Marketing",
-        description: "never wears pants",
+        description: "Third Year Statistics Major who wants to pet ur dog",
         contactinfo: {
+          github: "https://github.com/timothydnguyen",
+          linkedin: "https://www.linkedin.com/in/timothy-d-nguyen/"
         },
         current: false
       },
       {
         name: "Jonathan Hsu",
-        file: "samantha_lee.jpg",
+        file: "jonathan_hsu.png",
         position: "Marketing",
-        description: "JSON",
+        description: "I am a third year Global Studies major pursuing a minor in writing. Enjoy dogs, video games, and reading tech news.",
         contactinfo: {
         },
         current: false
