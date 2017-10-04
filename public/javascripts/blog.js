@@ -8,7 +8,7 @@ var app = new Vue({
         title: "UCSB Data Science and FACTOR Host Successful SQL Workshop",
         author: "Jonathan Hsu",
         date: "May 24, 1969",
-        content: "tele"
+        content: "tele **dfsd** \n\n dfsdf"
       },
       {
         title: "Another sample post",
@@ -36,13 +36,16 @@ var app = new Vue({
   },
   methods: {
     process: function (post, showFull) {
-      if (showFull) return post.content;
+      if (showFull) return marked(post.content);
       if (post.content.length > this.blogMaxChars) {
         post.long = true;
         return post.content.substring(0, this.blogMaxChars) + "...";
       } else {
         return post.content;
       }
+    },
+    compileMarkdown: function (raw) {
+      return marked(raw);
     },
     expand: function (post) {
       console.log("hi")

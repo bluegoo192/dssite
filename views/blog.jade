@@ -8,7 +8,8 @@ block content
       h1.title The Data Science Blog
       article.mini(v-for="post in posts")
         h2 {{ post.title }}
-        p {{ process(post) }} #[a(href='#' @click.stop="expand(post)" v-if="post.long") read more]
+        //- p {{ process(post) }} #[a(href='#' @click.stop="expand(post)" v-if="post.long") read more]
+        .md(v-html="compileMarkdown(process(post))")
         p.by by #[a(href="#"){{ post.author }}] on {{ post.date }}
     
     #fullpost(:class="{ shown: show.expandedPost }" @click="show.expandedPost = false")
@@ -21,6 +22,7 @@ block content
   
   
 block scripts
+  script(src="/javascripts/marked.js")
   script(src="/javascripts/blog.js")
 block styles
   link(rel='stylesheet', href='/stylesheets/blog.css')
