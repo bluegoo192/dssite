@@ -11,7 +11,7 @@ block content
         //- p {{ process(post) }} #[a(href='#' @click.stop="expand(post)" v-if="post.long") read more]
         .md(v-html="compileMarkdown(process(post))")
         a(href='#' @click.stop="expand(post)" v-if="post.long") read more
-        p.by by #[a(href="#"){{ post.author }}] on {{ post.date }}
+        p.by by {{ post.author }} on {{ post.date }}
       .divider5
       p There are no other posts
     
