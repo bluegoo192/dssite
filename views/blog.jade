@@ -10,14 +10,17 @@ block content
         h2 {{ post.title }}
         //- p {{ process(post) }} #[a(href='#' @click.stop="expand(post)" v-if="post.long") read more]
         .md(v-html="compileMarkdown(process(post))")
+        a(href='#' @click.stop="expand(post)" v-if="post.long") read more
         p.by by #[a(href="#"){{ post.author }}] on {{ post.date }}
+      .divider5
+      p There are no other posts
     
     #fullpost(:class="{ shown: show.expandedPost }" @click="show.expandedPost = false")
       .divider10
       #expanded
         article(v-if="show.expandedPost" @click.stop)
           h2 {{ currentPost.title }}
-          p {{ process(currentPost, true) }}
+          .md(v-html="compileMarkdown(process(currentPost, true))")
           p.by by #[a(href="#"){{ currentPost.author }}] on {{ currentPost.date }}
   
   

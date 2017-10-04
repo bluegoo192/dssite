@@ -9,6 +9,9 @@ h1.title {
   padding-bottom: 64px;
   overflow: hidden;
 }
+article img {
+  width: 100%;
+}
 .content {
   width: 100%;
   flex-direction: column;
