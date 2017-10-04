@@ -47,10 +47,11 @@ var app = new Vue({
       },
       {
         name: "Ryan Poff",
-        file: "arthur_silverstein.jpg",
-        position: "Finance",
-        description: "JSON",
+        file: "ryan_poff.jpg",
+        position: "Chief Accountant",
+        description: "Ryan, a fourth year senior, is our cheif accountant. He has been with the club for two years now and enjoys baseball, turtles, and watching every Jack Black movie back to back.",
         contactinfo: {
+          linkedin: "https://www.linkedin.com/in/ryan-poff-123575124/"
         },
         current: false
       },
