@@ -2,7 +2,6 @@ extends layout
 
 block content
   #hero.vcentercontainer
-    .filter
     h1.bottomdivider
       | discover 
       span.accent#buzzword {{ currentBuzzword }}
@@ -16,7 +15,7 @@ block content
         .vcentercontainer
           include ../public/images/resources.svg
         h2 Resources
-        p.content Datacamp.  Workshops.  Data talks.  Books.  A bespoke project sharing tool.  We have something for everyone, from novices to postgrads
+        p.content Datacamp.  Workshops.  Data talks.  Books.  A bespoke project sharing platform.  We have something for everyone, from novices to postgrads
       article
         .vcentercontainer
           include ../public/images/experience.svg
@@ -32,7 +31,7 @@ block content
       .flexcontainer#join
         article
           p We meet Thursdays at 7 pm in the Collaboratory.  It's on the second floor of UCSB's Davidson library, mountain side.
-          p Can't make it to meetings? #[a(href="#") Shoot us an email], and we'll work something out
+          p Can't make it to meetings? #[a(target="_blank" href="mailto:datascience.ucsb@gmail.com") Shoot us an email], and we'll work something out
         article.vcentercontainer
           button.cta Register
           p.fineprint There is a $30 annual fee for full membership.  This pays for data talks, food/drink at club events, books, and more

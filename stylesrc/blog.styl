@@ -11,6 +11,9 @@ h1.title
   padding-bottom: 64px
   overflow: hidden
 
+article img
+  width: 100%
+
 .content
   width: 100%
   flex-direction: column
@@ -29,10 +32,6 @@ h1.title
     h2
       font-size: 2em
       margin: 0
-      cursor: pointer
-
-    h2:hover
-      text-decoration: underline
 
     p
       margin: 0
@@ -69,7 +68,9 @@ h1.title
     top: 0
     background-color: white-color
     box-shadow: 0px 0px 340px black-color
-    padding: 64px
+    padding: 4vw
+    padding-top: 64px
+    padding-right: 11vw
     box-sizing: border-box
     transition: transform 0.5s
     overflow-y: scroll
@@ -89,7 +90,7 @@ h1.title
     transition: opacity 0.5s
 
     #expanded
-      transform: translateX(10vw);
+      transform: translateX(7vw);
 
 footer
   z-index: 10
