@@ -105,7 +105,7 @@ var app = new Vue({
       },
       {
         name: "Richa Wadaskar",
-        file: "richa_lastname.jpg",
+        file: "richa_wadaskar.jpg",
         position: "Marketing",
         description: "Works for Invoca!",
         contactinfo: {
@@ -124,7 +124,7 @@ var app = new Vue({
       },
       {
         name: "Matthew Peterschmidt",
-        file: "samantha_lee.jpg",
+        file: "matthew_peterschmidt.jpg",
         position: "Operations",
         description: "JSON",
         contactinfo: {
@@ -143,7 +143,7 @@ var app = new Vue({
       },
       {
         name: "Eri Kawakami",
-        file: "cindy_lastname.jpg",
+        file: "eri_kawakami.jpg",
         position: "Operations",
         description: "JSON",
         contactinfo: {
@@ -163,8 +163,8 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Shon SomethingOrOther",
-        file: "shon_lastname.jpg",
+        name: "Shon Inouye",
+        file: "shon_inouye.jpg",
         position: "Arthur's Assistant",
         description: "Likes coconuts",
         contactinfo: {
