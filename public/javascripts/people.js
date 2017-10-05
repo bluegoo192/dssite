@@ -107,8 +107,10 @@ var app = new Vue({
         name: "Richa Wadaskar",
         file: "richa_wadaskar.jpg",
         position: "Marketing",
-        description: "",
+        description: "Richa is a 2nd year honors undergraduate student at UCSB, and is pursuing a B.S. in Computer Science. In her free time, she enjoys coding, surfing, climbing, hiking, and dancing. ",
         contactinfo: {
+          linkedin: "https://www.linkedin.com/in/richa-wadaskar/",
+          github: "https://github.com/richawadaskar"
         },
         current: false
       },
