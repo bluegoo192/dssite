@@ -65,11 +65,12 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Ananya Havaru",
-        file: "timothy_nguyen.jpg",
+        name: "Ananya Haravu",
+        file: "ananya_haravu.jpg",
         position: "Finance",
-        description: "JSON",
+        description: "I am a second-year financial math and statistics major who has a passion for photography, music, martial arts, and books!",
         contactinfo: {
+          email: "aharavu@gmail.com"
         },
         current: false
       },
@@ -113,10 +114,11 @@ var app = new Vue({
       },
       {
         name: "Holly Cheek",
-        file: "jason_freeberg.jpg",
+        file: "holly_cheek.jpg",
         position: "Operations",
-        description: "JSON",
+        description: "I am a second year actuarial science major with a passion for colorguard, spinning and dancing with flags or sabres.",
         contactinfo: {
+          linkedin: "https://www.linkedin.com/in/holly-cheek-809004101/"
         },
         current: false
       },
@@ -135,6 +137,7 @@ var app = new Vue({
         position: "Officer of Operations",
         description: "I am a third year Statistical Sciences major. I love to learn about and explore the world. I strive to always be happy, healthy, and helpful.",
         contactinfo: {
+          linkedin: " https://www.linkedin.com/in/danielfields365/"
         },
         current: false
       },
@@ -169,10 +172,10 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Cindy SomethingOrOther",
-        file: "cindy_lastname.jpg",
-        position: "Out of town",
-        description: "Codes",
+        name: "Cindy Lu",
+        file: "cindy_lu.jpg",
+        position: "IT",
+        description: "Hi!! I’m a second computer science major. I enjoy hot yoga, hiking and pugs.",
         contactinfo: {
         },
         current: false
