@@ -20,7 +20,7 @@ var app = new Vue({
         name: "Jason Freeberg",
         file: "jason_freeberg.jpg",
         position: "President",
-        description: "JSON",
+        description: "",
         contactinfo: {
         },
         current: false
@@ -77,8 +77,8 @@ var app = new Vue({
       {
         name: "Calvin Wang",
         file: "calvin_wang.jpg",
-        position: "Something about marketing",
-        description: "The Wang",
+        position: "Marketing",
+        description: "",
         contactinfo: {
         },
         current: false
@@ -107,7 +107,7 @@ var app = new Vue({
         name: "Richa Wadaskar",
         file: "richa_wadaskar.jpg",
         position: "Marketing",
-        description: "Works for Invoca!",
+        description: "",
         contactinfo: {
         },
         current: false
@@ -126,7 +126,7 @@ var app = new Vue({
         name: "Matthew Peterschmidt",
         file: "matthew_peterschmidt.jpg",
         position: "Operations",
-        description: "JSON",
+        description: "",
         contactinfo: {
         },
         current: false
@@ -145,7 +145,7 @@ var app = new Vue({
         name: "Eri Kawakami",
         file: "eri_kawakami.jpg",
         position: "Operations",
-        description: "JSON",
+        description: "",
         contactinfo: {
         },
         current: false
@@ -166,8 +166,10 @@ var app = new Vue({
         name: "Shon Inouye",
         file: "shon_inouye.jpg",
         position: "Arthur's Assistant",
-        description: "Likes coconuts",
+        description: "I'm a fourth year Statistics major and aspiring data scientist who enjoys doing Judo and playing the ukulele.",
         contactinfo: {
+          github: "https://github.com/Inouyesan",
+          linkedin: "https://www.linkedin.com/in/shoninouye/"
         },
         current: false
       },
