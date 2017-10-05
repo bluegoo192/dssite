@@ -29,7 +29,7 @@ var app = new Vue({
         name: "Raul Eulogio",
         file: "raul_eulogio.jpg",
         position: "Vice President",
-        description: "I'm an alumni of UCSB, working as a data analyst. An aspiring data jedi with a love for teaching and all things data related. Got that LOUD on deck HMU ",
+        description: "I'm an alumni of UCSB, working as a data analyst. An aspiring data jedi with a love for teaching and all things data related.",
         contactinfo: {
         },
         current: false
