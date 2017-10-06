@@ -73,14 +73,12 @@ article {
 }
 #tab-carousel ul {
   display: flex;
-  padding: 0;
+  padding: 0px 8vw;
   margin: 0;
   flex-wrap: nowrap;
   overflow-x: auto;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #f9fafb;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 #tab-carousel ul li {
   flex: 0 0 auto;

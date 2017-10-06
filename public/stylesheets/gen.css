@@ -10,6 +10,9 @@ body {
 .maincontainer {
   width: 100%;
 }
+.wrap {
+  flex-wrap: wrap;
+}
 a {
   text-decoration: none;
   color: #1476fb;
