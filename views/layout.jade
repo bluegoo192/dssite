@@ -43,34 +43,35 @@ html
         .flexcontainer.spaced
           .logo
             h3 Data Science at UCSB
-          ul
-            li
-              h4 Upcoming
-            li 
-              a(href="/events") Meetings
-          ul
-            li
-              h4 Projects
-            li 
-              a(href="https://www.inertia7.com/" target="_blank") Inertia7
-            li
-              a(href="https://github.com/UCSB-dataScience-ProjectGroup/" target="_blank") Github
-            li 
-              a(href="https://www.datacamp.com/" target="_blank") Datacamp
-          ul
-            li
-              h4 Organization
-            li 
-              a(href="/about") About
-            li 
-              a(href="/people") Leadership
-            li
-              a(href="/blog") Blog
-            li
-              a(href="") Join
+          .column
+            h4 Upcoming
+            ul
+              li 
+                a(href="/events") Meetings
+          .column
+            h4 Projects
+            ul
+              li 
+                a(href="https://www.inertia7.com/" target="_blank") Inertia7
+              li
+                a(href="https://github.com/UCSB-dataScience-ProjectGroup/" target="_blank") Github
+              li 
+                a(href="https://www.datacamp.com/" target="_blank") Datacamp
+          .column
+            h4 Organization
+            ul
+              li 
+                a(href="/about") About
+              li 
+                a(href="/people") Leadership
+              li
+                a(href="/blog") Blog
+              li
+                a(href="") Join
+        .divider5
         .center
-          p Website by Arthur Silverstein
-          p Copyright 2017
+          p.small Website by Arthur Silverstein
+          p.small Copyright 2017
     script(src="/javascripts/vue.js")
     script(src="/javascripts/simplecomponents.js")
     block scripts
