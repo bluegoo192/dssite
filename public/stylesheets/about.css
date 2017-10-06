@@ -56,7 +56,13 @@ article {
 }
 .contact {
   max-width: 320px;
+  width: 45%;
   padding: 16px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.contact p.email {
+  text-align: center;
 }
 .wrapped {
   flex-wrap: wrap;
