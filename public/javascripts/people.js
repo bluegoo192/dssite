@@ -20,8 +20,10 @@ var app = new Vue({
         name: "Jason Freeberg",
         file: "jason_freeberg.jpg",
         position: "President",
-        description: "",
+        description: "Jason is the founding President of the organization and a fourth-year Statistics major. He will be working at Microsoft following his graduation in June.",
         contactinfo: {
+          linkedin: "https://www.linkedin.com/in/jfreeberg/",
+          website: "http://jasonfreeberg.com"
         },
         current: false
       },
