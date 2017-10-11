@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title UCSB Data Science
+    title Data Science @ UCSB
     link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet") 
     link(rel='stylesheet', href='/stylesheets/gen.css')
     
@@ -38,7 +38,7 @@ html
       nav#nav(:class="{ transparent: transparentNav }")
         nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
         .logo.vcentercontainer
-          a(href="/") #[h1 Data Science] 
+          a(href="/") #[h1 Data Science @ UCSB] 
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
           nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
           li
