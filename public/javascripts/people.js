@@ -89,7 +89,7 @@ var app = new Vue({
         name: "Timothy Nguyen",
         file: "timothy_nguyen.jpg",
         position: "Marketing",
-        description: "Third Year Statistics Major who wants to pet ur dog",
+        description: "third year statistics major who wants to pet ur dog",
         contactinfo: {
           github: "https://github.com/timothydnguyen",
           linkedin: "https://www.linkedin.com/in/timothy-d-nguyen/"
