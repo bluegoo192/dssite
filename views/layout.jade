@@ -38,7 +38,7 @@ html
       nav#nav(:class="{ transparent: transparentNav }")
         nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
         .logo.vcentercontainer
-          a(href="/") #[h1 Data Science @ UCSB] 
+          a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science @ UCSB] 
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
           nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
           li
