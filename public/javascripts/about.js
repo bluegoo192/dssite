@@ -18,7 +18,7 @@ var app = new Vue({
       {
         name: "Workshops",
         image: "images/sql_workshop_2.jpg",
-        description: "Data Science at UCSB hosts workshops throughout the year that teach various programs(?) to students. With assistance from skilled members, participants learn the basics of the program and demonstrate their knowledge by working on exercises or creating projects to showcase what they've learned. These events offer free food, free knowledge, and great opportunities to make new friends. Our organization has hosted workshops for SQL, Python, and (_), to name a few."
+        description: "Data Science at UCSB hosts workshops throughout the year that teach various programs to students. With assistance from skilled members, participants learn the basics of the program and demonstrate their knowledge by working on exercises or creating projects to showcase what they've learned. These events offer free food, free knowledge, and great opportunities to make new friends. Our organization has hosted workshops for SQL, Python, and Django, to name a few."
       },
       {
         name: "Data Talks",
