@@ -15,7 +15,7 @@ block content
       .divider5
       p There are no other posts
     
-    #fullpost(:class="{ shown: show.expandedPost }" @click="show.expandedPost = false")
+    #fullpost(:class="{ shown: show.expandedPost }" @click="closeExpanded")
       .divider10
       #expanded
         article(v-if="show.expandedPost" @click.stop)
