@@ -19,7 +19,7 @@ var app = new Vue({
       {
         name: "Jason Freeberg",
         file: "jason_freeberg.jpg",
-        position: "President",
+        position: "Retired but beloved",
         description: "Jason is the founding President of the organization and a fourth-year Statistics major. He will be working at Microsoft following his graduation in June.",
         contactinfo: {
           linkedin: "https://www.linkedin.com/in/jfreeberg/",
@@ -30,7 +30,7 @@ var app = new Vue({
       {
         name: "Raul Eulogio",
         file: "raul_eulogio.jpg",
-        position: "Vice President",
+        position: "Co-President",
         description: "I'm an alumni of UCSB, working as a data analyst. An aspiring data jedi with a love for teaching and all things data related.",
         contactinfo: {
         },
@@ -39,7 +39,7 @@ var app = new Vue({
       {
         name: "Samantha Lee",
         file: "samantha_lee.jpg",
-        position: "Vice President",
+        position: "Co-President",
         description: "Hi! I'm a fourth year Statistics major.  In my free time, I like reading Medium, swimming, blogging, and learning. Data is fun!!!!",
         contactinfo: {
           github: "www.github.com/samanthaklee",
@@ -88,7 +88,7 @@ var app = new Vue({
       {
         name: "Timothy Nguyen",
         file: "timothy_nguyen.jpg",
-        position: "Marketing",
+        position: "Vice President",
         description: "third year statistics major who wants to pet ur dog",
         contactinfo: {
           github: "https://github.com/timothydnguyen",
@@ -142,15 +142,6 @@ var app = new Vue({
         description: "I am a third year Statistical Sciences major. I love to learn about and explore the world. I strive to always be happy, healthy, and helpful.",
         contactinfo: {
           linkedin: " https://www.linkedin.com/in/danielfields365/"
-        },
-        current: false
-      },
-      {
-        name: "Eri Kawakami",
-        file: "eri_kawakami.jpg",
-        position: "Operations",
-        description: "",
-        contactinfo: {
         },
         current: false
       },
