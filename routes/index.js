@@ -35,6 +35,10 @@ router.get('/datatalks', function(req, res, next) {
   res.render('datatalks', { title: 'Data Talks' });
 });
 
+router.get('/resources', function(req, res, next) {
+  res.render('resources', { title: 'Resources' });
+});
+
 router.post('/api/v1/createBlogPost', async function(req, res, next) {
   var status = await database.createBlogPost(req.body);
   res.send(status);
