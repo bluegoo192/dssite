@@ -1,0 +1,22 @@
+ul {
+  margin-left: 5vw;
+}
+li.resource {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+li.resource h2 {
+  margin: 0;
+}
+li.resource .description {
+  min-width: 50vw;
+  max-width: 600px;
+}
+li.resource img {
+  width: 160px;
+  height: 160px;
+  padding-bottom: 32px;
+  margin-right: 32px;
+}
