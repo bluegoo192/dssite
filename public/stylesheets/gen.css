@@ -25,6 +25,7 @@ p.large {
 }
 h1 {
   margin: 0;
+  font-size: 3em;
 }
 button {
   cursor: pointer;
