@@ -2,9 +2,9 @@ doctype html
 html
   head
     title Data Science @ UCSB
-    link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet") 
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
     link(rel='stylesheet', href='/stylesheets/gen.css')
-    
+
     // Icon stuff
     link(rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png")
     link(rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png")
@@ -19,37 +19,39 @@ html
     link(rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png")
     link(rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png")
     link(rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png")
-    
+
     // Global Site Tag (gtag.js) for Google Analytics
     script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-107704515-1")
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      
+
       gtag('config', 'UA-107704515-1');
-    
+
     block styles
     link(rel='stylesheet', href='/stylesheets/nav.css')
-    
+
     meta(name="viewport" content="width=device-width")
   body
     #app
       nav#nav(:class="{ transparent: transparentNav }")
         nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
         .logo.vcentercontainer
-          a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science @ UCSB] 
+          a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science @ UCSB]
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
           nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
           li
             a(href="/about") About
           li
+            a(href="/calendar") Calendar
+          li
             a(href="/people") People
           li
             a(href="/blog") Blog
-      
+
       block content
-      
+
       footer
         .flexcontainer.spaced
           .logo
@@ -57,23 +59,23 @@ html
           .column
             h4 Upcoming
             ul
-              li 
+              li
                 a(href="/events") Meetings
           .column
             h4 Projects
             ul
-              li 
+              li
                 a(href="https://www.inertia7.com/" target="_blank") Inertia7
               li
                 a(href="https://github.com/UCSB-dataScience-ProjectGroup/" target="_blank") Github
-              li 
+              li
                 a(href="https://www.datacamp.com/" target="_blank") Datacamp
           .column
             h4 Organization
             ul
-              li 
+              li
                 a(href="/about") About
-              li 
+              li
                 a(href="/people") Leadership
               li
                 a(href="/blog") Blog
