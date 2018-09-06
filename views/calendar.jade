@@ -2,13 +2,12 @@ extends layout
 
 block content
   .divider10
-  h1.center.title Events
+  h1.center.title Calendar
   iframe.center(src="https://calendar.google.com/calendar/embed?src=datascience.ucsb%40gmail.com&ctz=America%2FLos_Angeles" style="border-width:0" frameborder="0" scrolling="no")
   .divider10
   .divider10
-  
+
 block scripts
-  script(src="/javascripts/events.js")
+  script(src="/javascripts/calendar.js")
 block styles
-  link(rel='stylesheet', href='/stylesheets/events.css')
-  
+  link(rel='stylesheet', href='/stylesheets/calendar.css')

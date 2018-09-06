@@ -19,8 +19,8 @@ router.get('/people', function(req, res, next) {
   res.render('people', { title: 'People' });
 });
 
-router.get('/events', function(req, res, next) {
-  res.render('events', { title: 'Events' });
+router.get('/calendar', function(req, res, next) {
+  res.render('calendar', { title: 'Calendar' });
 });
 
 router.get('/projects', function(req, res, next) {
