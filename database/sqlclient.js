@@ -3,3 +3,15 @@
   PSQL connection command, for manual editing:
   psql --port=5432 --host=ucsb-data-science.postgres.database.azure.com --username=dsadmin@ucsb-data-science -W
 */
+
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  user: 'dsadmin@ucsb-data-science',
+  host: 'ucsb-data-science.postgres.database.azure.com',
+  database: 'postgres',
+  password: '!@#123qweQWE',
+  port: 5432,
+});
+
+module.exports = pool;
