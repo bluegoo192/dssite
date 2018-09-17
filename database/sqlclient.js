@@ -5,6 +5,7 @@
 */
 
 const { Pool } = require('pg');
+const sql = require('sql');
 
 const pool = new Pool({
   user: 'dsadmin@ucsb-data-science',
@@ -14,4 +15,36 @@ const pool = new Pool({
   port: 5432,
 });
 
-module.exports = pool;
+sql.setDialect('postgres');
+
+// Define sql table
+const members = sql.define({
+  name: 'members',
+  columns: [
+    { name: 'id' },
+    { name: 'email' },
+    { name: 'hashed_password',
+      property: 'hashedPassword', },
+    { name: 'first_name',
+      property: 'firstName', },
+    { name: 'last_name',
+      property: 'lastName', },
+    { name: 'nickname' },
+    { name: 'year_started_school',
+      property: 'yearStartedSchool', },
+    { name: 'last_known_major',
+      property: 'lastKnownMajor', },
+  ]
+});
+
+// Shorthand query function that processes a sql query object and runs it
+const query = (sqlQuery) => {
+  console.log(sqlQuery.toQuery().text);
+  return pool.query(sqlQuery.toQuery().text);
+}
+
+module.exports = {
+  query,
+  pool,
+  members,
+};
