@@ -42,6 +42,11 @@ const members = sql.define({
 const salt = 10;
 
 /* Helper functions for quality of life */
+const hash = async (data) => {
+  data.hashedPassword = await bcrypt.hash(data.password, salt);
+  delete data.password;
+  return data;
+}
 const helpers = {
   // Processes a sql query object and runs it
   query: async (sqlQuery) => {
@@ -50,12 +55,15 @@ const helpers = {
   },
   // Adds a member, and returns the number of members inserted (1 for success)
   addMember: async (memberData) => {
-    memberData.hashedPassword = await bcrypt.hash(memberData.password, salt);
-    delete memberData.password;
+    await hash(memberData);
     const query = members.insert(...Object.keys(memberData).map(prop =>
       members[prop].value(memberData[prop])
     )).toQuery();
     return await pool.query(query.text, query.values);
+  },
+  // Check a member's login credentials
+  checkLogin: async (credentials) => {
+    // credentials.hashedPassword = await bcrypt.a
   }
 }
 
