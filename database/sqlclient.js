@@ -63,7 +63,16 @@ const helpers = {
   },
   // Check a member's login credentials
   checkLogin: async (credentials) => {
-    // credentials.hashedPassword = await bcrypt.a
+    const q = members
+      .select(members.star()).from(members)
+      .where(members.email.equals(credentials.email)).toQuery();
+    const response = await pool.query(q.text, q.values);
+    if (response.rows.length !== 1) return false;
+    const success = await bcrypt.compare(
+      credentials.password,
+      response.rows[0].hashedPassword);
+    if (!success) return false;
+    return response.rows[0];
   }
 }
 
