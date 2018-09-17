@@ -6,7 +6,9 @@
 
 const { Pool } = require('pg');
 const sql = require('sql');
+const bcrypt = require('bcrypt');
 
+/* Set up connection pool */
 const pool = new Pool({
   user: 'dsadmin@ucsb-data-science',
   host: 'ucsb-data-science.postgres.database.azure.com',
@@ -15,9 +17,8 @@ const pool = new Pool({
   port: 5432,
 });
 
+/* Set up application-side sql schema */
 sql.setDialect('postgres');
-
-// Define sql table
 const members = sql.define({
   name: 'members',
   columns: [
@@ -37,14 +38,29 @@ const members = sql.define({
   ]
 });
 
-// Shorthand query function that processes a sql query object and runs it
-const query = (sqlQuery) => {
-  console.log(sqlQuery.toQuery().text);
-  return pool.query(sqlQuery.toQuery().text);
+/* Set up encryption */
+const salt = 10;
+
+/* Helper functions for quality of life */
+const helpers = {
+  // Processes a sql query object and runs it
+  query: async (sqlQuery) => {
+    const query = sqlQuery.toQuery();
+    return await pool.query(query.text, query.values);
+  },
+  // Adds a member, and returns the number of members inserted (1 for success)
+  addMember: async (memberData) => {
+    memberData.hashedPassword = await bcrypt.hash(memberData.password, salt);
+    delete memberData.password;
+    const query = members.insert(...Object.keys(memberData).map(prop =>
+      members[prop].value(memberData[prop])
+    )).toQuery();
+    return await pool.query(query.text, query.values);
+  }
 }
 
 module.exports = {
-  query,
+  ...helpers,
   pool,
   members,
 };
