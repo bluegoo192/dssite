@@ -12,4 +12,17 @@ Vue.component('nav-hamburger', {
       this.$emit('togglenav');
     }
   }
-})
+});
+
+// Renders as a button, which opens a modal when clicked
+Vue.component('login', {
+  template:
+  `<div>
+      <a @click="openModal">Log In</a>
+  </div>`,
+  methods: {
+    openModal: function () {
+      this.$emit('openModal');
+    }
+  }
+});
