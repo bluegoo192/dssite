@@ -128,6 +128,15 @@ footer a {
   background-color: #f9fafb;
   color: #314155;
 }
+.modal-backdrop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #314155;
+  opacity: 0.5;
+}
 @media (max-width: 35em) {
   .msquare {
     min-height: 100vw;

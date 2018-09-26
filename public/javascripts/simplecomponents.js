@@ -19,27 +19,42 @@ Vue.component('login', {
   template:
   `<div>
       <a @click="showModal = true">Log In</a>
-      <modal
-        content="content"
-        title="Log In"
-        show="showModal" />
+      <modal title="Log In" :show="showModal" @closeModalEvent="closeModal">
+        <p>modal content slot</p>
+      </modal>
   </div>`,
   data: function () {
     return {
-      showModal: true,
-      content:
-        `<div>
-          <p>modal content</p>
-        </div>`,
+      showModal: false,
+    }
+  },
+  methods: {
+    closeModal: function () {
+      console.log('close')
+      console.log(this.showModal)
+      this.showModal = false;
+      console.log(this.showModal)
     }
   }
 });
 
 Vue.component('modal', {
-  props: ['content', 'title', 'show'],
+  props: {
+    title: String,
+    show: Boolean
+  },
   template:
-  `<div class="modal" v-if="show">
-    <h2>{{ title }}</h2>
-    {{ content }}
-  </div>`
+  `<div v-if="show">
+    <div class="modal-backdrop-overlay" @click="close"/>
+    <div class="modal">
+      <h2>{{ title }}</h2>
+      <slot></slot>
+    </div>
+  </div>`,
+  methods: {
+    close: function () {
+      console.log('show', this.show);
+      this.$emit('closeModalEvent');
+    }
+  }
 })
