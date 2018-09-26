@@ -127,6 +127,7 @@ footer a {
   transform: translate(-50%, -50%);
   background-color: #f9fafb;
   color: #314155;
+  padding: 12px;
 }
 .modal-backdrop-overlay {
   position: fixed;

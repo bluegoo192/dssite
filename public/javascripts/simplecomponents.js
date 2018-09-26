@@ -20,7 +20,10 @@ Vue.component('login', {
   `<div>
       <a @click="showModal = true">Log In</a>
       <modal title="Log In" :show="showModal" @closeModalEvent="closeModal">
-        <p>modal content slot</p>
+        <form>
+          <input type="email" name="email">
+          <input type="password" name="password">
+        </form>
       </modal>
   </div>`,
   data: function () {
@@ -30,10 +33,7 @@ Vue.component('login', {
   },
   methods: {
     closeModal: function () {
-      console.log('close')
-      console.log(this.showModal)
       this.showModal = false;
-      console.log(this.showModal)
     }
   }
 });
@@ -53,7 +53,6 @@ Vue.component('modal', {
   </div>`,
   methods: {
     close: function () {
-      console.log('show', this.show);
       this.$emit('closeModalEvent');
     }
   }
