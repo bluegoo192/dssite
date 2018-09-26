@@ -119,6 +119,15 @@ footer ul {
 footer a {
   color: #f9fafb;
 }
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 640px;
+  transform: translate(-50%, -50%);
+  background-color: #f9fafb;
+  color: #314155;
+}
 @media (max-width: 35em) {
   .msquare {
     min-height: 100vw;

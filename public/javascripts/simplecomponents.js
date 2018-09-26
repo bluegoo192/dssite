@@ -18,11 +18,28 @@ Vue.component('nav-hamburger', {
 Vue.component('login', {
   template:
   `<div>
-      <a @click="openModal">Log In</a>
+      <a @click="showModal = true">Log In</a>
+      <modal
+        content="content"
+        title="Log In"
+        show="showModal" />
   </div>`,
-  methods: {
-    openModal: function () {
-      this.$emit('openModal');
+  data: function () {
+    return {
+      showModal: true,
+      content:
+        `<div>
+          <p>modal content</p>
+        </div>`,
     }
   }
 });
+
+Vue.component('modal', {
+  props: ['content', 'title', 'show'],
+  template:
+  `<div class="modal" v-if="show">
+    <h2>{{ title }}</h2>
+    {{ content }}
+  </div>`
+})
