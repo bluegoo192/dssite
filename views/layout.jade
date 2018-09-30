@@ -50,7 +50,10 @@ html
           li
             a(href="/blog") Blog
           li
-            login
+            if loggedIn
+              login
+            else
+              a(href="/logout") Log Out
 
       block content
 
