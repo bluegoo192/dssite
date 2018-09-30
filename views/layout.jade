@@ -49,11 +49,12 @@ html
             a(href="/people") People
           li
             a(href="/blog") Blog
+          if logged
           li
             if loggedIn
-              login
-            else
               a(href="/logout") Log Out
+            else
+              login
 
       block content
 
