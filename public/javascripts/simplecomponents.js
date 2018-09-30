@@ -12,4 +12,59 @@ Vue.component('nav-hamburger', {
       this.$emit('togglenav');
     }
   }
+});
+
+// Renders as a button, which opens a modal when clicked
+Vue.component('login', {
+  template:
+  `<div>
+      <a @click="showModal = true">Log In</a>
+      <modal title="Log In" :show="showModal" @closeModalEvent="closeModal">
+        <form class="center vertical" action="/login" method="post">
+          <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
+          <br>
+          <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
+          <br>
+          <input class="button submitButton" type="submit" value="Submit">
+        </form>
+      </modal>
+  </div>`,
+  data: function () {
+    return {
+      showModal: false,
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    closeModal: function () {
+      this.showModal = false;
+    }
+  },
+  computed: {
+    emailIsValid: function () {
+      const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return this.email.match(emailPattern) != null || this.email === '';
+    }
+  }
+});
+
+Vue.component('modal', {
+  props: {
+    title: String,
+    show: Boolean
+  },
+  template:
+  `<div v-if="show">
+    <div class="modal-backdrop-overlay" @click="close"/>
+    <div class="modal">
+      <h2>{{ title }}</h2>
+      <slot></slot>
+    </div>
+  </div>`,
+  methods: {
+    close: function () {
+      this.$emit('closeModalEvent');
+    }
+  }
 })

@@ -63,6 +63,7 @@ const helpers = {
   },
   // Check a member's login credentials
   checkLogin: async (credentials) => {
+    console.log("checking login", credentials);
     const q = members
       .select(members.star()).from(members)
       .where(members.email.equals(credentials.email)).toQuery();
