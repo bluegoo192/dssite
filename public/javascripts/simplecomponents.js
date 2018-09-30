@@ -27,6 +27,22 @@ Vue.component('login', {
           <br>
           <input class="button submitButton" type="submit" value="Submit">
         </form>
+        <h3>Or sign up instead</h3>
+        <form class="center vertical" action="/register" method="post">
+          <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
+          <br>
+          <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
+          <br>
+          <input class="hpadded" type="text" name="firstName" placeholder="first name">
+          <br>
+          <input class="hpadded" type="text" name="lastName" placeholder="last name">
+          <br>
+          <input class="hpadded" type="number" min="2000" name="yearStartedSchool" placeholder="year started school">
+          <br>
+          <input class="hpadded" type="text" name="lastKnownMajor" placeholder="current major(s)">
+          <br>
+          <input class="button submitButton" type="submit" value="Submit">
+        </form>
       </modal>
   </div>`,
   data: function () {

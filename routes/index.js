@@ -4,6 +4,7 @@ var mongo = require('../database/mongooseclient.js');
 var db = require('../database/sqlclient.js')
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+
 passport.use(new LocalStrategy(
   {usernameField: 'email', passwordField: 'password'},
   function(username, password, done) {
@@ -74,6 +75,11 @@ router.post('/login', passport.authenticate('local', {
 }), function(req, res, next) {
   res.render('index');
 });
+
+router.post('/register', async function(req, res, next) {
+  await db.addMember(req.body);
+  res.redirect('/');
+})
 
 router.get('/logout', function (req, res) {
   req.logout();
