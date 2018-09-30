@@ -38,8 +38,34 @@ const members = sql.define({
   ]
 });
 
+const payments = sql.define({
+  name: 'payments',
+  columns: [
+    { name: 'id' },
+    { name: 'timestamp' },
+    { name: 'member_id',
+      property: 'memberId', },
+    { name: 'amount' },
+  ]
+});
+
 /* Set up encryption */
 const salt = 10;
+
+  // Check whether they are a *paying* member
+  // returns a member object with isPaying property
+  const addPaymentStatus = async (member) => {
+    let paying = false;
+    const q = payments
+      .select(payments.star()).from(payments)
+      .where(payments.memberId.equals(member.id)).toQuery();
+    const response = await pool.query(q.text, q.values);
+    // TODO: for now this just returns true.  Make it better
+    if (response.rows.length > 0) paying = true;
+    member.isPaying = paying;
+    console.log(member)
+    return member;
+  }
 
 /* Helper functions for quality of life */
 const hash = async (data) => {
@@ -73,12 +99,14 @@ const helpers = {
       credentials.password,
       response.rows[0].hashedPassword);
     if (!success) return false;
-    return response.rows[0];
-  }
+    return await (addPaymentStatus(response.rows[0]));
+  },
+  addPaymentStatus,
 }
 
 module.exports = {
   ...helpers,
   pool,
   members,
+  payments,
 };
