@@ -19,16 +19,16 @@ Vue.component('login', {
   template:
   `<div>
       <a @click="showModal = true">Log In</a>
-      <modal title="Log In" :show="showModal" @closeModalEvent="closeModal">
-        <form class="center vertical" action="/login" method="post">
+      <modal :title="newUser ? 'Sign up' : 'Log in'" :show="showModal" @closeModalEvent="closeModal">
+        <form class="center vertical" action="/login" method="post" v-if="!newUser">
           <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
           <br>
           <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
           <br>
           <input class="button submitButton" type="submit" value="Submit">
+          <a @click="newUser = true">Or sign up instead</a>
         </form>
-        <h3>Or sign up instead</h3>
-        <form class="center vertical" action="/register" method="post">
+        <form class="center vertical" action="/register" method="post" v-if="newUser">
           <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
           <br>
           <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
@@ -42,6 +42,7 @@ Vue.component('login', {
           <input class="hpadded" type="text" name="lastKnownMajor" placeholder="current major(s)">
           <br>
           <input class="button submitButton" type="submit" value="Submit">
+          <a @click="newUser = false">Back to login</a>
         </form>
       </modal>
   </div>`,
@@ -49,7 +50,8 @@ Vue.component('login', {
     return {
       showModal: false,
       email: '',
-      password: ''
+      password: '',
+      newUser: false,
     }
   },
   methods: {
