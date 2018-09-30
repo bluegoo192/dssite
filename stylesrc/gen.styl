@@ -19,6 +19,11 @@ a
   text-decoration: none
   color: theme-color
 
+.vertical
+  input
+    margin-bottom: 8px
+    width: 100%
+
 a:hover
   text-decoration: underline
 
@@ -28,9 +33,17 @@ p.large
 h1
   margin: 0
 
-button
+button, input.button
   cursor: pointer;
   letter-spacing: 1px;
+
+.submitButton
+  font-size: 1.1em
+  border-radius: 0
+  background-color: #2DC455
+  color: white-color
+  border: none
+  padding: 8px 16px
 
 ul li
   list-style: none;
@@ -83,6 +96,9 @@ ul li
 .flexcontainer.horizontal
   flex-direction: row;
 
+.flexcontainer.vertical
+  flex-direction: column;
+
 .purewhite
   background-color: #fff
 
@@ -120,17 +136,22 @@ footer
   a
     color: white-color
 
+input
+  box-sizing: border-box
+
+form
+  box-sizing: border-box
+
 // Relatively self-contained modal.
 // Can be embedded into any component while keeping its look & feel
 .modal
   position: fixed
   top: 50%
   left: 50%
-  width: 640px
   transform: translate(-50%, -50%)
   background-color: white-color
   color: black-color
-  padding: 12px
+  padding: 12px 24px
 
 .invalidInput
   border: 1px solid #abc

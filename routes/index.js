@@ -49,56 +49,36 @@ router.get('/test', function(req, res, next) {
   res.render('test', { title: 'Color Test' });
 });
 
-router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About' });
-});
+router.get('/about', render('about'));
 
-router.get('/people', function(req, res, next) {
-  res.render('people', { title: 'People' });
-});
+router.get('/people', render('people'));
 
-router.get('/calendar', function(req, res, next) {
-  res.render('calendar', { title: 'Calendar' });
-});
+router.get('/calendar', render('calendar'));
 
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects' });
-});
+router.get('/projects', render('projects'));
 
-router.get('/blog', function(req, res, next) {
-  res.render('blog', { title: 'Blog' });
-});
+router.get('/blog', render('blog'));
 
-router.get('/datatalks', function(req, res, next) {
-  res.render('datatalks', { title: 'Data Talks' });
-});
+router.get('/datatalks', render('datatalks'));
 
 router.post('/api/v1/createBlogPost', async function(req, res, next) {
   var status = await mongo.createBlogPost(req.body);
   res.send(status);
 });
 
-router.get('/resources', isAuthenticated, async function(req, res, next) {
-  res.render('about');
-})
+router.get('/resources', isAuthenticated, render('resources'))
 
-// router.post('/login', function(req, res, next) {
-//   passport.authenticate('local', function(err, user, info) {
-//     console.log(req.body);
-//     if (err) { return next(err); }
-//     if (!user) { return res.redirect('/login'); }
-//     req.logIn(user, function(err) {
-//       if (err) { return next(err); }
-//       return res.redirect('/');
-//     });
-//   })(req, res, next);
-// });
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/about',
 }), function(req, res, next) {
   res.render('index');
 });
+
+router.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+})
 
 
 
