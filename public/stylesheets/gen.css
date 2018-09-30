@@ -129,6 +129,9 @@ footer a {
   color: #314155;
   padding: 12px;
 }
+.invalidInput {
+  border: 1px solid #abc;
+}
 .modal-backdrop-overlay {
   position: fixed;
   top: 0;

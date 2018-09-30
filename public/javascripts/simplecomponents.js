@@ -21,19 +21,28 @@ Vue.component('login', {
       <a @click="showModal = true">Log In</a>
       <modal title="Log In" :show="showModal" @closeModalEvent="closeModal">
         <form>
-          <input type="email" name="email">
-          <input type="password" name="password">
+          <input :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email">
+          <input type="password" name="password" v-model="password">
+          <input type="submit" value="Submit">
         </form>
       </modal>
   </div>`,
   data: function () {
     return {
       showModal: false,
+      email: '',
+      password: ''
     }
   },
   methods: {
     closeModal: function () {
       this.showModal = false;
+    }
+  },
+  computed: {
+    emailIsValid: function () {
+      const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return this.email.match(emailPattern) != null || this.email === '';
     }
   }
 });
