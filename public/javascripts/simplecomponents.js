@@ -48,7 +48,7 @@ Vue.component('login', {
   </div>`,
   data: function () {
     return {
-      showModal: false,
+      showModal: new URLSearchParams(window.location.search).get('login'),
       email: '',
       password: '',
       newUser: false,

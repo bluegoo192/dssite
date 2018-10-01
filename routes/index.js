@@ -21,7 +21,7 @@ passport.use(new LocalStrategy(
 const isAuthenticated = function (req, res, next) {
   if (req.isAuthenticated())
     return next();
-  res.redirect('/');
+  res.redirect('/?login=true');
 };
 
 passport.serializeUser(function(user, done) {
@@ -71,7 +71,7 @@ router.get('/resources', isAuthenticated, render('resources'))
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/about',
+    failureRedirect: '/?login=true',
 }), function(req, res, next) {
   res.render('index');
 });
