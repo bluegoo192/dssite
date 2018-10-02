@@ -76,7 +76,7 @@ router.get('/resources', isAuthenticated, render('resources'))
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/?login=true',
+    failureRedirect: '/?login=true&loginFailed=true',
 }), function(req, res, next) {
   res.render('index');
 });

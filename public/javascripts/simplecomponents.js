@@ -20,6 +20,7 @@ Vue.component('login', {
   `<div>
       <a @click="showModal = true">Log In</a>
       <modal :title="newUser ? 'Sign up' : 'Log in'" :show="showModal" @closeModalEvent="closeModal">
+        <p class="error-message" v-if="showLoginFailedMessage">Sorry, your username or password was invalid</p>
         <form class="center vertical" action="/login" method="post" v-if="!newUser">
           <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
           <br>
@@ -49,6 +50,7 @@ Vue.component('login', {
   data: function () {
     return {
       showModal: new URLSearchParams(window.location.search).get('login'),
+      showLoginFailedMessage: new URLSearchParams(window.location.search).get('loginFailed'),
       email: '',
       password: '',
       newUser: false,
@@ -56,6 +58,8 @@ Vue.component('login', {
   },
   methods: {
     closeModal: function () {
+      this.showLoginFailedMessage = false;
+      this.password = '';
       this.showModal = false;
     }
   },
