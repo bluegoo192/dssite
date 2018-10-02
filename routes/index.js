@@ -62,6 +62,8 @@ router.get('/blog', render('blog'));
 
 router.get('/datatalks', render('datatalks'));
 
+router.get('/me', isAuthenticated, render('me'));
+
 router.post('/api/v1/createBlogPost', async function(req, res, next) {
   var status = await mongo.createBlogPost(req.body);
   res.send(status);

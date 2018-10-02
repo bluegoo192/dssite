@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .divider10
+  .hpadded.fixed-width-block-large.center
+    h1.title Your profile
+    
+    unless loggedIn && user
+      p Sorry, you have reached this page in error.  Please log in to try again
+      
+    h3 Welcome to Data Science at UCSB!
+    if !user.isPaying
+      p Your membership is currently unpaid.  Activate your membership for access to events, educational resources, and more!  
+    p.break-word Hi #{JSON.stringify(user)}
+  
+block scripts
+  script(src="/javascripts/me.js")
+block styles
+  link(rel='stylesheet', href='/stylesheets/me.css')
