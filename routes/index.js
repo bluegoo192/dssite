@@ -73,6 +73,14 @@ router.post('/api/v1/onPayment', async function(req, res, next) {
   res.sendStatus(200);
 });
 
+router.post('/api/v1/kickoffsignup', async function(req, res, next) {
+  if (req.body.Authorization === 'qwerty') {
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(401);
+  }
+})
+
 router.get('/resources', isAuthenticated, render('resources'))
 
 router.post('/login', passport.authenticate('local', {
