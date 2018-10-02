@@ -67,6 +67,11 @@ router.post('/api/v1/createBlogPost', async function(req, res, next) {
   res.send(status);
 });
 
+router.post('/api/v1/onPayment', async function(req, res, next) {
+  console.log(req.body);
+  res.sendStatus(200);
+});
+
 router.get('/resources', isAuthenticated, render('resources'))
 
 router.post('/login', passport.authenticate('local', {
