@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  .modal-backdrop-overlay
+  .modal.vcentercontainer(v-if="!hasAccessCode")
+    input.accessCode(v-model="accessCode" type="text" placeholder="Enter your access code here")
+    button.submitButton(@click="saveAccessCode") Submit
+  .modal.vcentercontainer(v-if="hasAccessCode")
+    .center.vertical
+      input.hpadded(type="email" name="email" placeholder="email")
+      br
+      input.hpadded(type="password" name="password" placeholder="password")
+      br
+      input.hpadded(type="text" name="firstName" placeholder="first name")
+      br
+      input.hpadded(type="text" name="lastName" placeholder="last name")
+      br
+      input.hpadded(type="number" min="2000" name="yearStartedSchool" placeholder="year started school")
+      br
+      input.hpadded(type="text" name="lastKnownMajor" placeholder="current major(s)")
+      br
+      button.submitButton(@click="register") Register
+    button(@click="resetAccessCode" v-if="show.resetButton") Reset access code
+    button(@click="show.resetButton = false" v-if="show.resetButton") Hide reset button
+    
+
+block scripts
+  script.
+    var app = new Vue({
+      el: '#app',
+      data: {
+        transparentNav: false,
+        show: {
+          mobilenav: false,
+          resetButton: true,
+        },
+        accessCode: localStorage.accessCode,
+        hasAccessCode: localStorage.hasAccessCode,
+      },
+      methods: {
+        saveAccessCode: function () {
+          this.hasAccessCode = true;
+        },
+        resetAccessCode: function () {
+          this.accessCode = '';
+          this.hasAccessCode = false;
+        },
+        register: function () {
+          
+        }
+      },
+      watch: {
+        hasAccessCode: function (has) {
+          localStorage.hasAccessCode = has;
+        },
+        accessCode: function (code) {
+          localStorage.accessCode = code;
+        }
+      }
+    })
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/kickoffsignup.css')

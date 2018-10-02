@@ -57,6 +57,7 @@ router.get('/people', render('people'));
 router.get('/calendar', render('calendar'));
 
 router.get('/projects', render('projects'));
+router.get('/kickoffsignup', render('kickoffsignup'));
 
 router.get('/blog', render('blog'));
 
