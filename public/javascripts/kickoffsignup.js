@@ -37,6 +37,7 @@ var app = new Vue({
         data: this.form,
       };
       this.$http.post('/api/v1/kickoffsignup', body).then(res => {
+        if (res.body.error) throw res.body;
         this.form = Object.assign({}, defaults);
         this.message = "You have been signed up successfully!";
         setTimeout(() => {

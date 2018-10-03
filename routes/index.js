@@ -93,7 +93,8 @@ router.post('/api/v1/kickoffsignup', async function(req, res, next) {
       // await db.payments.insert()
       res.sendStatus(200);
     } catch (error) {
-      console.log(error);
+      error.error = true;
+      res.send(error);
       res.sendStatus(500);
     }
   } else {
