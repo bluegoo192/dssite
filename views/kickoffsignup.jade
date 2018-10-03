@@ -7,19 +7,19 @@ block content
     button.submitButton(@click="saveAccessCode") Submit
   .modal.vcentercontainer(v-if="hasAccessCode")
     .center.vertical
-      input.hpadded(type="email" name="email" placeholder="email")
+      input.hpadded(v-model="form.email" type="email" name="email" placeholder="email")
       br
-      input.hpadded(type="password" name="password" placeholder="password")
+      input.hpadded(v-model="form.password" type="password" name="password" placeholder="password")
       br
-      input.hpadded(type="text" name="firstName" placeholder="first name")
+      input.hpadded(v-model="form.firstName" type="text" name="firstName" placeholder="first name")
       br
-      input.hpadded(type="text" name="lastName" placeholder="last name")
+      input.hpadded(v-model="form.lastName" type="text" name="lastName" placeholder="last name")
       br
-      input.hpadded(type="number" min="2000" name="yearStartedSchool" placeholder="year started school")
+      input.hpadded(v-model="form.yearStartedSchool" type="number" min="2000" name="yearStartedSchool" placeholder="year started school")
       br
-      input.hpadded(type="text" name="lastKnownMajor" placeholder="current major(s)")
+      input.hpadded(v-model="form.lastKnownMajor" type="text" name="lastKnownMajor" placeholder="current major(s)")
       br
-      button.submitButton(@click="register") Register
+      button.submitButton#submit(:disabled="!validated" @click="register") Register
     button(@click="resetAccessCode" v-if="show.resetButton") Reset access code
     button(@click="show.resetButton = false" v-if="show.resetButton") Hide reset button
     
