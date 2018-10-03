@@ -75,7 +75,7 @@ router.post('/api/v1/onPayment', async function(req, res, next) {
 
 router.post('/api/v1/kickoffsignup', async function(req, res, next) {
   // console.log(req.body.Authorization);
-  if (req.body.Authorization === 'qwerty') {
+  if (req.body.Authorization === 'ilikeblueberries') {
     try {
       const addResponse = await db.addMember(req.body.data);
       if (addResponse.rowCount != 1) return res.sendStatus(500);
