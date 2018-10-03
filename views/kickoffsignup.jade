@@ -6,21 +6,24 @@ block content
     input.accessCode(v-model="accessCode" type="text" placeholder="Enter your access code here")
     button.submitButton(@click="saveAccessCode") Submit
   .modal.vcentercontainer(v-if="hasAccessCode")
-    p.word-wrap#message(v-if="message") {{ message }}
-    .center.vertical
-      input.hpadded(v-model="form.email" type="email" name="email" placeholder="email")
-      br
-      input.hpadded(v-model="form.password" type="password" name="password" placeholder="password")
-      br
-      input.hpadded(v-model="form.firstName" type="text" name="firstName" placeholder="first name")
-      br
-      input.hpadded(v-model="form.lastName" type="text" name="lastName" placeholder="last name")
-      br
-      input.hpadded(v-model="form.yearStartedSchool" type="number" min="2000" name="yearStartedSchool" placeholder="year started school")
-      br
-      input.hpadded(v-model="form.lastKnownMajor" type="text" name="lastKnownMajor" placeholder="current major(s)")
-      br
-      button.submitButton#submit(:disabled="!validated || show.status === 'Loading...'" @click="register") {{ show.status }}
+    #logocontainer.vcentercontainer
+      img(src='/images/logo_white_simple.png')
+    .hellapadding
+      p.word-wrap#message(v-if="message") {{ message }}
+      .center.vertical
+        input.hpadded(v-model="form.email" type="email" name="email" placeholder="email")
+        br
+        input.hpadded(v-model="form.password" type="password" name="password" placeholder="password")
+        br
+        input.hpadded(v-model="form.firstName" type="text" name="firstName" placeholder="first name")
+        br
+        input.hpadded(v-model="form.lastName" type="text" name="lastName" placeholder="last name")
+        br
+        input.hpadded(v-model="form.yearStartedSchool" type="number" min="2000" name="yearStartedSchool" placeholder="year started school")
+        br
+        input.hpadded(v-model="form.lastKnownMajor" type="text" name="lastKnownMajor" placeholder="current major(s)")
+        br
+        button.submitButton#submit(:disabled="!validated || show.status === 'Loading...'" @click="register") {{ show.status }}
     
 
 block scripts
