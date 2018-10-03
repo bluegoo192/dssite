@@ -37,3 +37,6 @@ input {
   background-color: #ccc !important;
   cursor: not-allowed !important;
 }
+#message {
+  color: #1476fb;
+}

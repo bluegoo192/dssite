@@ -32,18 +32,22 @@ var app = new Vue({
     register: function () {
       console.log('register');
       this.show.status = 'Loading...';
-      this.$http.post('/api/v1/kickoffsignup', {
-        Authorization: this.accessCode
-      }).then(res => {
+      const body = {
+        Authorization: this.accessCode,
+        data: this.form,
+      };
+      this.$http.post('/api/v1/kickoffsignup', body).then(res => {
         this.form = Object.assign({}, defaults);
         this.message = "You have been signed up successfully!";
         setTimeout(() => {
           this.message = false;
         }, 2000);
+        this.show.status = 'Register';
         console.log(res);
       }).catch(error => {
         console.error(error);
         this.message = "Sorry, there was an error.  Please ask a staff member to assist you.";
+        this.show.status = 'Register';
         setTimeout(() => {
           this.message = false;
         }, 5000);
@@ -60,7 +64,6 @@ var app = new Vue({
   },
   computed: {
     validated: function () {
-      return true;
       let valid = true;
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       for (let key in defaults) {
@@ -68,7 +71,7 @@ var app = new Vue({
           valid = false;
         }
       }
-      return valid && re.test(this.form.email) && this.form.yearStartedSchool > 2000 && this.form.yearStartedSchool < 2020;
+      return valid && re.test(this.form.email) && this.form.yearStartedSchool > 1999 && this.form.yearStartedSchool < 2020;
     }
   }
 })

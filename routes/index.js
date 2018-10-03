@@ -74,9 +74,28 @@ router.post('/api/v1/onPayment', async function(req, res, next) {
 });
 
 router.post('/api/v1/kickoffsignup', async function(req, res, next) {
+  // console.log(req.body.Authorization);
   if (req.body.Authorization === 'qwerty') {
-    // await db.addMember(req.body);
-    res.sendStatus(200);
+    try {
+      const addResponse = await db.addMember(req.body.data);
+      if (addResponse.rowCount != 1) return res.sendStatus(500);
+      const getIdQuery = await db.members
+        .select(db.members.id).from(db.members)
+        .where(db.members.email.equals(req.body.data.email)).toQuery();
+      const getIdResponse = await db.pool.query(getIdQuery.text, getIdQuery.values);
+      const memberId = getIdResponse.rows[0].id;
+      const addPaymentQuery = db.payments.insert({
+        memberId,
+        timestamp: new Date(),
+        amount: 1500,
+      }).toQuery();
+      const addPaymentResponse = await db.pool.query(addPaymentQuery.text, addPaymentQuery.values);
+      // await db.payments.insert()
+      res.sendStatus(200);
+    } catch (error) {
+      console.log(error);
+      res.sendStatus(500);
+    }
   } else {
     res.sendStatus(401);
   }

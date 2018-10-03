@@ -6,7 +6,7 @@ block content
     input.accessCode(v-model="accessCode" type="text" placeholder="Enter your access code here")
     button.submitButton(@click="saveAccessCode") Submit
   .modal.vcentercontainer(v-if="hasAccessCode")
-    p.word-wrap(v-if="message") {{ message }}
+    p.word-wrap#message(v-if="message") {{ message }}
     .center.vertical
       input.hpadded(v-model="form.email" type="email" name="email" placeholder="email")
       br
@@ -20,7 +20,7 @@ block content
       br
       input.hpadded(v-model="form.lastKnownMajor" type="text" name="lastKnownMajor" placeholder="current major(s)")
       br
-      button.submitButton#submit(:disabled="!validated" @click="register") Register
+      button.submitButton#submit(:disabled="!validated || show.status === 'Loading...'" @click="register") {{ show.status }}
     
 
 block scripts
