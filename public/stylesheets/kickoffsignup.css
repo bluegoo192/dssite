@@ -11,6 +11,14 @@
 .modal {
   z-index: 11;
   background-color: #fff;
+  padding: 36px 24px;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 input.accessCode {
   border: none;
@@ -19,6 +27,11 @@ input.accessCode {
 }
 button {
   width: 100%;
+}
+input {
+  border: none;
+  font-size: 1.3em;
+  margin-bottom: 24px !important;
 }
 #submit:disabled {
   background-color: #ccc !important;
