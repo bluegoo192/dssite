@@ -75,6 +75,7 @@ router.post('/api/v1/onPayment', async function(req, res, next) {
 
 router.post('/api/v1/kickoffsignup', async function(req, res, next) {
   if (req.body.Authorization === 'qwerty') {
+    // await db.addMember(req.body);
     res.sendStatus(200);
   } else {
     res.sendStatus(401);
