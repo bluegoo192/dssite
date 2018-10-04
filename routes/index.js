@@ -4,6 +4,12 @@ var mongo = require('../database/mongooseclient.js');
 var db = require('../database/sqlclient.js')
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const probe = require('pmx').probe();
+
+const reqMeter = probe.meter({
+  name: 'requests/hour manual',
+  samples: 3600,
+});
 
 passport.use(new LocalStrategy(
   {usernameField: 'email', passwordField: 'password'},
@@ -39,6 +45,7 @@ passport.deserializeUser(function(user, done) {
 
 const render = function (page) {
   return function (req, res, next) {
+    reqMeter.mark();
     res.render(page, { loggedIn: req.user != null, user: req.user });
   }
 }
