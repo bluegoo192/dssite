@@ -10,6 +10,11 @@ const session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+const pmx = require('pmx').init({
+  network: true,
+  ports: false,
+  excludedHooks: [],
+});
 
 
 var app = express();
