@@ -122,4 +122,6 @@ module.exports = {
   pool,
   members,
   payments,
+  officers,
+  permissions,
 };
