@@ -49,6 +49,19 @@ const payments = sql.define({
   ]
 });
 
+const permissions = sql.define({
+  name: 'permissions',
+  columns: ['id','role','description'],
+});
+
+const officers = sql.define({
+  name: 'officers',
+  columns: [
+    { name: 'member_id', property: 'memberId' },
+    { name: 'permission_id', property: 'permissionId' },
+  ]
+});
+
 /* Set up encryption */
 const salt = 10;
 
