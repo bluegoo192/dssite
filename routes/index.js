@@ -44,8 +44,13 @@ passport.deserializeUser(function(user, done) {
 });
 
 const render = function (page) {
+  const pageMeter = probe.meter({
+    name: 'requests/hour for page: '+page,
+    samples: 3600,
+  });
   return function (req, res, next) {
     reqMeter.mark();
+    pageMeter.mark();
     res.render(page, { loggedIn: req.user != null, user: req.user });
   }
 }
