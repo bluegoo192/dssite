@@ -109,6 +109,11 @@ ul li {
 .material {
   box-shadow: 0px 0px 8px #314155;
 }
+.error-message {
+  box-sizing: border-box;
+  padding: 4px 8px;
+  color: #de0707;
+}
 footer {
   background-color: #314155;
   color: #f9fafb;

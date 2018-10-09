@@ -19,25 +19,47 @@ Vue.component('login', {
   template:
   `<div>
       <a @click="showModal = true">Log In</a>
-      <modal title="Log In" :show="showModal" @closeModalEvent="closeModal">
-        <form class="center vertical" action="/login" method="post">
+      <modal :title="newUser ? 'Sign up' : 'Log in'" :show="showModal" @closeModalEvent="closeModal">
+        <p class="error-message" v-if="showLoginFailedMessage">Sorry, your username or password was invalid</p>
+        <form class="center vertical" action="/login" method="post" v-if="!newUser">
           <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
           <br>
           <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
           <br>
           <input class="button submitButton" type="submit" value="Submit">
+          <a @click="newUser = true">Or sign up instead</a>
+        </form>
+        <form class="center vertical" action="/register" method="post" v-if="newUser">
+          <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
+          <br>
+          <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
+          <br>
+          <input class="hpadded" type="text" name="firstName" placeholder="first name">
+          <br>
+          <input class="hpadded" type="text" name="lastName" placeholder="last name">
+          <br>
+          <input class="hpadded" type="number" min="2000" name="yearStartedSchool" placeholder="year started school">
+          <br>
+          <input class="hpadded" type="text" name="lastKnownMajor" placeholder="current major(s)">
+          <br>
+          <input class="button submitButton" type="submit" value="Submit">
+          <a @click="newUser = false">Back to login</a>
         </form>
       </modal>
   </div>`,
   data: function () {
     return {
-      showModal: false,
+      showModal: new URLSearchParams(window.location.search).get('login'),
+      showLoginFailedMessage: new URLSearchParams(window.location.search).get('loginFailed'),
       email: '',
-      password: ''
+      password: '',
+      newUser: false,
     }
   },
   methods: {
     closeModal: function () {
+      this.showLoginFailedMessage = false;
+      this.password = '';
       this.showModal = false;
     }
   },

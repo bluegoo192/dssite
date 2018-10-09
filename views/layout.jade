@@ -52,7 +52,6 @@ html
             a(href="/people") People
           li
             a(href="/blog") Blog
-          if logged
           li
             if loggedIn
               a(href="/logout") Log Out
@@ -89,7 +88,7 @@ html
               li
                 a(href="/blog") Blog
               li
-                a(href="https://goo.gl/forms/hGLsyUruyCknGuIT2") Join
+                a(href="/?login=true") Join
         .divider5
         .center
           p.small Website by Arthur Silverstein
