@@ -158,6 +158,7 @@ form {
   background-color: #f9fafb;
   color: #314155;
   padding: 12px 24px;
+  z-index: 100;
 }
 .invalidInput {
   border: 1px solid #abc;
