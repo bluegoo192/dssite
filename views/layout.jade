@@ -52,6 +52,9 @@ html
             a(href="/people") People
           li
             a(href="/blog") Blog
+          if loggedIn
+            li
+              a(href="/resources") Resources
           li
             if loggedIn
               a(href="/logout") Log Out

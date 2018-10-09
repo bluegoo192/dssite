@@ -49,6 +49,9 @@ ul li {
 .themecolor {
   color: #1476fb;
 }
+.widecontainer {
+  max-width: 720px;
+}
 .accent {
   color: #ff6200;
 }
