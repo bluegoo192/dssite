@@ -5,6 +5,7 @@ var db = require('../database/sqlclient.js')
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const probe = require('pmx').probe();
+const getRole = require('../utils/getOfficerRole.js');
 
 const reqMeter = probe.meter({
   name: 'requests/hour manual',
@@ -29,6 +30,23 @@ const isAuthenticated = function (req, res, next) {
     return next();
   res.redirect('/?login=true');
 };
+
+const isOfficer = function (req, res, next) {
+  if (!req.isAuthenticated()) {
+    res.redirect('/?login=true');
+    return;
+  }
+  getRole({id: req.user.id})
+    .then(role => {
+      if (role === true) {
+        return next();
+      }
+      res.redirect('/?login=true');
+    })
+    .catch(error => {
+      res.redirect('/?login=true');
+    })
+}
 
 passport.serializeUser(function(user, done) {
   // please read the Passport documentation on how to implement this. We're now
