@@ -32,18 +32,22 @@ const isAuthenticated = function (req, res, next) {
 };
 
 const isOfficer = function (req, res, next) {
+  console.log("CHECKING IF OFFICER", req.user);
   if (!req.isAuthenticated()) {
+    console.log("not authenticated");
     res.redirect('/?login=true');
     return;
   }
-  getRole({id: req.user.id})
+  getRole(req.user.id)
     .then(role => {
-      if (role === true) {
+      console.log('role', role);
+      if (role != null) {
         return next();
       }
       res.redirect('/?login=true');
     })
     .catch(error => {
+      console.log("error", error);
       res.redirect('/?login=true');
     })
 }
@@ -83,7 +87,7 @@ router.get('/test', function(req, res, next) {
 router.get('/about', render('about'));
 
 router.get('/people', render('people'));
-
+router.get('/admin', isOfficer, render('admin'));
 router.get('/calendar', render('calendar'));
 
 router.get('/projects', render('projects'));
