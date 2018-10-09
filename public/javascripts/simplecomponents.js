@@ -16,20 +16,21 @@ Vue.component('nav-hamburger', {
 
 // Renders as a button, which opens a modal when clicked
 Vue.component('login', {
+  props: ['register', 'text'],
   template:
   `<div>
-      <a @click="showModal = true">Log In</a>
+      <a class="open-login-modal" @click="showModal = true">{{ text }}</a>
       <modal :title="newUser ? 'Sign up' : 'Log in'" :show="showModal" @closeModalEvent="closeModal">
         <p class="error-message" v-if="showLoginFailedMessage">Sorry, your username or password was invalid</p>
-        <form class="center vertical" action="/login" method="post" v-if="!newUser">
+        <form class="center vertical vcentercontainer" action="/login" method="post" v-if="!newUser">
           <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
           <br>
           <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
           <br>
           <input class="button submitButton" type="submit" value="Submit">
-          <a @click="newUser = true">Or sign up instead</a>
+          <a.loginToggleButton @click="newUser = true">Or sign up instead</a>
         </form>
-        <form class="center vertical" action="/register" method="post" v-if="newUser">
+        <form class="center vertical vcentercontainer" action="/register" method="post" v-if="newUser">
           <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
           <br>
           <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
@@ -43,7 +44,7 @@ Vue.component('login', {
           <input class="hpadded" type="text" name="lastKnownMajor" placeholder="current major(s)">
           <br>
           <input class="button submitButton" type="submit" value="Submit">
-          <a @click="newUser = false">Back to login</a>
+          <a.loginToggleButton @click="newUser = false">Back to login</a>
         </form>
       </modal>
   </div>`,
@@ -53,7 +54,7 @@ Vue.component('login', {
       showLoginFailedMessage: new URLSearchParams(window.location.search).get('loginFailed'),
       email: '',
       password: '',
-      newUser: false,
+      newUser: !!this.register,
     }
   },
   methods: {

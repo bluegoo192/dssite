@@ -16,6 +16,7 @@ body {
 a {
   text-decoration: none;
   color: #1476fb;
+  cursor: pointer;
 }
 .vertical input {
   margin-bottom: 8px;
@@ -169,6 +170,11 @@ form {
   height: 100%;
   background-color: #314155;
   opacity: 0.5;
+}
+a.loginToggleButton {
+  color: blue-color;
+  text-decoration: none;
+  cursor: pointer;
 }
 @media (max-width: 35em) {
   .msquare {

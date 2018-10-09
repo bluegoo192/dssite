@@ -59,7 +59,7 @@ html
             if loggedIn
               a(href="/logout") Log Out
             else
-              login
+              login(text="Log In")
 
       block content
 
@@ -91,7 +91,7 @@ html
               li
                 a(href="/blog") Blog
               li
-                a(href="/?login=true") Join
+                login(text="Join" register="true")
         .divider5
         .center
           p.small Website by Arthur Silverstein

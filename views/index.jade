@@ -5,7 +5,8 @@ block content
     h1.bottomdivider
       | discover 
       span.accent#buzzword {{ currentBuzzword }}
-    a.cta(href="/?login=true") Get Involved
+    a.cta
+      login(register="true" text="Get Involved")
   .maincontainer#end-of-hero
     article.large
       h1 UCSB’s most active coding community.

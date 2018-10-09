@@ -1,4 +1,5 @@
-a.cta {
+a.cta,
+.cta a.open-login-modal {
   background-color: #ff6200;
   color: #f9fafb;
   border: none;
