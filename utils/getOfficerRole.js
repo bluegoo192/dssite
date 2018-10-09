@@ -3,7 +3,7 @@ const db = require('../database/sqlclient.js');
 // given a member ID, retrieve a string representing their role/permissions
 // returns null for generic members (no special role)
 // possible roles can be found in permissions.role in the sql db
-const getRole = async (memberId) => {
+const getOfficerRole = async (memberId) => {
   //var query = user.select(user.name, post.body)
   // .from(user.join(post).on(user.id.equals(post.userId))).toQuery();
   const officerRoles = db.officers.join(db.permissions)
@@ -21,4 +21,4 @@ const getRole = async (memberId) => {
   return null;
 }
 
-module.exports = getRole;
+module.exports = getOfficerRole;
