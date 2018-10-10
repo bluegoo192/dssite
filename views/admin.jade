@@ -3,10 +3,18 @@ extends layout
 block content
   .divider10
   h1.center.title Admin Dashboard
+  p(v-if="loading") Loading...
+  button(@click="downloadMembers") Click to view member directory
+  ul
+    li
+      h3 First name, Last Name, Email
+    li(v-for="member in members")
+      p {{ member.firstName }}  ,  {{ member.lastName }}  ,  {{ member.email }}
   .divider10
   .divider10
 
 block scripts
+  script(src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1")
   script(src="/javascripts/admin.js")
 block styles
   //- link(rel='stylesheet', href='/stylesheets/calendar.css')
