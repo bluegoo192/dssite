@@ -102,7 +102,7 @@ router.post('/api/v1/createBlogPost', async function(req, res, next) {
   res.send(status);
 });
 
-router.post('/api/v1/members', async function (req, res, next) {
+router.post('/api/v1/members', isOfficer, async function (req, res, next) {
   const getPayingMembersQuery = db.members
     .select(db.members.firstName, db.members.lastName, db.members.email, db.payments.amount)
     .from(db.members.join(db.payments).on(db.members.id.equals(db.payments.memberId)))
