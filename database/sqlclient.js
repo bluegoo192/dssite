@@ -10,11 +10,11 @@ const bcrypt = require('bcrypt');
 
 /* Set up connection pool */
 const pool = new Pool({
-  user: 'dsadmin@ucsb-data-science',
-  host: 'ucsb-data-science.postgres.database.azure.com',
-  database: 'postgres',
-  password: '!@#123qweQWE',
-  port: 5432,
+  user: process.env.DSSITE_PG_USER,
+  host: process.env.DSSITE_PG_HOST,
+  database: process.env.DSSITE_PG_DB,
+  password: process.env.DSSITE_PG_PASS,
+  port: process.env.DSSITE_PG_PORT,
 });
 
 /* Set up application-side sql schema */
