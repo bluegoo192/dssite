@@ -15,8 +15,6 @@ const reqMeter = probe.meter({
 passport.use(new LocalStrategy(
   {usernameField: 'email', passwordField: 'password'},
   function(username, password, done) {
-    console.log('username', username);
-    console.log('password', password);
     db.checkLogin({email: username, password}).then(result => {
       return done(null, result);
     }).catch(err => {
