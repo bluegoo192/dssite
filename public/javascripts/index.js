@@ -1,17 +1,13 @@
-var app = new Vue({
+var app = {
   el: '#app',
   data: {
     buzzwordCounter: 0,
-    transparentNav: true,
     buzzwords: [
       "machine learning",
       "data visualization",
       "scalable computing",
       "big data"
     ],
-    show: {
-      mobilenav: false
-    }
   },
   methods: {
     trackPos: function() {
@@ -36,4 +32,4 @@ var app = new Vue({
       this.buzzwordCounter += 1
     }.bind(this), 3000)
   }
-})
+}

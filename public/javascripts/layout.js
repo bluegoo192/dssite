@@ -12,5 +12,4 @@ var defaultApp = {
 if (app !== null) {
   app.data = Object.assign(defaultApp.data, app.data);
 }
-console.log('app', Object.assign(defaultApp, app));
 var ds = new Vue(Object.assign(defaultApp, app));
