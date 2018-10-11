@@ -1,6 +1,9 @@
 const aws = require('aws-sdk');
-aws.config.loadFromPath('./awscreds.json');
-
+aws.config.credentials = new aws.SharedIniFileCredentials({profile: 'dssite'});
+aws.config.update({
+  region: 'us-east-2',
+  endpoint: 'https://dynamodb.us-east-2.amazonaws.com',
+});
 
 const client = new aws.DynamoDB.DocumentClient();
 
