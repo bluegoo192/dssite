@@ -35,31 +35,32 @@ html
     meta(name="viewport" content="width=device-width")
   body
     #app
-      nav#nav(:class="{ transparent: transparentNav }")
-        nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
-        .logo.vcentercontainer
-          if loggedIn
-            a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 #{user.firstName}]
-          else
-            a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science @ UCSB]
-        ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
-          nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
-          li
-            a(href="/about") About
-          li
-            a(href="/calendar") Calendar
-          li
-            a(href="/people") People
-          li
-            a(href="/blog") Blog
-          if loggedIn
-            li
-              a(href="/resources") Resources
-          li
+      navbar(inline-template)
+        nav#nav(:class="{ transparent: transparentBackground }")
+          nav-hamburger(onClick="showMobileNav = !showMobileNav")
+          .logo.vcentercontainer
             if loggedIn
-              a(href="/logout") Log Out
+              a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 #{user.firstName}]
             else
-              login(text="Log In")
+              a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science @ UCSB]
+          ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
+            nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
+            li
+              a(href="/about") About {{ showMobileNav }}
+            li
+              a(href="/calendar") Calendar
+            li
+              a(href="/people") People
+            li
+              a(href="/blog") Blog
+            if loggedIn
+              li
+                a(href="/resources") Resources
+            li
+              if loggedIn
+                a(href="/logout") Log Out
+              else
+                login(text="Log In")
 
       block content
 
