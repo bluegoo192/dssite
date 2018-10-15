@@ -10,13 +10,18 @@ block content
       .flexcontainer.stack
         .flexcontainer.horizontal.profile-data-row
           p #{user.email}
-          p email
+          p.profile-data-label email
         .flexcontainer.horizontal.profile-data-row
           p ••••••••••••••
-          p password
+          p.profile-data-label  password
         .flexcontainer.horizontal.profile-data-row
           p #{user.lastKnownMajor}
-          p major
+          p.profile-data-label  major
+        if user.isPaying
+          p.themecolor You are currently a paid member!
+        else
+          p.themecolor You are not currently a paid member, and some features will be unavailabile.  Head to one of our meetings to sign up!
+          
   .divider10
   .divider10
 
