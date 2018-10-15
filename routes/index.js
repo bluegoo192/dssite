@@ -113,7 +113,12 @@ router.post('/api/v1/members', isOfficer, async function (req, res, next) {
     console.error(error);
     res.sendStatus(500);
   }
-})
+});
+
+router.post('/api/v1/makeMembershipPayment', isAuthenticated, async function (req, res, next) {
+  console.log(req.body.nonce);
+  res.sendStatus(200);
+});
 
 router.post('/api/v1/onPayment', async function(req, res, next) {
   console.log(req.body);

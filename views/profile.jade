@@ -22,7 +22,7 @@ block content
         else
           p.themecolor You are not currently a paid member, and some features will be unavailabile.  Head to one of our meetings to sign up!
           #sq-ccbox
-            form#nonce-form(novalidate='', action='path/to/payment/processing/page', method='post')
+            form#nonce-form(novalidate='', action='/api/v1/makeMembershipPayment', method='post')
               | Pay with a Credit Card
               table
                 tbody
