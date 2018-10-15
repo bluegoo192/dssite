@@ -1,0 +1,10 @@
+.top-margin {
+  margin-top: 24px;
+}
+.profile-data-row {
+  justify-content: space-between;
+  padding: 8px 0px;
+}
+.profile-data-row p {
+  margin: 0;
+}

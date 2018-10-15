@@ -2,7 +2,21 @@ extends layout
 
 block content
   .divider10
-  h1.center.title Profile
+  .divider5
+  .maincontainer.widecontainer.center.hpadded
+    h1.title Your profile
+    .maincontainer.hpadded.purewhite.top-margin.border-box
+      h2 #{user.firstName} #{user.lastName}
+      .flexcontainer.stack
+        .flexcontainer.horizontal.profile-data-row
+          p #{user.email}
+          p email
+        .flexcontainer.horizontal.profile-data-row
+          p ••••••••••••••
+          p password
+        .flexcontainer.horizontal.profile-data-row
+          p #{user.lastKnownMajor}
+          p major
   .divider10
   .divider10
 
