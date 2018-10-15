@@ -149,7 +149,8 @@ router.post('/api/v1/kickoffsignup', async function(req, res, next) {
   }
 })
 
-router.get('/resources', isAuthenticated, render('resources'))
+router.get('/resources', isAuthenticated, render('resources'));
+router.get('/profile', isAuthenticated, render('profile'));
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
