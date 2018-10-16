@@ -14,6 +14,14 @@ Vue.component('nav-hamburger', {
   }
 });
 
+Vue.component('notification', {
+  props: ['text'],
+  template:
+  `<div class="notification">
+    <p>{{ text }}</p>
+  </div>`
+})
+
 // Renders as a button, which opens a modal when clicked
 Vue.component('login', {
   props: ['register', 'text'],
