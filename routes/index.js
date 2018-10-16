@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('../database/mongooseclient.js');
 var db = require('../database/sqlclient.js')
+const cache = require('../database/cacheclient.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const probe = require('pmx').probe();
@@ -68,10 +69,20 @@ const render = function (page) {
     name: 'requests/hour for page: '+page,
     samples: 3600,
   });
-  return function (req, res, next) {
+  return async function (req, res, next) {
     reqMeter.mark();
     pageMeter.mark();
-    res.render(page, { loggedIn: req.user != null, user: req.user });
+    const sessionData = {};
+    if (req.user) {
+      const notifications = await cache.get(req.user.id, 'notifications');
+      if (notifications) delete notifications.key;
+      sessionData.notifications = notifications;
+    };
+    res.render(page, {
+      loggedIn: req.user != null,
+      user: req.user,
+      sessionData,
+    });
   }
 }
 
@@ -99,6 +110,26 @@ router.post('/api/v1/createBlogPost', async function(req, res, next) {
   var status = await mongo.createBlogPost(req.body);
   res.send(status);
 });
+
+router.post('/api/v1/onNotificationAcknowledged', isAuthenticated, async function (req, res, next) {
+  const params = {
+    TableName: cache.USER_CACHE,
+    Key: {key: req.user.id + ':notifications'},
+    UpdateExpression: "REMOVE #notificationId",
+    ReturnValues: 'ALL_NEW',
+    ExpressionAttributeNames: {
+      '#notificationId': req.body.notificationId,
+    }
+  };
+  console.log(params)
+  cache.client.update(params).promise().then(response => {
+    console.log(response);
+    res.sendStatus(200);
+  }).catch(error => {
+    console.error(error);
+    res.sendStatus(500);
+  });
+})
 
 router.post('/api/v1/members', isOfficer, async function (req, res, next) {
   const getPayingMembersQuery = db.members
