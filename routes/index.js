@@ -7,6 +7,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const probe = require('pmx').probe();
 const getRole = require('../utils/getOfficerRole.js');
+const square = require('../utils/squareclient.js');
+const markMemberAsPaid = require('../utils/markMemberAsPaid.js');
+const sendNotification = require('../utils/sendNotification.js');
 
 const reqMeter = probe.meter({
   name: 'requests/hour manual',
@@ -144,7 +147,41 @@ router.post('/api/v1/members', isOfficer, async function (req, res, next) {
     console.error(error);
     res.sendStatus(500);
   }
-})
+});
+
+router.post('/api/v1/makeMembershipPayment', isAuthenticated, async function (req, res, next) {
+  console.log(req.body.nonce);
+  const finish = async (status, upgrade) => {
+    await sendNotification([req.user.id], status);
+    req.user.isPaying = upgrade;
+    res.redirect('/profile');
+  };
+  try {
+    const paymentResponse = await square.chargeMembership(req.body.nonce);
+    const payment = paymentResponse.data;
+    cache.put(req.user.id, 'mostRecentPayment', payment).catch(console.error);
+    const status = await markMemberAsPaid({id: req.user.id}, payment.transaction.id);
+    if (status !== true) { // if we get an error marking them as paid
+      // log the error, and give them paid status temporarily
+      console.log(status);
+      cache.put(req.user.id, 'mostRecentError', {
+        error: status,
+        payment: payment,
+      }).then(x => finish("There was an error marking you as a paid member, but we'll fix it.  You will have paid member privileges for this session.", true))
+        .catch(x => res.sendStatus(500));
+      return;
+    }
+    finish("You are now a paid member!", true);
+  } catch (error) {
+    if (error.response.status === 402) {
+      finish('Sorry, there was a problem processing your payment.  Please make sure card is valid and try again.', false)
+      return;
+    }
+    console.log('failed to charge card');
+    cache.put(req.user.id, 'mostRecentError', error).catch(console.error);
+    res.sendStatus(500);
+  }
+});
 
 router.post('/api/v1/onPayment', async function(req, res, next) {
   console.log(req.body);
