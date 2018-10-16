@@ -15,10 +15,11 @@ Vue.component('nav-hamburger', {
 });
 
 Vue.component('notification', {
-  props: ['text'],
+  props: ['text', 'notificationId'],
   template:
   `<div class="notification">
     <p>{{ text }}</p>
+    <p> hi {{ notificationId }}</p>
   </div>`
 })
 

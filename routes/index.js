@@ -74,9 +74,9 @@ const render = function (page) {
     pageMeter.mark();
     const sessionData = {};
     if (req.user) {
-      const notificationsObj = await cache.get(req.user.id, 'notifications');
-      if (notificationsObj)
-        sessionData.notifications = notificationsObj.notifications;
+      const notifications = await cache.get(req.user.id, 'notifications');
+      delete notifications.key;
+      sessionData.notifications = notifications;
     };
     res.render(page, {
       loggedIn: req.user != null,

@@ -6,8 +6,8 @@ block content
   .maincontainer.widecontainer.center.hpadded
     h1.title Your profile
     if sessionData.notifications
-      each notification in sessionData.notifications
-        notification(text=notification)
+      each notification, index in sessionData.notifications
+        notification(text=notification notification-id=index)
     .maincontainer.hpadded.purewhite.top-margin.border-box
       h2 #{user.firstName} #{user.lastName}
       .flexcontainer.stack

@@ -1,4 +1,9 @@
 const cache = require('../database/cacheclient.js');
+const uuidv5 = require('uuid/v5');
+
+const uuid = () => {
+  return uuidv5('datascience.ucsb.org', uuidv5.DNS);
+};
 
 const sendNotification = async (memberIds, text) => {
   const promises = [];
@@ -7,13 +12,12 @@ const sendNotification = async (memberIds, text) => {
       TableName: 'dssite_user_cache',
       Key: {key: memberId + ':notifications'},
       ReturnValues: 'ALL_NEW',
-      UpdateExpression: 'SET notifications = list_append(if_not_exists(#notifications, :empty_list), :notification)',
+      UpdateExpression: 'SET #notificationID = :notification',
       ExpressionAttributeNames: {
-        '#notifications': 'notifications',
+        '#notificationID': 'notification:'+uuid(),
       },
       ExpressionAttributeValues: {
-        ':notification': [text],
-        ':empty_list': []
+        ':notification': text,
       }
     }).promise())
   });
