@@ -75,7 +75,7 @@ const render = function (page) {
     const sessionData = {};
     if (req.user) {
       const notifications = await cache.get(req.user.id, 'notifications');
-      delete notifications.key;
+      if (notifications) delete notifications.key;
       sessionData.notifications = notifications;
     };
     res.render(page, {
