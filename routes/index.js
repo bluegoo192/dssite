@@ -7,6 +7,11 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const probe = require('pmx').probe();
 const getRole = require('../utils/getOfficerRole.js');
+const uuidv5 = require('uuid/v5');
+
+const uuid = () => {
+  return uuidv5('datascience.ucsb.org', uuidv5.DNS);
+};
 
 const reqMeter = probe.meter({
   name: 'requests/hour manual',
