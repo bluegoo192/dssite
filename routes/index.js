@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('../database/mongooseclient.js');
 var db = require('../database/sqlclient.js')
+const cache = require('../database/cacheclient.js');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const probe = require('pmx').probe();
@@ -68,10 +69,20 @@ const render = function (page) {
     name: 'requests/hour for page: '+page,
     samples: 3600,
   });
-  return function (req, res, next) {
+  return async function (req, res, next) {
     reqMeter.mark();
     pageMeter.mark();
-    res.render(page, { loggedIn: req.user != null, user: req.user });
+    const sessionData = {};
+    if (req.user) {
+      const notificationsObj = await cache.get(req.user.id, 'notifications');
+      if (notificationsObj)
+        sessionData.notifications = notificationsObj.notifications;
+    };
+    res.render(page, {
+      loggedIn: req.user != null,
+      user: req.user,
+      sessionData,
+    });
   }
 }
 

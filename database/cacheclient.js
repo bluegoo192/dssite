@@ -27,7 +27,10 @@ const get = async (userId, property) => {
     }
   };
   const response = await client.query(params).promise();
-  if (response.Count !== 1) throw 'Key was not unique';
+  if (response.Count > 1) {
+    console.log(response);
+    throw 'Key was not unique';
+  }
   return response.Items[0];
 }
 
