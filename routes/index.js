@@ -167,7 +167,7 @@ router.post('/api/v1/makeMembershipPayment', isAuthenticated, async function (re
       cache.put(req.user.id, 'mostRecentError', {
         error: status,
         payment: payment,
-      }).then(x => finish("There was an error marking you as a paid member, but we'll fix it.", true))
+      }).then(x => finish("There was an error marking you as a paid member, but we'll fix it.  You will have paid member privileges for this session.", true))
         .catch(x => res.sendStatus(500));
       return;
     }
