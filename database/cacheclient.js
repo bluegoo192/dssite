@@ -31,4 +31,4 @@ const get = async (userId, property) => {
   return response.Items[0];
 }
 
-module.exports = {put, get};
+module.exports = {put, get, client};
