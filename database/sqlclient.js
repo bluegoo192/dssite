@@ -46,6 +46,8 @@ const payments = sql.define({
     { name: 'member_id',
       property: 'memberId', },
     { name: 'amount' },
+    { name: 'square_transaction_id',
+      property: 'squareTransactionId' },
   ]
 });
 
