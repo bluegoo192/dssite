@@ -72,9 +72,10 @@ ul li {
   border: 1px solid #1476fb;
 }
 .notification:hover {
-  background-color: rgba(20,11,25,0.4);
+  background-color: rgba(20,118,251,0.2);
 }
-.notification-read-pending {
+.notification-read-pending,
+.notification-read-pending:hover {
   background-color: #1476fb;
   color: #f9fafb;
 }

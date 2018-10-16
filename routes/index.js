@@ -112,16 +112,18 @@ router.post('/api/v1/createBlogPost', async function(req, res, next) {
 });
 
 router.post('/api/v1/onNotificationAcknowledged', isAuthenticated, async function (req, res, next) {
-  cache.client.update({
+  const params = {
     TableName: cache.USER_CACHE,
-    Key: req.user.id + ':notifications',
+    Key: {key: req.user.id + ':notifications'},
     UpdateExpression: "REMOVE #notificationId",
     ReturnValues: 'ALL_NEW',
     ExpressionAttributeNames: {
       '#notificationId': req.body.notificationId,
     }
-  }).promise().then(response => {
-    console.log(reponse);
+  };
+  console.log(params)
+  cache.client.update(params).promise().then(response => {
+    console.log(response);
     res.sendStatus(200);
   }).catch(error => {
     console.error(error);

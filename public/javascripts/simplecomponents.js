@@ -29,11 +29,12 @@ Vue.component('notification', {
   },
   methods: {
     onNotificationRead: function () {
+      this.loading = true;
       this.$http.post(
         '/api/v1/onNotificationAcknowledged',
         {notificationId: this.notificationId},
       ).then(() => {
-        this.isShown = false;
+        // this.isShown = false;
       }).catch(() => {});
     }
   }

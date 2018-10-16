@@ -35,4 +35,4 @@ const get = async (userId, property) => {
   return response.Items[0];
 }
 
-module.exports = {put, get, client};
+module.exports = {put, get, client, USER_CACHE};
