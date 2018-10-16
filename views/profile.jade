@@ -24,7 +24,8 @@ block content
         if user.isPaying
           p.themecolor You are currently a paid member!
         else
-          p.themecolor You are not currently a paid member, and some features will be unavailabile.  Head to one of our meetings to sign up!
+          p.themecolor You are not currently a paid member, and some features will be unavailabile.  Head to one of our meetings to sign up, or pay online below
+          p.themecolor Membership costs $15 for the quarter
           #sq-ccbox
             form#nonce-form(novalidate='', action='/api/v1/makeMembershipPayment', method='post')
               | Pay with a Credit Card
