@@ -70,6 +70,10 @@ ul li {
 }
 .notification {
   border: 1px solid #1476fb;
+  cursor: pointer;
+}
+.notification p {
+  margin: 0;
 }
 .notification:hover {
   background-color: rgba(20,118,251,0.2);

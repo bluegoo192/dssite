@@ -19,7 +19,6 @@ Vue.component('notification', {
   template:
   `<div v-if="isShown" class="notification hpadded themecolor" @click="onNotificationRead" v-bind:class="{ 'notification-read-pending': loading }">
     <p>{{ text }}</p>
-    <p> id {{ notificationId }}</p>
   </div>`,
   data: function () {
     return {
@@ -34,8 +33,10 @@ Vue.component('notification', {
         '/api/v1/onNotificationAcknowledged',
         {notificationId: this.notificationId},
       ).then(() => {
-        // this.isShown = false;
-      }).catch(() => {});
+        this.isShown = false;
+      }).catch(() => {
+        this.isShown = false;
+      });
     }
   }
 })
