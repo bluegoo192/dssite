@@ -7,14 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const probe = require('pmx').probe();
 const getRole = require('../utils/getOfficerRole.js');
-const uuidv5 = require('uuid/v5');
-const SquareConnect = require('square-connect');
-const SquareTransactions = new SquareConnect.TransactionsApi();
-const SQUARE_LOCATION_ID = 'NCQKPHA45A7Q8';
-
-const uuid = () => {
-  return uuidv5('datascience.ucsb.org', uuidv5.DNS);
-};
+const square = require('../utils/squareclient.js');
 
 const reqMeter = probe.meter({
   name: 'requests/hour manual',
@@ -156,21 +149,12 @@ router.post('/api/v1/members', isOfficer, async function (req, res, next) {
 
 router.post('/api/v1/makeMembershipPayment', isAuthenticated, async function (req, res, next) {
   console.log(req.body.nonce);
-  const paymentRequest = {
-    idempotency_key: 'payment:'+uuid(),
-    amount_money: {
-      amount: 1500,
-      currency: 'USD',
-    },
-    card_nonce: req.body.nonce,
-    note: 'Online membership payment',
-  };
   try {
-    const payment = await SquareTransactions.charge(SQUARE_LOCATION_ID, paymentRequest);
-    console.log(payment);
-    res.sendStatus(200);
+    const payment = await square.chargeMembership(req.body.nonce);
+    cache.put(req.user.id, 'mostRecentPayment', payment).catch(console.error);
+    res.send(payment);
   } catch (error) {
-    console.error(error);
+    cache.put(req.user.id, 'mostRecentError', error).catch(console.error);
     res.sendStatus(500);
   }
 });
