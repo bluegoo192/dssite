@@ -6,18 +6,19 @@ aws.config.update({
 });
 
 const client = new aws.DynamoDB.DocumentClient();
+const USER_CACHE = 'dssite_user_cache';
 
 const put = async (userId, property, data) => {
   data.key = userId + ":" + property;
   return await client.put({
-    TableName: 'dssite_user_cache',
+    TableName: USER_CACHE,
     Item: data,
   }).promise();
 }
 
 const get = async (userId, property) => {
   const params = {
-    TableName: 'dssite_user_cache',
+    TableName: USER_CACHE,
     KeyConditionExpression: '#k = :usrprop',
     ExpressionAttributeNames: {
       '#k': 'key'

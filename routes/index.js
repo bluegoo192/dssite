@@ -111,6 +111,24 @@ router.post('/api/v1/createBlogPost', async function(req, res, next) {
   res.send(status);
 });
 
+router.post('/api/v1/onNotificationAcknowledged', isAuthenticated, async function (req, res, next) {
+  cache.client.update({
+    TableName: cache.USER_CACHE,
+    Key: req.user.id + ':notifications',
+    UpdateExpression: "REMOVE #notificationId",
+    ReturnValues: 'ALL_NEW',
+    ExpressionAttributeNames: {
+      '#notificationId': req.body.notificationId,
+    }
+  }).promise().then(response => {
+    console.log(reponse);
+    res.sendStatus(200);
+  }).catch(error => {
+    console.error(error);
+    res.sendStatus(500);
+  });
+})
+
 router.post('/api/v1/members', isOfficer, async function (req, res, next) {
   const getPayingMembersQuery = db.members
     .select(db.members.firstName, db.members.lastName, db.members.email, db.payments.amount)
