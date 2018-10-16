@@ -68,6 +68,21 @@ ul li {
 .divider10 {
   height: 10vh;
 }
+.notification {
+  border: 1px solid #1476fb;
+  cursor: pointer;
+}
+.notification p {
+  margin: 0;
+}
+.notification:hover {
+  background-color: rgba(20,118,251,0.2);
+}
+.notification-read-pending,
+.notification-read-pending:hover {
+  background-color: #1476fb;
+  color: #f9fafb;
+}
 .stack {
   width: 100%;
   box-sizing: border-box;

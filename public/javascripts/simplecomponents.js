@@ -14,6 +14,33 @@ Vue.component('nav-hamburger', {
   }
 });
 
+Vue.component('notification', {
+  props: ['text', 'notificationId'],
+  template:
+  `<div v-if="isShown" class="notification hpadded themecolor" @click="onNotificationRead" v-bind:class="{ 'notification-read-pending': loading }">
+    <p>{{ text }}</p>
+  </div>`,
+  data: function () {
+    return {
+      isShown: true,
+      loading: false,
+    }
+  },
+  methods: {
+    onNotificationRead: function () {
+      this.loading = true;
+      this.$http.post(
+        '/api/v1/onNotificationAcknowledged',
+        {notificationId: this.notificationId},
+      ).then(() => {
+        this.isShown = false;
+      }).catch(() => {
+        this.isShown = false;
+      });
+    }
+  }
+})
+
 // Renders as a button, which opens a modal when clicked
 Vue.component('login', {
   props: ['register', 'text'],
