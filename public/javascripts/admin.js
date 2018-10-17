@@ -62,5 +62,19 @@ var app = new Vue({
         this.scanError = e;
       });
     },
+    markAsPaid: function () {
+      const content = JSON.parse(this.scanContent);
+      this.$http.post('/api/v1/markMemberAsPaid', {
+        memberId: content.id
+      });
+      this.scanContent = null;
+    },
+    markAsAttending: function () {
+      const content = JSON.parse(this.scanContent);
+      this.$http.post('/api/v1/markMemberAsAttending', {
+        memberId: content.id
+      });
+      this.scanContent = null;
+    },
   }
 })

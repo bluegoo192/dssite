@@ -204,6 +204,11 @@ router.post('/api/v1/markMemberAsPaid', isOfficer, async function(req, res, next
   res.sendStatus(200);
 });
 
+router.post('/api/v1/markMemberAsAttending', isOfficer, async function(req, res,next) {
+  cache.put(req.body.memberId, 'secondMeetingAttendance', {attended: true});
+  res.sendStatus(200);
+})
+
 router.post('/api/v1/kickoffsignup', async function(req, res, next) {
   // console.log(req.body.Authorization);
   if (req.body.Authorization === 'ilikeblueberries') {

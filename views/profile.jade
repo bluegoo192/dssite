@@ -67,7 +67,11 @@ block scripts
   script.
     var generateQrCode = function () {
       console.log("#{user.id}")
-      const user = "Email: #{user.email}\nId: #{user.id}\nIs paying member: #{user.isPaying}"
+      const user = JSON.stringify({
+        email: "#{user.email}",
+        id: "#{user.id}",
+        isPayingMember: "#{user.isPaying}"
+      });
       QRCode.toCanvas(document.getElementById('qrcode'), user);
     }
   script(type="text/javascript" src="https://js.squareup.com/v2/paymentform")

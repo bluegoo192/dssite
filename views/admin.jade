@@ -13,7 +13,9 @@ block content
     video#scanner(@click="switchCameras")
   modal(title="Scanned" v-bind:show="scanContent !== null")
     p {{ scanContent }}
-    button(@click="scanContent = null") Close
+    button.hpadded(@click="markAsPaid") Make paying member
+    button.hpadded(@click="markAsAttending") Mark attendance
+    button.hpadded(@click="scanContent = null") Close
   ul
     li
       h3 First name, Last Name, Email
