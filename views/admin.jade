@@ -5,8 +5,8 @@ block content
   h1.center.title Admin Dashboard
   p(v-if="loading") Loading...
   button(@click="downloadMembers") Click to view member directory
-  button(@click="initScanner") Open QR scanner
-  modal(title="QR Scanner" v-bind:show="showScanner")
+  button(@click="initScanner") Initialize QR scanner
+  .scanner
     p(v-if="scanError") Error: {{ scanError }}
     p(v-if="scanContent") Content: {{ scanContent }}
     video#scanner
