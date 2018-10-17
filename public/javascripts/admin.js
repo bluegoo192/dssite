@@ -29,8 +29,8 @@ var app = new Vue({
       });
       this.scanner = scanner;
       console.log('created scanner')
-      scanner.addListener('scan', function (content) {
-        alert("scanned");
+      scanner.addListener('scan', content => {
+        if (this.scanContent !== null) return; //don't override current scan until it is cleared
         this.scanContent = content;
       });
       console.log('added listener')
