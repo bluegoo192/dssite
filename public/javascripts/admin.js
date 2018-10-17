@@ -23,7 +23,10 @@ var app = new Vue({
     },
     initScanner: function () {
       this.showScanner = true;
-      let scanner = new Instascan.Scanner({ video: document.getElementById('scanner') });
+      let scanner = new Instascan.Scanner({
+        video: document.getElementById('scanner'),
+        mirror: false
+      });
       this.scanner = scanner;
       console.log('created scanner')
       scanner.addListener('scan', function (content) {
