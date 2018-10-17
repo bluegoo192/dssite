@@ -188,6 +188,22 @@ router.post('/api/v1/onPayment', async function(req, res, next) {
   res.sendStatus(200);
 });
 
+router.post('/api/v1/markMemberAsPaid', isOfficer, async function(req, res, next) {
+  if (!req.body.memberId) {
+    res.sendStatus(400);
+    return;
+  }
+  try {
+    const status = await markMemberAsPaid({id: req.body.memberId});
+    if (status !== true) {
+      cache.put(req.body.memberId, 'errorMarkingAsPaid', {status});
+    }
+  } catch (error) {
+    cache.put(req.body.memberId, 'exceptionMarkingAsPaid', {error});
+  }
+  res.sendStatus(200);
+});
+
 router.post('/api/v1/kickoffsignup', async function(req, res, next) {
   // console.log(req.body.Authorization);
   if (req.body.Authorization === 'ilikeblueberries') {
