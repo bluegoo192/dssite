@@ -6,7 +6,10 @@ var app = new Vue({
       mobilenav: false
     },
     members: [],
+    showScanner: false,
     loading: false,
+    scanError: null,
+    scanContent: null,
   },
   methods: {
     downloadMembers: function () {
@@ -15,6 +18,26 @@ var app = new Vue({
         this.members = response.body;
         this.loading = false;
       })
+    },
+    initScanner: function () {
+      let scanner = new Instascan.Scanner({ video: document.getElementById('scanner') });
+      console.log('created scanner')
+      scanner.addListener('scan', function (content) {
+        this.scanContent = content;
+      });
+      console.log('added listener')
+      Instascan.Camera.getCameras().then(cameras => {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.log('no cameras')
+          this.scanError = "No camera found";
+        }
+      }).catch(e => {
+        console.log('unexpected error')
+        this.scanError = e;
+      });
+      this.showScanner = true;
     }
   }
 })
