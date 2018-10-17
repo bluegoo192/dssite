@@ -13,6 +13,7 @@ block content
     video#scanner(@click="switchCameras")
   modal(title="Scanned" v-bind:show="scanContent !== null")
     p {{ scanContent }}
+    button(@click="scanContent = null") Close
   ul
     li
       h3 First name, Last Name, Email
