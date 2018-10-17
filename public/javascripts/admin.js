@@ -44,6 +44,7 @@ var app = new Vue({
     },
     switchCameras: function () {
       if (this.scanner == null) return;
+      let scanner = this.scanner;
       this.currentCamera = this.currentCamera + 1;
       Instascan.Camera.getCameras().then(cameras => {
         if (cameras.length > 0) {
