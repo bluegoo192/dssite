@@ -30,6 +30,7 @@ var app = new Vue({
       this.scanner = scanner;
       console.log('created scanner')
       scanner.addListener('scan', function (content) {
+        alert("scanned");
         this.scanContent = content;
       });
       console.log('added listener')
