@@ -26,10 +26,9 @@ block content
         else
           p.themecolor You are not currently a paid member, and some features will be unavailabile.  Head to one of our meetings to sign up, or pay online below
           p.themecolor Membership costs $15 for the quarter
-          #payment-form
+          #payment-form.vcentercontainer.top-margin
             #sq-ccbox
               form#nonce-form(novalidate='', action='/api/v1/makeMembershipPayment', method='post')
-                | Pay with a Credit Card
                 table
                   tbody
                     tr
@@ -50,7 +49,7 @@ block content
                         #sq-postal-code
                     tr
                       td(colspan='2')
-                        button#sq-creditcard.button-credit-card(@click="submitPayment")
+                        button#sq-creditcard.button-credit-card.cta(@click="submitPayment")
                           | Pay with card
                 //
                   After a nonce is generated it will be assigned to this hidden input field.
