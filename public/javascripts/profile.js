@@ -11,6 +11,9 @@ var app = new Vue({
     submitPayment: function (event) {
       requestCardNonce(event); // comes from squarepaymentform.js
       this.loading = true;
-    }
+    },
+    genQrCode: function () {
+      generateQrCode();
+    },
   }
 })

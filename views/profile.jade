@@ -21,6 +21,8 @@ block content
         .flexcontainer.horizontal.profile-data-row
           p #{user.lastKnownMajor}
           p.profile-data-label  major
+        button.cta(@click="genQrCode") Generate QR code
+        canvas#qrcode
         if user.isPaying
           p.themecolor You are currently a paid member!
         else
@@ -61,6 +63,13 @@ block content
   .divider10
 
 block scripts
+  script(type="text/javascript" src="/javascripts/qrcode.min.js")
+  script.
+    var generateQrCode = function () {
+      console.log("#{user.id}")
+      const user = "Email: #{user.email}\nId: #{user.id}\nIs paying member: #{user.isPaying}"
+      QRCode.toCanvas(document.getElementById('qrcode'), user);
+    }
   script(type="text/javascript" src="https://js.squareup.com/v2/paymentform")
   script(type="text/javascript" src="/javascripts/squarepaymentform.js")
   script(src="/javascripts/profile.js")
