@@ -20,6 +20,7 @@ var app = new Vue({
       })
     },
     initScanner: function () {
+      this.showScanner = true;
       let scanner = new Instascan.Scanner({ video: document.getElementById('scanner') });
       console.log('created scanner')
       scanner.addListener('scan', function (content) {
@@ -37,7 +38,6 @@ var app = new Vue({
         console.log('unexpected error')
         this.scanError = e;
       });
-      this.showScanner = true;
     }
   }
 })
