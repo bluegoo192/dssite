@@ -21,7 +21,7 @@ block content
         .flexcontainer.horizontal.profile-data-row
           p #{user.lastKnownMajor}
           p.profile-data-label  major
-        button.cta(@click="genQrCode") Generate QR code
+        button.cta.top-margin(@click="genQrCode") Generate QR code
         canvas#qrcode
         if user.isPaying
           p.themecolor You are currently a paid member!
