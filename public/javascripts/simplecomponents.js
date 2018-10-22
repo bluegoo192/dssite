@@ -47,7 +47,7 @@ Vue.component('login', {
   template:
   `<div>
       <a class="open-login-modal" @click="showModal = true">{{ text }}</a>
-      <modal :title="newUser ? 'Sign up' : 'Log in'" :show="showModal" @closeModalEvent="closeModal">
+      <modal :title="newUser ? 'Sign up' : 'Log in'" :show="showModal" @close-modal="closeModal">
         <p class="error-message" v-if="showLoginFailedMessage">Sorry, your username or password was invalid</p>
         <form class="center vertical vcentercontainer" action="/login" method="post" v-if="!newUser">
           <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="email">
@@ -114,7 +114,7 @@ Vue.component('modal', {
   </div>`,
   methods: {
     close: function () {
-      this.$emit('closeModalEvent');
+      this.$emit('close-modal');
     }
   }
 })
