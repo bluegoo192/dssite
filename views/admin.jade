@@ -3,6 +3,7 @@ extends layout
 block content
   .divider10
   h1.center.title Admin Dashboard
+  p.hpadded.error-message(v-if="apiError != null") API Error! {{ JSON.stringify(apiError) }}
   .maincontainer.hpadded.flexcontainer.wrap
     .hpadded
       button(@click="initScanner") Initialize QR scanner
@@ -20,6 +21,10 @@ block content
       h2 Member directory
       button.hpadded(:class="{ themecolor: currentDirectoryName === 'paidMembers' }" @click="selectDirectory('paidMembers')") Paid Members
       button.hpadded(:class="{ themecolor: currentDirectoryName === 'unpaidMembers' }" @click="selectDirectory('unpaidMembers')") Unpaid Members
+      button.hpadded(v-show="currentDirectory != null" @click="showEmailsModal = true") Show emails only (for easy copying)
+      modal(:show="showEmailsModal" @close-modal="showEmailsModal = false")
+        h3 {{ currentDirectoryName }}
+        textarea(readonly v-model="emails")
       p(v-if="loading") Loading...
       table(v-if="currentDirectory != null")
         tr

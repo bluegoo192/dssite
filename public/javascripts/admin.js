@@ -9,6 +9,7 @@ var app = new Vue({
     paidMembers: [],
     unpaidMembers: [],
     showScanner: false,
+    showEmailsModal: false,
     loading: false,
     scanError: null,
     scanContent: null,
@@ -21,6 +22,14 @@ var app = new Vue({
       return (this.currentDirectoryName == null)
         ? null
         : this[this.currentDirectoryName];
+    },
+    emails: function () {
+      if (this.currentDirectory == null) {
+        return "Sorry, something went wrong.  Please refresh and try again";
+      }
+      let emails = '';
+      this.currentDirectory.forEach(m => emails = emails + m.email + '\n');
+      return emails;
     }
   },
   methods: {
