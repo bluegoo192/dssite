@@ -24,6 +24,12 @@ var app = new Vue({
     }
   },
   methods: {
+    selectDirectory: function (dir) {
+      this.currentDirectoryName = dir;
+      if (!this.currentDirectory || this.currentDirectory.length === 0) {
+        (dir == 'members') ? this.downloadMembers() : this.downloadUnpaidMembers();
+      }
+    },
     downloadMembers: function () {
       this.loading = true;
       this.currentDirectoryName = 'members';
@@ -36,11 +42,9 @@ var app = new Vue({
       this.loading = true;
       this.currentDirectoryName = 'unpaidMembers';
       try {
-        console.log("success");
         this.unpaidMembers = (await this.$http.get('/api/v1/unpaidMembers')).body;
         this.loading = false;
       } catch (error) {
-        console.log("failure");
         this.apiError = error;
         this.loading = false;
       }
