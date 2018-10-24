@@ -183,6 +183,20 @@ router.post('/api/v1/makeMembershipPayment', isAuthenticated, async function (re
   }
 });
 
+router.get('/api/v1/unpaidMembers', isOfficer, async function (req, res, next) {
+  const query = db.members
+    .select(db.members.firstName, db.members.lastName, db.members.id, db.members.email)
+    .from(db.members.leftJoin(db.payments).on(db.members.id.equals(db.payments.memberId)))
+    .where(db.payments.memberId.isNull());
+  try {
+    const response = await db.query(query);
+    res.send(response.rows);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+})
+
 router.post('/api/v1/onPayment', async function(req, res, next) {
   console.log(req.body);
   res.sendStatus(200);
