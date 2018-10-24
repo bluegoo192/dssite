@@ -5,6 +5,7 @@ block content
   h1.center.title Admin Dashboard
   p(v-if="loading") Loading...
   button(@click="downloadMembers") Click to view member directory
+  button(@click="downloadUnpaidMembers") View unpaid members
   button(@click="initScanner") Initialize QR scanner
   .scanner
     p Tap camera feed to switch cameras
@@ -21,6 +22,11 @@ block content
       h3 First name, Last Name, Email
     li(v-for="member in members")
       p {{ member.firstName }}  ,  {{ member.lastName }}  ,  {{ member.email }}
+  table
+    tr(v-for="member in unpaidMembers")
+      th {{ member.firstName }}
+      th {{ member.lastName }}
+      th {{ member.email }}
   .divider10
   .divider10
 

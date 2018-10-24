@@ -6,12 +6,14 @@ var app = new Vue({
       mobilenav: false
     },
     members: [],
+    unpaidMembers: [],
     showScanner: false,
     loading: false,
     scanError: null,
     scanContent: null,
     currentCamera: 0,
     scanner: null,
+    apiError: null,
   },
   methods: {
     downloadMembers: function () {
@@ -20,6 +22,18 @@ var app = new Vue({
         this.members = response.body;
         this.loading = false;
       })
+    },
+    downloadUnpaidMembers: async function () {
+      this.loading = true;
+      try {
+        console.log("success");
+        this.unpaidMembers = (await this.$http.get('/api/v1/unpaidMembers')).body;
+        this.loading = false;
+      } catch (error) {
+        console.log("failure");
+        this.apiError = error;
+        this.loading = false;
+      }
     },
     initScanner: function () {
       this.showScanner = true;
