@@ -6,7 +6,7 @@ var app = new Vue({
       mobilenav: false
     },
     currentDirectoryName: null,
-    members: [],
+    paidMembers: [],
     unpaidMembers: [],
     showScanner: false,
     loading: false,
@@ -27,22 +27,13 @@ var app = new Vue({
     selectDirectory: function (dir) {
       this.currentDirectoryName = dir;
       if (!this.currentDirectory || this.currentDirectory.length === 0) {
-        (dir == 'members') ? this.downloadMembers() : this.downloadUnpaidMembers();
+        this.downloadDirectory(dir);
       }
     },
-    downloadMembers: function () {
+    downloadDirectory: async function (dirname) {
       this.loading = true;
-      this.currentDirectoryName = 'members';
-      this.$http.post('/api/v1/members').then(response => {
-        this.members = response.body;
-        this.loading = false;
-      })
-    },
-    downloadUnpaidMembers: async function () {
-      this.loading = true;
-      this.currentDirectoryName = 'unpaidMembers';
       try {
-        this.unpaidMembers = (await this.$http.get('/api/v1/unpaidMembers')).body;
+        this[dirname] = (await this.$http.get('/api/v1/' + dirname)).body;
         this.loading = false;
       } catch (error) {
         this.apiError = error;

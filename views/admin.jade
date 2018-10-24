@@ -5,7 +5,7 @@ block content
   h1.center.title Admin Dashboard
   .maincontainer.hpadded
     p(v-if="loading") Loading...
-    button(@click="selectDirectory('members')") Click to view member directory
+    button(@click="selectDirectory('paidMembers')") Click to view member directory
     button(@click="selectDirectory('unpaidMembers')") View unpaid members
     button(@click="initScanner") Initialize QR scanner
     .scanner
