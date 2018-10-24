@@ -5,6 +5,7 @@ var app = new Vue({
     show: {
       mobilenav: false
     },
+    currentDirectoryName: null,
     members: [],
     unpaidMembers: [],
     showScanner: false,
@@ -15,9 +16,17 @@ var app = new Vue({
     scanner: null,
     apiError: null,
   },
+  computed: {
+    currentDirectory: function () {
+      return (this.currentDirectoryName == null)
+        ? null
+        : this[this.currentDirectoryName];
+    }
+  },
   methods: {
     downloadMembers: function () {
       this.loading = true;
+      this.currentDirectoryName = 'members';
       this.$http.post('/api/v1/members').then(response => {
         this.members = response.body;
         this.loading = false;
@@ -25,6 +34,7 @@ var app = new Vue({
     },
     downloadUnpaidMembers: async function () {
       this.loading = true;
+      this.currentDirectoryName = 'unpaidMembers';
       try {
         console.log("success");
         this.unpaidMembers = (await this.$http.get('/api/v1/unpaidMembers')).body;

@@ -17,13 +17,12 @@ block content
     button.hpadded(@click="markAsPaid") Make paying member
     button.hpadded(@click="markAsAttending") Mark attendance
     button.hpadded(@click="scanContent = null") Close
-  ul
-    li
-      h3 First name, Last Name, Email
-    li(v-for="member in members")
-      p {{ member.firstName }}  ,  {{ member.lastName }}  ,  {{ member.email }}
-  table
-    tr(v-for="member in unpaidMembers")
+  table(v-if="currentDirectory != null")
+    tr
+      th First name 
+      th Last name 
+      th Email
+    tr(v-for="member in currentDirectory")
       th {{ member.firstName }}
       th {{ member.lastName }}
       th {{ member.email }}
