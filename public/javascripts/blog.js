@@ -15,6 +15,62 @@ var app = new Vue({
     blogMaxChars: 157,
     posts: [
       {
+        title: "Data Science Project Showcase 2018",
+        id: 3,
+        author: "Admin",
+        date: "2018",
+        content: `![](images/title_photo.jpg)
+
+On the evening of Tuesday, June 5th, audience members lined up in the back of Corwin Pavillion for catered samosas and chicken satay as seven teams from Data Science at UCSB eagerly awaited the opportunity to present their projects to a panel of data science professionals for their spring showcase.
+
+The four panelists were
+* **Adam Tashman**, Director of Data Science at Carpe Data and visiting associate professor of Statistics and Probability at UCSB
+* **Luca Foschini**, Chief Data Scientist at Evidation Health
+* **Nikki Marinsek**, Data Scientist at Evidation Health
+* And **Sang Oh**, Assistant Professor of Statistics and Probability at UCSB.
+
+![](images/panelists.jpg)
+*Left to right: Sang Oh, Adam Tashman, Nikki Marinsek, Luca Foschini*
+
+Data Science at UCSB partnered with [Evidation Health](https://evidation.com/) and received additional support from [Carpe Data](https://carpe.io/) to provide a platform for members to share what they had been working on for the past year. Each group had roughly 15 minutes to present their project while the panelists assessed their work based on a set of criteria. Luca Foschini noted that, "For each project, [they were] looking for how creative it is, what problem is being solved, and the strength of the methods."
+
+Once everyone sat down and the panelists introduced themselves, it was time for the show to begin! Teams took turns presenting their projects, walking through the motivations, methods, and results of their work. After each presentation, the team defended their work, answering any questions put forth by the panel. Over the course of two hours, the audience learned about the application of technologies ranging from conventional machine learning to natural language processing, and even computer vision. A list of the presented projects and their descriptions is included at the end of the article.
+
+![](images/whos_my_president.jpg)
+*Tim, Jason, and Samantha reviewing the image data used in their computer vision project, "Who's My President"*
+
+![](images/sb_analytica.jpg)
+*Brian and Yash demonstrating the chat server moderator dashboard they created for their project, "SB Analytica"*
+
+![](images/diabetes.jpg)
+*Calvin and Mary fielding questions from the panel about their diabetes diagnosis project*
+
+With the end of the final presentation, the event began to wrap up and the audience wandered back to the refreshment tables to congratulate or mingle with the presenting teams and panelists. Adam Tashman added, "I think this is a great event with a lot of interesting projects, and these groups are very motivated to take on workloads that help solve problems in the community."
+
+![](images/mingling.jpg)
+*Shon, Andie, and Matt discussing the specifics of their Youtube comment sentiment analysis project with an audience member*
+
+Last year's project showcase was the second one ever hosted by our club, and it certainly won't be the last; keep an eye out for this year's showcase coming up early this spring! Our club is eagerly working on more projects, and we hope you're excited to see what we come up with.
+
+
+**Presented Projects**
+1. **SpongeGuyParkFeld**: Built a text classifier that distinguishes between the television shows *Spongebob Squarepants*, *South Park*, and *Seinfeld* given a line from one of the shows.
+
+2. **Pima Indians Diabetes Diagnosis**: Utilized data augmentation of a limited data set alonside machine learning to foresee if an individual is at risk for diabetes.
+
+3. **NFL Running Back Survival Analysis**: Investigated the physical characteristics of NFL running backs to anticipate how long their careers will last.
+
+4. **SB Analytica**: Analyzed data from a school wide chat server to measure the amount of toxic activity, and then use that data to create a simple UI that can be used by chat moderators to better manage the server.
+
+5. **YouTube Comment Sentiment Analysis**: Created a support vector machine model to classify YouTube comments as positive, negative, or neutral, and implemented it in a dashboard interface.
+
+6. **Who's my President**: Applied transfer learning to produce an image classifier capable of identifying which of the past four U.S. presidents (Clinton, Bush, Obama, or Trump) is in a picture.
+
+7. **ICU Activity Recognition**: Used computer vision to detect and classify actions in a hospital setting. The presented model is transfer learned from Inception-Resnet V2 and trained on the *Humans Interacting with Common Objects (HICO)* dataset.
+
+Slides for each presentation can be found [here](https://tinyurl.com/project-showcase-s18).`
+},
+      {
         title: "DjangoGirls Santa Barbara: a Web Development Workshop",
         id: 2,
         author: "Jonathan Hsu",
