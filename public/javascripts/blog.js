@@ -17,8 +17,8 @@ var app = new Vue({
       {
         title: "Data Science Project Showcase 2018",
         id: 3,
-        author: "Admin",
-        date: "2018",
+        author: "Luke Dorsey",
+        date: "October 27, 2018",
         content: `![](images/title_photo.jpg)
 
 On the evening of Tuesday, June 5th, audience members lined up in the back of Corwin Pavillion for catered samosas and chicken satay as seven teams from Data Science at UCSB eagerly awaited the opportunity to present their projects to a panel of data science professionals for their spring showcase.
