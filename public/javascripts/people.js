@@ -221,6 +221,17 @@ var app = new Vue({
         current: false
       },
       {
+        name: "Jonathan Tsegaye",
+        file: "jonathan_tsegaye.jpg",
+        position: "IT",
+        description: "I really like talking to people and I really like numbers. Bridging the gap between useful information ant the people that could most benefit from that knowledge are what draw me to data science, but I stay for the pretty graphs. I've moved from Computer Science to Mathmatical Sciences, to finally Statistical Science in my fifth and final year. I love to go snowboarding on Mammoth Mountain when I can find the time between midterms, and read books in the summer faster than I can binge watch the netflix adaptation.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/jonathantsegaye/",
+          email: "jontseg@gmail.com"
+        },
+        current: false
+      },
+      {
         name: "Justin Dong",
         file: "justin_dong.jpg",
         position: "Operations",
@@ -274,7 +285,7 @@ var app = new Vue({
         contactinfo: {
         },
         current: false
-      }
+      },
     ]
   },
   methods: {
