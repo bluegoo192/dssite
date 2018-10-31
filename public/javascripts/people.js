@@ -265,6 +265,15 @@ var app = new Vue({
           email: "jay.d.singh5@gmail.com"
         },
         current: false
+      },
+      {
+        name: "Luis Aragon",
+        file: "luis_aragon.jpg",
+        position: "Finance",
+        description: "I am a third year Statistics Major and I love coffee and climbing!",
+        contactinfo: {
+        },
+        current: false
       }
     ]
   },
