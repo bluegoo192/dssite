@@ -122,10 +122,12 @@ var app = new Vue({
       },
       {
         name: "Moritz Droste",
-        file: "moritz_droste.jpg",
-        position: "Club Accountant",
-        description: "I'm a third-year Economics and Accounting major that also loves programming! I can be a bit quiet and reserved sometimes, but really enjoy talking to people about stuff I'm passionate about.",
+        file: "moritz_droste.PNG",
+        position: "Finance",
+        description: "Hey! I'm a third year studying Economics, and I've been a part of the data science club since my first year at UCSB. Currently, I am doing finance and accounting for the officer board, but I am also interested in game design, deep learning, web design, creative writing and more!",
         contactinfo: {
+          linkedin: "https://www.linkedin.com/in/moritz-droste-147526126/",
+          email: "mordritzdr@gmail.com"
         },
         current: false
       },
@@ -214,9 +216,10 @@ var app = new Vue({
         name: "Bryan Wu",
         file: "bryan_wu.png",
         position: "IT",
-        description: " I'm a third year computer science major who enjoys coffee.",
+        description: "I'm a third year computer science major who enjoys coffee, photography, and chicken nuggets.",
         contactinfo: {
-          linkedin: "https://www.linkedin.com/in/wu-bryan/"
+          linkedin: "https://www.linkedin.com/in/wu-bryan/",
+          email: "bryanwu@ucsb.edu"
         },
         current: false
       },
