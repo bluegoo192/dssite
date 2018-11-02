@@ -116,6 +116,14 @@ const helpers = {
     return await (addPaymentStatus(response.rows[0]));
   },
   addPaymentStatus,
+  // change a member's password
+  changePassword: async (password, email) => {
+    hashedPassword = await bcrypt.hash(password, salt);
+    const values = [hashedPassword, email];
+    const text = "UPDATE members SET hashed_password=$1 WHERE email=$2";
+
+    return await pool.query(text, values).then(console.log()).catch(console.log());
+  },
 }
 
 module.exports = {
