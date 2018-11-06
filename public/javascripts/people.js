@@ -91,18 +91,6 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Arthur Silverstein",
-        file: "arthur_silverstein.jpg",
-        position: "Director of IT",
-        description: "I'm a fourth year computer science major who likes hiking, playing piano, and DIY.",
-        contactinfo: {
-          github: "http://www.github.com/bluegoo192",
-          linkedin: "https://www.linkedin.com/in/arthur-silverstein/",
-          email: "mailto:arthursilverstein@umail.ucsb.edu"
-        },
-        current: false
-      },
-      {
         name: "Brian Lim",
         file: "brian_lim.jpg",
         position: "Project Group Manager",
@@ -121,13 +109,36 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Moritz Droste",
-        file: "moritz_droste.PNG",
-        position: "Finance",
-        description: "Hey! I'm a third year studying Economics, and I've been a part of the data science club since my first year at UCSB. Currently, I am doing finance and accounting for the officer board, but I am also interested in game design, deep learning, web design, creative writing and more!",
+        name: "Arthur Silverstein",
+        file: "arthur_silverstein.jpg",
+        position: "Director of IT",
+        description: "I'm a fourth year computer science major who likes hiking, playing piano, and DIY.",
         contactinfo: {
-          linkedin: "https://www.linkedin.com/in/moritz-droste-147526126/",
-          email: "mordritzdr@gmail.com"
+          github: "http://www.github.com/bluegoo192",
+          linkedin: "https://www.linkedin.com/in/arthur-silverstein/",
+          email: "mailto:arthursilverstein@umail.ucsb.edu"
+        },
+        current: false
+      },
+      {
+        name: "Jonathan Tsegaye",
+        file: "jonathan_tsegaye.jpg",
+        position: "IT",
+        description: "I really like talking to people and I really like numbers. Bridging the gap between useful information and the people that could most benefit from that knowledge are what draw me to data science, but I stay for the pretty graphs. I've moved from Computer Science to Mathmatical Sciences, to finally Statistical Science in my fifth and final year. I love to go snowboarding on Mammoth Mountain when I can find the time between midterms, and read books in the summer faster than I can binge watch the Netflix adaptation.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/jonathantsegaye/",
+          email: "jontseg@gmail.com"
+        },
+        current: false
+      },
+      {
+        name: "Bryan Wu",
+        file: "bryan_wu.png",
+        position: "IT",
+        description: "I'm a third year computer science major who enjoys coffee, photography, and chicken nuggets.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/wu-bryan/",
+          email: "bryanwu@ucsb.edu"
         },
         current: false
       },
@@ -181,6 +192,17 @@ var app = new Vue({
       //   current: false
       // },
       {
+        name: "Moritz Droste",
+        file: "moritz_droste.PNG",
+        position: "Finance",
+        description: "Hey! I'm a third year studying Economics, and I've been a part of the data science club since my first year at UCSB. Currently, I am doing finance and accounting for the officer board, but I am also interested in game design, deep learning, web design, creative writing and more!",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/moritz-droste-147526126/",
+          email: "mordritzdr@gmail.com"
+        },
+        current: false
+      },
+      {
         name: "Daniel Fields",
         file: "daniel_fields.jpeg",
         position: "Finance",
@@ -191,7 +213,15 @@ var app = new Vue({
         },
         current: false
       },
-
+      {
+        name: "Luis Aragon",
+        file: "luis_aragon.jpg",
+        position: "Finance",
+        description: "I am a third year Statistics Major and I love coffee and climbing!",
+        contactinfo: {
+        },
+        current: false
+      },
       // {
       //   name: "Shon Inouye",
       //   file: "shon_inouye.jpg",
@@ -212,28 +242,6 @@ var app = new Vue({
       //   },
       //   current: false
       // },
-      {
-        name: "Bryan Wu",
-        file: "bryan_wu.png",
-        position: "IT",
-        description: "I'm a third year computer science major who enjoys coffee, photography, and chicken nuggets.",
-        contactinfo: {
-          linkedin: "https://www.linkedin.com/in/wu-bryan/",
-          email: "bryanwu@ucsb.edu"
-        },
-        current: false
-      },
-      {
-        name: "Jonathan Tsegaye",
-        file: "jonathan_tsegaye.jpg",
-        position: "IT",
-        description: "I really like talking to people and I really like numbers. Bridging the gap between useful information and the people that could most benefit from that knowledge are what draw me to data science, but I stay for the pretty graphs. I've moved from Computer Science to Mathmatical Sciences, to finally Statistical Science in my fifth and final year. I love to go snowboarding on Mammoth Mountain when I can find the time between midterms, and read books in the summer faster than I can binge watch the Netflix adaptation.",
-        contactinfo: {
-          linkedin: "https://www.linkedin.com/in/jonathantsegaye/",
-          email: "jontseg@gmail.com"
-        },
-        current: false
-      },
       {
         name: "Justin Dong",
         file: "justin_dong.jpg",
@@ -277,15 +285,6 @@ var app = new Vue({
           linkedin: "https://www.linkedin.com/in/jay-singh-714958101",
           github: "http://github.com/JayDSingh/",
           email: "jay.d.singh5@gmail.com"
-        },
-        current: false
-      },
-      {
-        name: "Luis Aragon",
-        file: "luis_aragon.jpg",
-        position: "Finance",
-        description: "I am a third year Statistics Major and I love coffee and climbing!",
-        contactinfo: {
         },
         current: false
       },
