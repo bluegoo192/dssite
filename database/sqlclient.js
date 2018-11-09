@@ -122,7 +122,11 @@ const helpers = {
     const values = [hashedPassword, email];
     const text = "UPDATE members SET hashed_password=$1 WHERE email=$2";
 
-    return await pool.query(text, values).then(console.log()).catch(console.log());
+    const response = await pool.query(text, values);
+
+    if (response.rows.length < 1) return false;
+    if (response.rows.length === 1) return true;
+    if (response.rows.length > 1) throw new Error("SOMETHING HELLA WRONG WITH DATABASE");
   },
 }
 
