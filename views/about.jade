@@ -8,7 +8,7 @@ block content
   .banner
     .filter
   .flex
-    article
+    article.left-border
       p Data Science at UCSB is a student run club centered around developing career paths in the field of data science. Our organization teaches members how to use programs like R, Python, and SQL, which students then utilize in their own group-led projects. Apart from these hands-on activities, Data Science at UCSB also hosts key speakers from data-centered companies in the industry. Our organization is centered around a collaborative community of self-driven students who strive to further their knowledge in the realm of data science.  
     #stats.vcentercontainer
       p #[span 52] projects published
@@ -23,7 +23,12 @@ block content
     .info.flexcontainer.horizontal.spaced
       p {{ show.active.description }}
       img(:src="show.active.image")
-  .divider10
+  article
+    h2 FAQ
+      ul#faq
+        li 
+          h3 Where are the meetings?
+          p Meetings are in the DAHC every Tuesday at 7pm
   h2.center Contact Us
   .divider5
   .flexcontainer.spaced.wrap
