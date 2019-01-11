@@ -38,6 +38,15 @@ const members = sql.define({
   ]
 });
 
+const contents = sql.define({
+  name: 'contents',
+  columns: [
+    { name: 'id' },
+    { name: 'type' },
+    { name: 'content' },
+  ]
+});
+
 const payments = sql.define({
   name: 'payments',
   columns: [
@@ -125,4 +134,5 @@ module.exports = {
   payments,
   officers,
   permissions,
+  contents,
 };

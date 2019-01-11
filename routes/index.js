@@ -202,6 +202,24 @@ router.post('/api/v1/onPayment', async function(req, res, next) {
   res.sendStatus(200);
 });
 
+router.post('/api/v1/setFaqs', async function(req, res, next) {
+  if (!req.body.faqs) {
+    res.sendStatus(400);
+    return;
+  }
+  const query = db.contents.insert(
+    db.contents.type.value('faqs'),
+    db.contents.content.value(req.body)
+  );
+  try {
+    const response = await db.query(query);
+    res.send(200);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
+
 router.post('/api/v1/markMemberAsPaid', isOfficer, async function(req, res, next) {
   if (!req.body.memberId) {
     res.sendStatus(400);
