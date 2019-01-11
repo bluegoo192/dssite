@@ -192,8 +192,8 @@ router.post('/api/v1/makeMembershipPayment', isAuthenticated, async function (re
       return;
     }
     console.log('failed to charge card');
-    cache.put(req.user.id, 'mostRecentError', error).catch(console.error);
-    res.sendStatus(500);
+    cache.put(req.user.id, 'mostRecentError', JSON.stringify(error)).catch(console.error);
+    finish("Sorry, we failed to charge your card.  Please make sure the card is valid and try again.", false);
   }
 });
 
