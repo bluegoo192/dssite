@@ -67,7 +67,7 @@ passport.deserializeUser(function(user, done) {
   done(null, user);
 });
 
-const render = function (page) {
+const render = function (page, getData) {
   const pageMeter = probe.meter({
     name: 'requests/hour for page: '+page,
     samples: 3600,
@@ -81,9 +81,15 @@ const render = function (page) {
       if (notifications) delete notifications.key;
       sessionData.notifications = notifications;
     };
+    let data = {};
+    if (getData != null) {
+      data = await getData();
+    }
+    console.log(JSON.stringify(data))
     res.render(page, {
       loggedIn: req.user != null,
       user: req.user,
+      ...data,
       sessionData,
     });
   }
@@ -96,7 +102,12 @@ router.get('/test', function(req, res, next) {
   res.render('test', { title: 'Color Test' });
 });
 
-router.get('/about', render('about'));
+router.get('/about', render('about', async () => {
+  const ret = {
+    faqs: await db.getFaqs()
+  }
+  return ret;
+}));
 
 router.get('/people', render('people'));
 router.get('/admin', isOfficer, render('admin'));

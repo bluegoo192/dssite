@@ -26,9 +26,10 @@ block content
   article
     h2 FAQ
       ul#faq
-        li 
-          h3 Where are the meetings?
-          p Meetings are in the DAHC every Tuesday at 7pm
+        each faq in faqs
+          li
+            h3= faq.question
+            p= faq.answer
   h2.center Contact Us
   .divider5
   .flexcontainer.spaced.wrap
