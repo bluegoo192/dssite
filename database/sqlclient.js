@@ -55,6 +55,7 @@ const payments = sql.define({
     { name: 'member_id',
       property: 'memberId', },
     { name: 'amount' },
+    { name: 'expired' },
     { name: 'square_transaction_id',
       property: 'squareTransactionId' },
   ]
@@ -82,7 +83,7 @@ const salt = 10;
     let paying = false;
     const q = payments
       .select(payments.star()).from(payments)
-      .where(payments.memberId.equals(member.id)).toQuery();
+      .and(payments.memberId.equals(member.id), payments.expired.equals(false)).toQuery();
     const response = await pool.query(q.text, q.values);
     // TODO: for now this just returns true.  Make it better
     if (response.rows.length > 0) paying = true;
