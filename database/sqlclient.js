@@ -83,7 +83,8 @@ const salt = 10;
     let paying = false;
     const q = payments
       .select(payments.star()).from(payments)
-      .and(payments.memberId.equals(member.id), payments.expired.equals(false)).toQuery();
+      .where([payments.memberId.equals(member.id), payments.expired.equals(false)]).toQuery();
+    console.log(q.text);
     const response = await pool.query(q.text, q.values);
     // TODO: for now this just returns true.  Make it better
     if (response.rows.length > 0) paying = true;

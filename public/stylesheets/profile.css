@@ -53,6 +53,14 @@ button.cta {
   color: #f9fafb;
   font-size: 1.2em;
 }
+.paymentErrors {
+  color: #fff;
+}
+.paymentErrors button {
+  border: 2px solid #f9fafb;
+  padding: 4px 8px;
+  font-size: 1em;
+}
 @-moz-keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);

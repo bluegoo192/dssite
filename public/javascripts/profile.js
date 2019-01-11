@@ -6,10 +6,14 @@ var app = new Vue({
       mobilenav: false
     },
     loading: false,
+    paymentErrors: null,
   },
   methods: {
     submitPayment: function (event) {
-      requestCardNonce(event); // comes from squarepaymentform.js
+      requestCardNonce(event, (errors) => {
+        this.paymentErrors = errors;
+        this.loading = false;
+      }); // comes from squarepaymentform.js
       this.loading = true;
     },
     genQrCode: function () {

@@ -56,8 +56,12 @@ block content
                 //
                   After a nonce is generated it will be assigned to this hidden input field.
                 input#card-nonce(name='nonce', type='hidden')
-            #payment-loading-cover.vcentercontainer(v-if="loading")
-              .lds-dual-ring
+            #payment-loading-cover.vcentercontainer(v-if="loading || paymentErrors")
+              .lds-dual-ring(v-if="loading")
+              .paymentErrors(v-if="paymentErrors")
+                h3 Error
+                p(v-for="error in paymentErrors") {{ error.message }}
+                button(@click="paymentErrors = null") Try again
           
   .divider10
   .divider10

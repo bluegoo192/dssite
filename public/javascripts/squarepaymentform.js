@@ -3,6 +3,9 @@ var applicationId = "sq0idp-PdqO-Z_aRkbIjkFa7ovIFA";
 
 // Set the location ID
 var locationId = "NCQKPHA45A7Q8";
+var onError = function () {
+  return null;
+}
 
 /*
  * function: requestCardNonce
@@ -13,10 +16,13 @@ var locationId = "NCQKPHA45A7Q8";
  * Modifying this function is not required, but can be customized if you
  * wish to take additional action when the form button is clicked.
  */
-function requestCardNonce(event) {
+function requestCardNonce(event, onErr) {
 
   // Don't submit the form until SqPaymentForm returns with a nonce
   event.preventDefault();
+  if (onErr != null) {
+    onError = onErr;
+  }
 
   // Request a nonce from the SqPaymentForm object
   paymentForm.requestCardNonce();
@@ -72,12 +78,14 @@ var paymentForm = new SqPaymentForm({
      * Triggered when: SqPaymentForm completes a card nonce request
      */
     cardNonceResponseReceived: function(errors, nonce, cardData, billingContact, shippingContact) {
+      console.log("NONCE RECEIVED")
       if (errors) {
         // Log errors from nonce generation to the Javascript console
         console.log("Encountered errors:");
         errors.forEach(function(error) {
           console.log('  ' + error.message);
         });
+        onError(errors);
 
         return;
       }

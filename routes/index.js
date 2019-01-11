@@ -19,9 +19,12 @@ const reqMeter = probe.meter({
 passport.use(new LocalStrategy(
   {usernameField: 'email', passwordField: 'password'},
   function(username, password, done) {
+    console.log("Checking login")
     db.checkLogin({email: username, password}).then(result => {
+      console.log("Success.  Result is "+JSON.stringify(result))
       return done(null, result);
     }).catch(err => {
+      console.log("Failure.  Error is "+err)
       return done(err);
     });
   }
@@ -85,7 +88,7 @@ const render = function (page, getData) {
     if (getData != null) {
       data = await getData();
     }
-    console.log(JSON.stringify(data))
+    console.log(`Rendering page ${page}.  req.user is ${req.user}`)
     res.render(page, {
       loggedIn: req.user != null,
       user: req.user,
