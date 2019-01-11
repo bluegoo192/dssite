@@ -39,6 +39,11 @@ When creating a new view, you can put `extends layout` at the top to automatical
 
 ## Tech Stack (open to suggestions)
 
+Hosting:
+* Site is hosted on AWS Lightsail
+* Postgres database is on Heroku
+* Redis cache is on Redis Labs
+
 Backend:
 * NodeJS: scalable, asynchronous Javascript runtime
 * ExpressJS: lightweight server framework
@@ -48,3 +53,11 @@ Frontend:
 * Pug: templating language
 * Stylus: CSS language with indented syntax
 * VueJS: lightweight Javascript framework with components
+
+# Maintenance
+
+There are lots of little things to keep in mind while maintaining the server.  I'll add them here as I come across them.
+
+## HTTPS Certificate Setup and Renewal
+
+I think that our certificate should auto-renew.  If it doesn't, ssh into the server and run `sudo certbot certonly` and follow the instructions.  The URLs are 'datascienceucsb.org' and 'www.datascienceucsb.org'.  When it asks for a directory, provide the relative path to 'dssite/public'.
