@@ -125,6 +125,15 @@ const helpers = {
     return await (addPaymentStatus(response.rows[0]));
   },
   addPaymentStatus,
+  getFaqs: async () => {
+    const query = contents.select(contents.content).from(contents)
+      .where(contents.type.equals('faqs')).order(contents.id.desc).limit(1).toQuery();
+    const response = await pool.query(query.text, query.values);
+    if (response.rows.length === 1) {
+      return response.rows[0].content.faqs;
+    }
+    return [];
+  },
 }
 
 module.exports = {

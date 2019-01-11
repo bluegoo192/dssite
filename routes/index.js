@@ -202,7 +202,7 @@ router.post('/api/v1/onPayment', async function(req, res, next) {
   res.sendStatus(200);
 });
 
-router.post('/api/v1/setFaqs', async function(req, res, next) {
+router.post('/api/v1/setFaqs', isOfficer, async function(req, res, next) {
   if (!req.body.faqs) {
     res.sendStatus(400);
     return;
@@ -214,6 +214,17 @@ router.post('/api/v1/setFaqs', async function(req, res, next) {
   try {
     const response = await db.query(query);
     res.send(200);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
+
+router.get('/api/v1/faqs', async function(req, res, next) {
+  try {
+    const faqs = await db.getFaqs();
+    console.log(faqs);
+    res.send(faqs);
   } catch (error) {
     console.error(error);
     res.sendStatus(500);
