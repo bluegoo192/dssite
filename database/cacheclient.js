@@ -5,6 +5,7 @@ aws.config.update({
   endpoint: 'https://dynamodb.us-east-2.amazonaws.com',
 });
 
+const genericClient = new aws.DynamoDB();
 const client = new aws.DynamoDB.DocumentClient();
 const USER_CACHE = 'dssite_user_cache';
 
@@ -35,4 +36,4 @@ const get = async (userId, property) => {
   return response.Items[0];
 }
 
-module.exports = {put, get, client, USER_CACHE};
+module.exports = {put, get, client, USER_CACHE, genericClient};

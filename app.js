@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
+const dynamoDbStore = require('connect-dynamodb')({session: session});
+const cache = require('./database/cacheclient.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -16,6 +18,9 @@ const pmx = require('pmx').init({
   excludedHooks: [],
 });
 
+const dynamoDbStoreOptions = {
+  client: cache.genericClient
+};
 
 var app = express();
 
@@ -30,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({secret: 'testsecretkey'}));
+app.use(session({store: new dynamoDbStore(dynamoDbStoreOptions), secret: 'testsecretkey'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
