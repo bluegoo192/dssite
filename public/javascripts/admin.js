@@ -16,6 +16,7 @@ var app = new Vue({
     currentCamera: 0,
     scanner: null,
     apiError: null,
+    faqs: null,
   },
   computed: {
     currentDirectory: function () {
@@ -104,5 +105,22 @@ var app = new Vue({
       });
       this.scanContent = null;
     },
+    getFaqs: async function () {
+      this.loading = true;
+      this.faqs = JSON.stringify((await this.$http.get('/api/v1/faqs')).body);
+      this.loading = false;
+    },
+    submitFaqs: async function () {
+      this.loading = true;
+      try {
+        await this.$http.post('/api/v1/setFaqs', {
+          faqs: JSON.parse(this.faqs)
+        });
+        this.loading = false;
+        this.faqs = null;
+      } catch (error) {
+        this.apiError = error;
+      }
+    }
   }
 })

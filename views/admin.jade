@@ -36,6 +36,11 @@ block content
           th {{ member.lastName }}
           th {{ member.email }}
   .divider10
+    .hpadded
+      button.hpadded(@click="getFaqs") Edit FAQs
+      .form(v-if="faqs != null")
+        textarea(v-model="faqs")
+        button.hpadded(@click="submitFaqs") Submit
   .divider10
 
 block scripts
