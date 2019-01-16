@@ -24,6 +24,13 @@ h3 {
 .flex {
   flex-flow: row wrap;
 }
+.fullwidth {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: calc(4vw + 12px);
+}
 article {
   flex: 1 1 360px;
   max-width: 580px;
@@ -35,7 +42,7 @@ article {
   border-left: 4px #1476fb solid;
 }
 #faq {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 #faq h3 {
   font-size: 0.8em;
