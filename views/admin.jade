@@ -9,6 +9,7 @@ block content
       button(@click="initScanner") Initialize QR scanner
       .scanner
         p Tap camera feed to switch cameras
+        button.hpadded(@click="switchCameras") You can tap here to switch cameras too!
         p(v-if="scanError") Error: {{ scanError }}
         p(v-if="scanContent") Content: {{ scanContent }}
         video#scanner(@click="switchCameras")
