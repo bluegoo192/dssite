@@ -88,7 +88,7 @@ const render = function (page, getData) {
     if (getData != null) {
       data = await getData();
     }
-    console.log(`Rendering page ${page}.  req.user is ${req.user}`)
+    console.log(`Rendering page ${page}.  req.user is ${JSON.stringify(req.user)}`)
     res.render(page, {
       loggedIn: req.user != null,
       user: req.user,
@@ -126,6 +126,19 @@ router.get('/datatalks', render('datatalks'));
 router.post('/api/v1/createBlogPost', async function(req, res, next) {
   var status = await mongo.createBlogPost(req.body);
   res.send(status);
+});
+
+router.post('/api/v1/editMember', isAuthenticated, async function (req, res, next) {
+  req.body = await db.hash(req.body);
+  try {
+    const q = db.members.update(req.body).where(db.members.id.equals(req.user.id)).toQuery();
+    const dbResponse = await db.pool.query(q.text, q.values);
+    console.log(dbResponse);
+    res.send(200);
+  } catch(error) {
+    console.error(error);
+    res.send(500);
+  }
 });
 
 router.post('/api/v1/onNotificationAcknowledged', isAuthenticated, async function (req, res, next) {

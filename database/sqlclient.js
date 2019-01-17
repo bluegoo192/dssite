@@ -95,6 +95,9 @@ const salt = 10;
 
 /* Helper functions for quality of life */
 const hash = async (data) => {
+  if (!data.password) {
+    return data;
+  }
   data.hashedPassword = await bcrypt.hash(data.password, salt);
   delete data.password;
   return data;
@@ -146,4 +149,5 @@ module.exports = {
   officers,
   permissions,
   contents,
+  hash,
 };
