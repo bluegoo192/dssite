@@ -44,6 +44,7 @@ const contents = sql.define({
     { name: 'id' },
     { name: 'type' },
     { name: 'content' },
+    { name: 'blog' },
   ]
 });
 

@@ -10,6 +10,7 @@ const getRole = require('../utils/getOfficerRole.js');
 const square = require('../utils/squareclient.js');
 const markMemberAsPaid = require('../utils/markMemberAsPaid.js');
 const sendNotification = require('../utils/sendNotification.js');
+const bodyParser = require('body-parser');
 
 const reqMeter = probe.meter({
   name: 'requests/hour manual',
@@ -246,6 +247,21 @@ router.post('/api/v1/setFaqs', isOfficer, async function(req, res, next) {
     console.error(error);
     res.sendStatus(500);
   }
+});
+
+router.post('/api/v1/addBlogPost', bodyParser.text(), async function(req, res, next) {
+    console.log(req.body);
+    const query = db.contents.insert(
+      db.contents.type.value('blog'),
+      db.contents.blog.value(req.body)
+    );
+    try {
+      const response = await db.query(query);
+      res.send(200);
+    } catch (error) {
+      console.error(error);
+      res.sendStatus(500);
+    }
 });
 
 router.get('/api/v1/faqs', async function(req, res, next) {
