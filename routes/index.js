@@ -249,7 +249,7 @@ router.post('/api/v1/setFaqs', isOfficer, async function(req, res, next) {
   }
 });
 
-router.post('/api/v1/addBlogPost', bodyParser.text(), async function(req, res, next) {
+router.post('/api/v1/addBlogPost', isOfficer, bodyParser.text(), async function(req, res, next) {
     console.log(req.body);
     const query = db.contents.insert(
       db.contents.type.value('blog'),
@@ -263,6 +263,20 @@ router.post('/api/v1/addBlogPost', bodyParser.text(), async function(req, res, n
       res.sendStatus(500);
     }
 });
+
+router.get('/api/v1/blogPosts', bodyParser.text(), async function(req, res, next) {
+  try {
+    const q = db.contents.select(db.contents.blog).from(db.contents)
+      .where(db.contents.type.equals('blog')).toQuery();
+    const response = await db.pool.query(q.text, q.values);
+
+    res.send(response.rows.map(item => item.blog));
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
+
 
 router.get('/api/v1/faqs', async function(req, res, next) {
   try {

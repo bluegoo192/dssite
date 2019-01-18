@@ -1,20 +1,16 @@
 extends layout
 
 block content
-  
+
   .c-container
     .content.flex.main(:class="{ under: show.expandedPost }")
       .divider10
       h1.title The Data Science Blog
       article.mini(v-for="post in posts")
-        h2 {{ post.title }}
-        //- p {{ process(post) }} #[a(href='#' @click.stop="expand(post)" v-if="post.long") read more]
-        .md(v-html="compileMarkdown(process(post))")
-        a(href='#' @click.stop="expand(post)" v-if="post.long") read more
-        p.by by {{ post.author }} on {{ post.date }}
+        p.md(v-html="compileMarkdown(process(post))")
       .divider5
       p There are no other posts
-    
+
     #fullpost(:class="{ shown: show.expandedPost }" @click="closeExpanded")
       .divider10
       #expanded
@@ -22,8 +18,8 @@ block content
           h2 {{ currentPost.title }}
           .md(v-html="compileMarkdown(process(currentPost, true))")
           p.by by #[a(href="#"){{ currentPost.author }}] on {{ currentPost.date }}
-  
-  
+
+
 block scripts
   script(src="/javascripts/marked.js")
   script(src="/javascripts/blog.js")
