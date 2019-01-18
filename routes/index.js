@@ -142,6 +142,16 @@ router.post('/api/v1/editMember', isAuthenticated, async function (req, res, nex
   }
 });
 
+router.post('/api/v1/broadcastNotification', async function (req, res, next) {
+  try {
+    await sendNotification([],req.body.text,true);
+    res.send(200);
+  } catch(error) {
+    console.error(error);
+    res.send(500);
+  }
+});
+
 router.post('/api/v1/onNotificationAcknowledged', isAuthenticated, async function (req, res, next) {
   const params = {
     TableName: cache.USER_CACHE,
