@@ -44,6 +44,11 @@ var app = new Vue({
     }
   },
   mounted: function () {
+    this.$http.get('/api/v1/blogPosts').then(response => {
+      this.posts = response.body;
+    }).catch(error => {
+      console.error(error);
+    });
     var currentPostId = getParameterByName("post");
     console.log(currentPostId);
     if (currentPostId) {
