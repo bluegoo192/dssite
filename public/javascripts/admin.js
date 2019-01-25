@@ -17,6 +17,7 @@ var app = new Vue({
     scanner: null,
     apiError: null,
     faqs: null,
+    notification: '',
   },
   computed: {
     currentDirectory: function () {
@@ -118,6 +119,21 @@ var app = new Vue({
         });
         this.loading = false;
         this.faqs = null;
+      } catch (error) {
+        this.apiError = error;
+      }
+    },
+    broadcastNotification: async function () {
+      if (this.notification==""){
+        return;
+      }
+      this.loading = true;
+      try {
+        await this.$http.post('/api/v1/broadcastNotification', {
+          text: this.notification
+        });
+        this.loading = false;
+        this.notification = "";
       } catch (error) {
         this.apiError = error;
       }

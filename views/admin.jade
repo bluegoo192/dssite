@@ -42,6 +42,9 @@ block content
       .form(v-if="faqs != null")
         textarea(v-model="faqs")
         button.hpadded(@click="submitFaqs") Submit
+    .hpadded
+      input(v-model="notification")
+      button.hpadded(@click="broadcastNotification") Broadcast to all members
   .divider10
 
 block scripts
