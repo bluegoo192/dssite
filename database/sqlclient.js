@@ -130,6 +130,18 @@ const helpers = {
     if (!success) return false;
     return await (addPaymentStatus(response.rows[0]));
   },
+  // change a member's password
+  changePassword: async (password, email) => {
+    hashedPassword = await bcrypt.hash(password, salt);
+    const values = [hashedPassword, email];
+    const text = "UPDATE members SET hashed_password=$1 WHERE email=$2";
+
+    const response = await pool.query(text, values);
+
+    if (response.rows.length < 1) return false;
+    if (response.rows.length === 1) return true;
+    if (response.rows.length > 1) throw new Error("SOMETHING HELLA WRONG WITH DATABASE");
+  },
   addPaymentStatus,
   getFaqs: async () => {
     const query = contents.select(contents.content).from(contents)
