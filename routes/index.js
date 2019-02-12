@@ -101,6 +101,9 @@ const render = function (page, getData) {
 
 /* GET home page. */
 router.get('/', render('index'));
+router.get('/locust', async function (req, res, next) {
+  res.sendStatus(200);
+});
 
 router.get('/test', function(req, res, next) {
   res.render('test', { title: 'Color Test' });
