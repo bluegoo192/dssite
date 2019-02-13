@@ -43,6 +43,12 @@ block content
         textarea(v-model="faqs")
         button.hpadded(@click="submitFaqs") Submit
   .divider10
+    .hpadded
+      button.hpadded(@click="newBlogPost = 'Insert markdown here.  For now, use imgur or something for your images'") Add blog post
+      .form(v-if="newBlogPost != null")
+        textarea(v-model="newBlogPost")
+        button.hpadded(@click="submitNewBlogPost") Submit
+  .divider10
 
 block scripts
   script(type="text/javascript" src="/javascripts/instascan.min.js")
