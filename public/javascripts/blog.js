@@ -22,12 +22,12 @@ var app = new Vue({
   },
   methods: {
     process: function (post, showFull) {
-      if (showFull) return marked(post);
-      if (post.length > this.blogMaxChars) {
+      if (showFull) return marked(post.blog);
+      if (post.blog.length > this.blogMaxChars) {
         post.long = true;
-        return post.substring(0, this.blogMaxChars) + "...";
+        return post.blog.substring(0, this.blogMaxChars) + "...";
       } else {
-        return post;
+        return post.blog;
       }
     },
     compileMarkdown: function (raw) {
@@ -48,15 +48,15 @@ var app = new Vue({
     this.$http.get('/api/v1/blogPosts').then(response => {
       this.posts = response.body;
       this.loading = false;
+      var currentPostId = getParameterByName("post");
+      console.log(currentPostId);
+      if (currentPostId) {
+        this.posts.forEach((post) => {
+          if (post.id == currentPostId) this.expand(post);
+        });
+      }
     }).catch(error => {
       console.error(error);
     });
-    var currentPostId = getParameterByName("post");
-    console.log(currentPostId);
-    if (currentPostId) {
-      this.posts.forEach((post) => {
-        if (post.id == currentPostId) this.expand(post);
-      });
-    }
   }
 })

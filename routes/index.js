@@ -269,11 +269,11 @@ router.post('/api/v1/addBlogPost', isOfficer, bodyParser.text(), async function(
 
 router.get('/api/v1/blogPosts', bodyParser.text(), async function(req, res, next) {
   try {
-    const q = db.contents.select(db.contents.blog).from(db.contents)
+    const q = db.contents.select(db.contents.id, db.contents.blog).from(db.contents)
       .where(db.contents.type.equals('blog')).toQuery();
     const response = await db.pool.query(q.text, q.values);
 
-    res.send(response.rows.map(item => item.blog));
+    res.send(response.rows);
   } catch (error) {
     console.error(error);
     res.sendStatus(500);

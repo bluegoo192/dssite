@@ -6,7 +6,7 @@ block content
     .content.flex.main(:class="{ under: show.expandedPost }")
       .divider10
       h1.title The Data Science Blog
-      article.mini(v-for="post in posts")
+      article.mini(@click="expand(post)" v-for="post in posts")
         p.md(v-html="compileMarkdown(process(post))")
       .divider5
       p {{ this.loading ? "Loading posts..." : "There are no other posts" }}
@@ -17,7 +17,7 @@ block content
         article(v-if="show.expandedPost" @click.stop)
           h2 {{ currentPost.title }}
           .md(v-html="compileMarkdown(process(currentPost, true))")
-          p.by by #[a(href="#"){{ currentPost.author }}] on {{ currentPost.date }}
+          // p.by by #[a(href="#"){{ currentPost.author }}] on {{ currentPost.date }}
 
 
 block scripts
