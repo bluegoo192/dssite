@@ -17,6 +17,7 @@ var app = new Vue({
     scanner: null,
     apiError: null,
     faqs: null,
+    newBlogPost: null,
   },
   computed: {
     currentDirectory: function () {
@@ -121,6 +122,20 @@ var app = new Vue({
       } catch (error) {
         this.apiError = error;
       }
-    }
+    },
+    submitNewBlogPost: async function () {
+      this.loading = true;
+      try {
+        await this.$http.post('/api/v1/addBlogPost', this.newBlogPost, {
+          headers: {
+            'Content-Type': 'text/plain'
+          }
+        });
+        this.loading = false;
+        this.newBlogPost = null;
+      } catch (error) {
+        this.apiError = error;
+      }
+    },
   }
 })
