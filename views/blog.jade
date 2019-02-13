@@ -9,7 +9,7 @@ block content
       article.mini(v-for="post in posts")
         p.md(v-html="compileMarkdown(process(post))")
       .divider5
-      p There are no other posts
+      p {{ this.loading ? "Loading posts..." : "There are no other posts" }}
 
     #fullpost(:class="{ shown: show.expandedPost }" @click="closeExpanded")
       .divider10

@@ -14,6 +14,7 @@ var app = new Vue({
     transparentNav: false,
     blogMaxChars: 157,
     posts: [],
+    loading: true,
     show: {
       mobilenav: false,
       expandedPost: false
@@ -46,6 +47,7 @@ var app = new Vue({
   mounted: function () {
     this.$http.get('/api/v1/blogPosts').then(response => {
       this.posts = response.body;
+      this.loading = false;
     }).catch(error => {
       console.error(error);
     });
