@@ -253,7 +253,6 @@ router.post('/api/v1/setFaqs', isOfficer, async function(req, res, next) {
 });
 
 router.post('/api/v1/addBlogPost', isOfficer, bodyParser.text(), async function(req, res, next) {
-    console.log(req.body);
     const query = db.contents.insert(
       db.contents.type.value('blog'),
       db.contents.blog.value(req.body)
