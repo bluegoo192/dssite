@@ -49,6 +49,12 @@ block content
         textarea(v-model="newBlogPost")
         button.hpadded(@click="submitNewBlogPost") Submit
   .divider10
+    .hpadded
+      button.hpadded(@click="membersToBeMarkedPaid = 'Insert member emails here. One per line.'") Mark Member as Paid
+      .form(v-if="membersToBeMarkedPaid != null")
+        textarea(v-model="membersToBeMarkedPaid")
+        button.hpadded(@click="markAsPaid") Submit
+  .divider10
 
 block scripts
   script(type="text/javascript" src="/javascripts/instascan.min.js")

@@ -18,6 +18,7 @@ var app = new Vue({
     apiError: null,
     faqs: null,
     newBlogPost: null,
+    membersToBeMarkedPaid: null,
   },
   computed: {
     currentDirectory: function () {

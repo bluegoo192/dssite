@@ -180,6 +180,8 @@ router.get('/api/v1/paidMembers', isOfficer, async function (req, res, next) {
   }
 });
 
+
+
 router.post('/api/v1/makeMembershipPayment', isAuthenticated, async function (req, res, next) {
   console.log(req.body.nonce);
   const finish = async (status, upgrade) => {
