@@ -140,6 +140,32 @@ const helpers = {
     }
     return [];
   },
+  makeOfficer: async (email, role) => {
+    const selectPromises = [];
+    // Get member id
+    const query = members
+      .select(members.star()).from(members)
+      .where(members.email.equals(email)).toQuery();
+    selectPromises.push(pool.query(query.text, query.values));
+
+    // Get permission id
+    const perms = permissions
+      .select(permissions.id).from(permissions)
+      .where(permissions.role.equals(role)).toQuery();
+    selectPromises.push(pool.query(perms.text, perms.values));
+
+    const [memberResponse, permissionResponse] = await Promise.all(selectPromises);
+    const member = memberResponse.rows[0];
+    const permId = permissionResponse.rows[0];
+
+    const insertQuery = officers.insert(officers.memberId.value(member.id),
+    officers.permissionId.value(permId.id)).onConflict({
+      columns: ['memberId'],
+      update: ['permissionId']
+    }).toQuery();
+    response = await pool.query(insertQuery.text, insertQuery.values);
+    console.log(response.rows);
+  },
 }
 
 module.exports = {
