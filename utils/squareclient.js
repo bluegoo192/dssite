@@ -2,7 +2,7 @@ const axios = require('axios');
 const SQUARE_LOCATION_ID = 'NCQKPHA45A7Q8';
 const token = process.env.DSSITE_SQUARE_ACCESS_TOKEN;
 const uuid = require('uuid/v4');
-const MEMBERSHIP_FEE_IN_CENTS = 1500;
+const MEMBERSHIP_FEE_IN_CENTS = 2000;
 
 const locationBaseURL = `https://connect.squareup.com/v2/locations/${SQUARE_LOCATION_ID}/`;
 
