@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Data Science @ UCSB
+    title Data Science UCSB
     link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
     link(rel='stylesheet', href='/stylesheets/gen.css')
 
@@ -41,7 +41,7 @@ html
           if loggedIn
             a(href="/profile") #[img(src='/images/logo_white_simple.png')] #[h1 #{user.firstName}]
           else
-            a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science @ UCSB]
+            a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science UCSB]
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
           nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
           li
@@ -79,8 +79,6 @@ html
                 a(href="https://www.inertia7.com/" target="_blank") Inertia7
               li
                 a(href="https://github.com/UCSB-dataScience-ProjectGroup/" target="_blank") Github
-              li
-                a(href="https://www.datacamp.com/" target="_blank") Datacamp
           .column
             h4 Organization
             ul
