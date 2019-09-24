@@ -326,7 +326,7 @@ router.post('/api/v1/kickoffsignup', async function(req, res, next) {
       const addPaymentQuery = db.payments.insert({
         memberId,
         timestamp: new Date(),
-        amount: 2000,
+        amount: 1500,
       }).toQuery();
       const addPaymentResponse = await db.pool.query(addPaymentQuery.text, addPaymentQuery.values);
       // await db.payments.insert()

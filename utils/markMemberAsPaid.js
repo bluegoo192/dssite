@@ -1,5 +1,5 @@
 const db = require('../database/sqlclient.js')
-const PAYMENT_AMOUNT = 2000;
+const PAYMENT_AMOUNT = 1500;
 
 // member is an object; must contain either id or email
 // returns either true (success), a user-friendly error message, or throws an error
