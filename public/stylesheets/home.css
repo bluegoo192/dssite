@@ -117,13 +117,13 @@ article.large p {
   z-index: 0;
 }
 .alert {
-  width: 97%;
+  width: 90%;
   position: fixed;
   padding: 20px;
   background-color: #ffaa1d;
   color: #000;
   z-index: 5;
-  margin-top: 34px;
+  margin-top: 3em;
   opacity: 1;
   transition: opacity 0.6s;
 }
