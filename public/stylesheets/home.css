@@ -116,6 +116,30 @@ article.large p {
   animation-iteration-count: infinite;
   z-index: 0;
 }
+.alert {
+  width: 97%;
+  position: fixed;
+  padding: 20px;
+  background-color: #ffaa1d;
+  color: #000;
+  z-index: 5;
+  margin-top: 34px;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+.closebtn {
+  margin-left: 15px;
+  color: #000;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: #fff;
+}
 #mainexpl {
   padding: 5em 5em;
   background-color: #1476fb;

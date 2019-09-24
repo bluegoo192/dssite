@@ -1,6 +1,10 @@
 extends layout
 
 block content
+  .divider5
+  .alert
+      span.closebtn(onclick="this.parentElement.style.display='none';") ×
+      |   Note: Many of the features on this website are outdated. We are in the process of updating the website.
   #hero.vcentercontainer
     h1.bottomdivider
       | discover 
@@ -56,20 +60,6 @@ block scripts
     function getPosition(el) {
       var xPos = 0;
       var yPos = 0;
-      while (el) {
-        if (el.tagName == "BODY") {
-          // deal with browser quirks with body/window/document and page scroll
-          var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
-          var yScroll = el.scrollTop || document.documentElement.scrollTop;
-          xPos += (el.offsetLeft - xScroll + el.clientLeft);
-          yPos += (el.offsetTop - yScroll + el.clientTop);
-        } else {
-          // for all other non-BODY elements
-          xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-          yPos += (el.offsetTop - el.scrollTop + el.clientTop);
-        }
-        el = el.offsetParent;
-      }
       return {
         x: xPos,
         y: yPos
@@ -78,5 +68,24 @@ block scripts
     app.trackPos();
     window.addEventListener("scroll", app.trackPos, false);
     window.addEventListener("resize", app.trackPos, false);
+  script.
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    // Loop through all close buttons
+    for (i = 0; i < close.length; i++) {
+      // When someone clicks on a close button
+      close[i].onclick = function(){
+
+        // Get the parent of <span class="closebtn"> (<div class="alert">)
+        var div = this.parentElement;
+
+        // Set the opacity of div to 0 (transparent)
+        div.style.opacity = "0";
+
+        // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+      }
+    }
 block styles
   link(rel='stylesheet', href='/stylesheets/home.css')
