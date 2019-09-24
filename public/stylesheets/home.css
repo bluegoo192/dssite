@@ -31,7 +31,6 @@ h2 {
 }
 h1 {
   font-size: 2em;
-  z-index: 1;
   transition: width 0.5s;
 }
 article.large {
