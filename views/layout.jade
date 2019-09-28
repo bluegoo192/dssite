@@ -45,6 +45,8 @@ html
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
           nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
           li
+            a(href="/") Home
+          li
             a(href="/about") About
           li
             a(href="/calendar") Calendar
