@@ -58,53 +58,42 @@ var app = new Vue({
       //   current: false
       // },
       {
-        name: "Timothy Nguyen",
-        file: "timothy_nguyen.png",
-        position: "President",
-        description: "I'm a fourth year statistics major who enjoys reading, the beach, and reading at the beach. My primary interest with data science is practical application of machine learning (especially computer vision) for task automation and anomaly detection. Why yes, I'd love to meet your dog.",
-        contactinfo: {
-          github: "https://github.com/timothydnguyen",
-          linkedin: "https://www.linkedin.com/in/timothy-d-nguyen/",
-          email: "nguyen.d.timothy@gmail.com"
-        },
-        current: false
-      },
-      {
-        name: "Ananya Haravu",
-        file: "ananya_haravu.jpg",
-        position: "Vice President",
-        description: "I am a third-year financial math and statistics major who has a passion for photography, music, martial arts, and books!",
-        contactinfo: {
-          email: "aharavu@gmail.com"
-        },
-        current: false
-      },
-      {
-        name: "Calvin Wang",
-        file: "calvin_wang.jpg",
-        position: "Vice President",
-        description: "I'm a 4th year CS major in the College of Creative Studies. My primary interest with data science is applied AI in the medical field.",
-        contactinfo: {
-          linkedin: "https://www.linkedin.com/in/calvinwang0628/",
-          github: "https://github.com/calvin-is-seksy"
-        },
-        current: false
-      },
-      {
         name: "Brian Lim",
         file: "brian_lim.jpg",
-        position: "Project Group Manager",
+        position: "President",
         description: "",
         contactinfo: {
+        },
+        current: false
+      },
+      {
+        name: "Claire Qian",
+        file: "claire_qian.PNG",
+        position: "Vice President",
+        description: "I am a fourth year statistics major who enjoys going on food adventures, traveling, and dogs!",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/claire-qian-6ba818120/"
         },
         current: false
       },
       {
         name: "Yash Rane",
         file: "yash_rane.jpg",
-        position: "Project Group Manager",
+        position: "Vice President",
         description: "",
         contactinfo: {
+        },
+        current: false
+      },
+      {
+        name: "Natalie Rozak",
+        file: "natalie_rozak.JPG",
+        position: "Project Group Leader",
+        description: "I'm a third year Statistics and Data Science major who enjoys hiking, baking desserts, and horseback riding. I want to be a Data Scientist because I'll get to use data to solve important real-world problems.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/natalie-rozak-74147b13b/",
+          github: "https://github.com/nsrozak",
+          email: "natalie.s.rozak@gmail.com"
         },
         current: false
       },
@@ -121,21 +110,22 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Jonathan Tsegaye",
-        file: "jonathan_tsegaye.jpg",
-        position: "IT",
-        description: "I really like talking to people and I really like numbers. Bridging the gap between useful information and the people that could most benefit from that knowledge are what draw me to data science, but I stay for the pretty graphs. I've moved from Computer Science to Mathmatical Sciences, to finally Statistical Science in my fifth and final year. I love to go snowboarding on Mammoth Mountain when I can find the time between midterms, and read books in the summer faster than I can binge watch the Netflix adaptation.",
+        name: "Justin Dong",
+        file: "justin_dong.jpg",
+        position: "Engineering",
+        description: "I am a third year Computer Science major with an intended minor in Statistics. I enjoy photography, traveling, watching TV and eating food in my free time.",
         contactinfo: {
-          linkedin: "https://www.linkedin.com/in/jonathantsegaye/",
-          email: "jontseg@gmail.com"
+          linkedin: "https://linkedin.com/in/justindong1",
+          github: "https://github.com/justindong1",
+          email: "justin.s.dong99@gmail.com"
         },
         current: false
       },
       {
         name: "Bryan Wu",
         file: "bryan_wu.png",
-        position: "IT",
-        description: "I'm a third year computer science major who enjoys coffee, photography, and chicken nuggets.",
+        position: "Engineering",
+        description: "I'm a fourth year computer science major who enjoys coffee, photography, and chicken nuggets.",
         contactinfo: {
           linkedin: "https://www.linkedin.com/in/wu-bryan/",
           email: "bryanwu@ucsb.edu"
@@ -172,25 +162,17 @@ var app = new Vue({
         },
         current: false
       },
-      // {
-      //   name: "Holly Cheek",
-      //   file: "holly_cheek.jpg",
-      //   position: "Operations",
-      //   description: "I am a second year actuarial science major with a passion for colorguard, spinning and dancing with flags or sabres.",
-      //   contactinfo: {
-      //     linkedin: "https://www.linkedin.com/in/holly-cheek-809004101/"
-      //   },
-      //   current: false
-      // },
-      // {
-      //   name: "Matthew Peterschmidt",
-      //   file: "matthew_peterschmidt.jpg",
-      //   position: "Operations",
-      //   description: "",
-      //   contactinfo: {
-      //   },
-      //   current: false
-      // },
+      {
+        name: "Sunny (Sung Hee) Hong ",
+        file: "sunny_hong.JPG",
+        position: "Marketing",
+        description: "I’m Sunny a fourth-year statistics and data science major heavenly involved in both Data Science and Epic. I am a coffee shop connoisseur who loves to spend intentional quality time with friends. I am currently working on an interactive map through power BI by using data-driven decision made through Natural language Processing , AB testing, and data visualizations.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/sung-hee-hong-07b84216a/",
+          github: "https://github.com/sunny7x7/TrendingApp"
+        },
+        current: false
+      },
       {
         name: "Moritz Droste",
         file: "moritz_droste.PNG",
@@ -199,6 +181,17 @@ var app = new Vue({
         contactinfo: {
           linkedin: "https://www.linkedin.com/in/moritz-droste-147526126/",
           email: "mordritzdr@gmail.com"
+        },
+        current: false
+      },
+      {
+        name: "Amiya Dutta",
+        file: "amiya_dutta.jpeg",
+        position: "Finance",
+        description: "I'm a third year financial math and statistics major with an English minor. I love hiking, baking, frisbee, and The Office. You can find me working on my second novel in my free time.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/amiya-dutta-b40b40192/",
+          email: "amiyadutta@ucsb.edu"
         },
         current: false
       },
@@ -217,61 +210,8 @@ var app = new Vue({
         name: "Luis Aragon",
         file: "luis_aragon.jpg",
         position: "Finance",
-        description: "I am a third year Statistics Major and I love coffee and climbing!",
+        description: "I am a fourth year Statistics Major and I love coffee and climbing!",
         contactinfo: {
-        },
-        current: false
-      },
-      // {
-      //   name: "Shon Inouye",
-      //   file: "shon_inouye.jpg",
-      //   position: "Arthur's Assistant",
-      //   description: "I'm a fourth year Statistics major and aspiring data scientist who enjoys doing Judo and playing the ukulele.",
-      //   contactinfo: {
-      //     github: "https://github.com/Inouyesan",
-      //     linkedin: "https://www.linkedin.com/in/shoninouye/"
-      //   },
-      //   current: false
-      // },
-      // {
-      //   name: "Cindy Lu",
-      //   file: "cindy_lu.jpg",
-      //   position: "IT",
-      //   description: "Hi!! I’m a second computer science major. I enjoy hot yoga, hiking and pugs.",
-      //   contactinfo: {
-      //   },
-      //   current: false
-      // },
-      {
-        name: "Justin Dong",
-        file: "justin_dong.jpg",
-        position: "Operations",
-        description: "I am a second year Computer Science major with an intended minor in Statistics. I enjoy photography, traveling, watching TV and eating food in my free time.",
-        contactinfo: {
-          linkedin: "https://linkedin.com/in/justindong1",
-          github: "https://github.com/justindong1",
-          email: "justin.s.dong99@gmail.com"
-        },
-        current: false
-      },
-      {
-        name: "Shakuntala Mitra",
-        file: "shakuntala_mitra.jpg",
-        position: "Operations",
-        description: "I'm a fourth year Biochemistry-Molecular Biology major with a Statistical Science minor. When I'm not in the lab doing research, you can find me volunteering at the hospital, going for a run, or drinking boba! My interests in data science are applications of machine learning in solving computational biology problems.",
-        contactinfo: {
-          github: "https://github.com/dna-witch",
-          email: "shakuntala_mitra@ucsb.edu"
-        },
-        current: false
-      },
-      {
-        name: "Claire Qian",
-        file: "claire_qian.PNG",
-        position: "Operations",
-        description: "I am a third year statistics major who enjoys going on food adventures, traveling, and dogs!",
-        contactinfo: {
-          linkedin: "https://www.linkedin.com/in/claire-qian-6ba818120/"
         },
         current: false
       },
@@ -285,6 +225,26 @@ var app = new Vue({
           linkedin: "https://www.linkedin.com/in/jay-singh-714958101",
           github: "http://github.com/JayDSingh/",
           email: "jay.d.singh5@gmail.com"
+        },
+        current: false
+      },
+      {
+        name: "Ishana Narayanan",
+        file: "ishanana_rayanan.jpg",
+        position: "Operations",
+        description: "I'm a second year computer science & statistics and data science double major who loves dancing, hiking, and going on food adventures.",
+        contactinfo: {
+        },
+        current: false
+      },
+      {
+        name: "Jasmine Kellogg",
+        file: "jasmine_kellogg.jpg",
+        position: "Operations",
+        description: "I'm a fourth year Statistics and Data Science major who enjoys reading, watching sports, and drinking excessive amounts of coffee!",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/jasmine-kellogg",
+          email: "jkellogg@ucsb.edu"
         },
         current: false
       },
