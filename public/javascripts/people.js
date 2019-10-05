@@ -98,6 +98,18 @@ var app = new Vue({
         current: false
       },
       {
+        name: "Parker Glenn",
+        file: "parker_glenn.jpg",
+        position: "Project Group Leader",
+        description: "I'm a fourth year Linguistics major who loves doing any type of Data Science related to NLP. When I'm not being a Data Science nerd, I love to surf and play jazz guitar.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/parker-glenn5/",
+          github: "https://github.com/parkervg",
+          email: "pglenn@ucsb.edu"
+        },
+        current: false
+      },
+      {
         name: "Arthur Silverstein",
         file: "arthur_silverstein.jpg",
         position: "Director of IT",
@@ -163,13 +175,22 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Sunny (Sung Hee) Hong ",
+        name: "Sunny (Sung Hee) Hong",
         file: "sunny_hong.JPG",
         position: "Marketing",
         description: "I’m Sunny a fourth-year statistics and data science major heavenly involved in both Data Science and Epic. I am a coffee shop connoisseur who loves to spend intentional quality time with friends. I am currently working on an interactive map through power BI by using data-driven decision made through Natural language Processing , AB testing, and data visualizations.",
         contactinfo: {
           linkedin: "https://www.linkedin.com/in/sung-hee-hong-07b84216a/",
           github: "https://github.com/sunny7x7/TrendingApp"
+        },
+        current: false
+      },
+      {
+        name: "Madeline Li",
+        file: "madeline_li.jpg",
+        position: "Marketing",
+        description: "Hi! I'm a second year statistics and data science major and Chinese minor. In my free time, I love reading, dancing, martial arts, and board games.",
+        contactinfo: {
         },
         current: false
       },
