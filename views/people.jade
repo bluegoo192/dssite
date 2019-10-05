@@ -26,6 +26,17 @@ block content
       .tile-label
         h3.center {{ officer.name }}
   .divider10
+  h2.title.center Engineering
+  .divider4
+  .tilecontainer
+    .tile.vcentercontainer(v-for="officer of engineeringOfficers" 
+      @click="showDescription(officer)" @mouseover="officer.current = true" 
+      @mouseout="if (!showPopupDescription) officer.current = false"
+      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
+      v-bind:class="{ active: officer.current }")
+      .tile-label
+        h3.center {{ officer.name }}
+  .divider10
   h2.title.center Finance
   .divider4
   .tilecontainer
@@ -52,17 +63,6 @@ block content
   .divider4
   .tilecontainer
     .tile.vcentercontainer(v-for="officer of operationsOfficers" 
-      @click="showDescription(officer)" @mouseover="officer.current = true" 
-      @mouseout="if (!showPopupDescription) officer.current = false"
-      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
-      v-bind:class="{ active: officer.current }")
-      .tile-label
-        h3.center {{ officer.name }}
-  .divider10
-  h2.title.center Engineering
-  .divider4
-  .tilecontainer
-    .tile.vcentercontainer(v-for="officer of engineeringOfficers" 
       @click="showDescription(officer)" @mouseover="officer.current = true" 
       @mouseout="if (!showPopupDescription) officer.current = false"
       v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
