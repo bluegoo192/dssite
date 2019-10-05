@@ -15,7 +15,7 @@ var app = new Vue({
         name: "Alex Mathgod"
       }
     ],
-    officers: [
+    executiveOfficers: [
       // {
       //   name: "Jason Freeberg",
       //   file: "jason_freeberg.jpg",
@@ -85,6 +85,8 @@ var app = new Vue({
         },
         current: false
       },
+    ],
+    projectOfficers: [
       {
         name: "Natalie Rozak",
         file: "natalie_rozak.JPG",
@@ -109,41 +111,52 @@ var app = new Vue({
         },
         current: false
       },
+    ],
+    financeOfficers: [
       {
-        name: "Arthur Silverstein",
-        file: "arthur_silverstein.jpg",
-        position: "Director of IT",
-        description: "I'm a fourth year computer science major who likes hiking, playing piano, and DIY.",
+        name: "Moritz Droste",
+        file: "moritz_droste.PNG",
+        position: "Finance",
+        description: "Hey! I'm a third year studying Economics, and I've been a part of the data science club since my first year at UCSB. Currently, I am doing finance and accounting for the officer board, but I am also interested in game design, deep learning, web design, creative writing and more!",
         contactinfo: {
-          github: "http://www.github.com/bluegoo192",
-          linkedin: "https://www.linkedin.com/in/arthur-silverstein/",
-          email: "mailto:arthursilverstein@umail.ucsb.edu"
+          linkedin: "https://www.linkedin.com/in/moritz-droste-147526126/",
+          email: "mordritzdr@gmail.com"
         },
         current: false
       },
       {
-        name: "Justin Dong",
-        file: "justin_dong.jpg",
-        position: "Engineering",
-        description: "I am a third year Computer Science major with an intended minor in Statistics. I enjoy photography, traveling, watching TV and eating food in my free time.",
+        name: "Amiya Dutta",
+        file: "amiya_dutta.jpeg",
+        position: "Finance",
+        description: "I'm a third year financial math and statistics major with an English minor. I love hiking, baking, frisbee, and The Office. You can find me working on my second novel in my free time.",
         contactinfo: {
-          linkedin: "https://linkedin.com/in/justindong1",
-          github: "https://github.com/justindong1",
-          email: "justin.s.dong99@gmail.com"
+          linkedin: "https://www.linkedin.com/in/amiya-dutta-b40b40192/",
+          email: "amiyadutta@ucsb.edu"
         },
         current: false
       },
       {
-        name: "Bryan Wu",
-        file: "bryan_wu.png",
-        position: "Engineering",
-        description: "I'm a fourth year computer science major who enjoys coffee, photography, and chicken nuggets.",
+        name: "Daniel Fields",
+        file: "daniel_fields.jpeg",
+        position: "Finance",
+        description: "Hello, my name is Daniel Fields. I am a fourth year Statistical Sciences Major, an Officer of Finance, and a Data Science Tutor at UCSB. In my free time I like to go running, swim , lift , listen to music, and study politics.",
         contactinfo: {
-          linkedin: "https://www.linkedin.com/in/wu-bryan/",
-          email: "bryanwu@ucsb.edu"
+          linkedin: "https://www.linkedin.com/in/danielfields365/",
+          email: "dfields@ucsb.edu"
         },
         current: false
       },
+      {
+        name: "Luis Aragon",
+        file: "luis_aragon.jpg",
+        position: "Finance",
+        description: "I am a fourth year Statistics Major and I love coffee and climbing!",
+        contactinfo: {
+        },
+        current: false
+      },
+    ],
+    marketingOfficers: [
       {
         name: "Jonathan Hsu",
         file: "jonathan_hsu.png",
@@ -194,48 +207,8 @@ var app = new Vue({
         },
         current: false
       },
-      {
-        name: "Moritz Droste",
-        file: "moritz_droste.PNG",
-        position: "Finance",
-        description: "Hey! I'm a third year studying Economics, and I've been a part of the data science club since my first year at UCSB. Currently, I am doing finance and accounting for the officer board, but I am also interested in game design, deep learning, web design, creative writing and more!",
-        contactinfo: {
-          linkedin: "https://www.linkedin.com/in/moritz-droste-147526126/",
-          email: "mordritzdr@gmail.com"
-        },
-        current: false
-      },
-      {
-        name: "Amiya Dutta",
-        file: "amiya_dutta.jpeg",
-        position: "Finance",
-        description: "I'm a third year financial math and statistics major with an English minor. I love hiking, baking, frisbee, and The Office. You can find me working on my second novel in my free time.",
-        contactinfo: {
-          linkedin: "https://www.linkedin.com/in/amiya-dutta-b40b40192/",
-          email: "amiyadutta@ucsb.edu"
-        },
-        current: false
-      },
-      {
-        name: "Daniel Fields",
-        file: "daniel_fields.jpeg",
-        position: "Finance",
-        description: "Hello, my name is Daniel Fields. I am a fourth year Statistical Sciences Major, an Officer of Finance, and a Data Science Tutor at UCSB. In my free time I like to go running, swim , lift , listen to music, and study politics.",
-        contactinfo: {
-          linkedin: "https://www.linkedin.com/in/danielfields365/",
-          email: "dfields@ucsb.edu"
-        },
-        current: false
-      },
-      {
-        name: "Luis Aragon",
-        file: "luis_aragon.jpg",
-        position: "Finance",
-        description: "I am a fourth year Statistics Major and I love coffee and climbing!",
-        contactinfo: {
-        },
-        current: false
-      },
+    ],
+    operationsOfficers: [
       {
         name: "Jay Singh",
         file: "jay_singh.jpg",
@@ -269,7 +242,44 @@ var app = new Vue({
         },
         current: false
       },
-    ]
+    ],
+    engineeringOfficers: [
+      {
+        name: "Arthur Silverstein",
+        file: "arthur_silverstein.jpg",
+        position: "Director of Engineering",
+        description: "I'm a fourth year computer science major who likes hiking, playing piano, and DIY.",
+        contactinfo: {
+          github: "http://www.github.com/bluegoo192",
+          linkedin: "https://www.linkedin.com/in/arthur-silverstein/",
+          email: "mailto:arthursilverstein@umail.ucsb.edu"
+        },
+        current: false
+      },
+      {
+        name: "Justin Dong",
+        file: "justin_dong.jpg",
+        position: "Engineering",
+        description: "I am a third year Computer Science major with an intended minor in Statistics. I enjoy photography, traveling, watching TV and eating food in my free time.",
+        contactinfo: {
+          linkedin: "https://linkedin.com/in/justindong1",
+          github: "https://github.com/justindong1",
+          email: "justin.s.dong99@gmail.com"
+        },
+        current: false
+      },
+      {
+        name: "Bryan Wu",
+        file: "bryan_wu.png",
+        position: "Engineering",
+        description: "I'm a fourth year computer science major who enjoys coffee, photography, and chicken nuggets.",
+        contactinfo: {
+          linkedin: "https://www.linkedin.com/in/wu-bryan/",
+          email: "bryanwu@ucsb.edu"
+        },
+        current: false
+      },
+    ],
   },
   methods: {
     getOfficerPath: function (filename) {
