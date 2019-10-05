@@ -4,8 +4,65 @@ block content
   .divider5
   h1.title.center Our officer team
   .divider5
+  h2.title.center Executive Board
+  .divider4
   .tilecontainer
-    .tile.vcentercontainer(v-for="officer of officers" 
+    .tile.vcentercontainer(v-for="officer of executiveOfficers" 
+      @click="showDescription(officer)" @mouseover="officer.current = true" 
+      @mouseout="if (!showPopupDescription) officer.current = false"
+      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
+      v-bind:class="{ active: officer.current }")
+      .tile-label
+        h3.center {{ officer.name }}
+  .divider10
+  h2.title.center Project Group Leaders
+  .divider4
+  .tilecontainer
+    .tile.vcentercontainer(v-for="officer of projectOfficers" 
+      @click="showDescription(officer)" @mouseover="officer.current = true" 
+      @mouseout="if (!showPopupDescription) officer.current = false"
+      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
+      v-bind:class="{ active: officer.current }")
+      .tile-label
+        h3.center {{ officer.name }}
+  .divider10
+  h2.title.center Finance
+  .divider4
+  .tilecontainer
+    .tile.vcentercontainer(v-for="officer of financeOfficers" 
+      @click="showDescription(officer)" @mouseover="officer.current = true" 
+      @mouseout="if (!showPopupDescription) officer.current = false"
+      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
+      v-bind:class="{ active: officer.current }")
+      .tile-label
+        h3.center {{ officer.name }}
+  .divider10
+  h2.title.center Marketing
+  .divider4
+  .tilecontainer
+    .tile.vcentercontainer(v-for="officer of marketingOfficers" 
+      @click="showDescription(officer)" @mouseover="officer.current = true" 
+      @mouseout="if (!showPopupDescription) officer.current = false"
+      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
+      v-bind:class="{ active: officer.current }")
+      .tile-label
+        h3.center {{ officer.name }}
+  .divider10
+  h2.title.center Operations
+  .divider4
+  .tilecontainer
+    .tile.vcentercontainer(v-for="officer of operationsOfficers" 
+      @click="showDescription(officer)" @mouseover="officer.current = true" 
+      @mouseout="if (!showPopupDescription) officer.current = false"
+      v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
+      v-bind:class="{ active: officer.current }")
+      .tile-label
+        h3.center {{ officer.name }}
+  .divider10
+  h2.title.center Engineering
+  .divider4
+  .tilecontainer
+    .tile.vcentercontainer(v-for="officer of engineeringOfficers" 
       @click="showDescription(officer)" @mouseover="officer.current = true" 
       @mouseout="if (!showPopupDescription) officer.current = false"
       v-bind:style="{ backgroundImage: 'url('+getOfficerPath(officer.file)+')' }"
