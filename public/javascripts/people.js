@@ -165,16 +165,16 @@ var app = new Vue({
         current: false
       },
       {
-        name: "Jackie Zhang",
-        file: "placeholder.png",
+        name: "Sifeng (Miranda) Li",
+        file: "sifeng_li.jpeg",
         position: "Marketing",
-        description: "",
+        description: "Hey I’m Miranda! I’m a junior majoring is Stats Data Science & Computer science. I love traveling, tasting good food, and reading! My primary interest with data science is data analysis with real applications.",
         contactinfo: {
         },
         current: false
       },
       {
-        name: "Miranda Li",
+        name: "Jackie Zhang",
         file: "placeholder.png",
         position: "Marketing",
         description: "",
