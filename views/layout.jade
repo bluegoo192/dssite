@@ -39,7 +39,7 @@ html
         nav-hamburger(@togglenav="show.mobilenav=!show.mobilenav")
         .logo.vcentercontainer
           if loggedIn
-            a(href="/profile") #[img(src='/images/logo_white_simple.png')] #[h1 #{user.firstName}]
+            a(href="/profile") #[img(src='/images/logo_white_simple.png')] #[h1 #{user.firstName} #{user.lastName}]
           else
             a(href="/") #[img(src='/images/logo_white_simple.png')] #[h1 Data Science UCSB]
         ul.horizontal.responsivemenu(:class="{ visible: show.mobilenav }")
