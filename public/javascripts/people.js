@@ -168,7 +168,7 @@ var app = new Vue({
         name: "Sifeng (Miranda) Li",
         file: "sifeng_li.jpeg",
         position: "Marketing",
-        description: "Hey I’m Miranda! I’m a junior majoring is Stats Data Science & Computer science. I love traveling, tasting good food, and reading! My primary interest with data science is data analysis with real applications.",
+        description: "Hey I’m Miranda! I’m a junior majoring in Stats, Data Science and Computer science. I love traveling, tasting good food, and reading! My primary interest with data science is data analysis with real applications.",
         contactinfo: {
         },
         current: false
