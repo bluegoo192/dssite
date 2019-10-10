@@ -11,6 +11,7 @@ h3 {
   width: 90%;
   position: fixed;
   padding: 20px;
+  padding-left: 2em;
   background-color: #ffaa1d;
   color: #000;
   z-index: 5;
