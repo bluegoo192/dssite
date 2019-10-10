@@ -2,6 +2,10 @@ extends layout
 
 block content
   .divider5
+  .alert
+      span.closebtn(onclick="this.parentElement.style.display='none';") ×
+      |   Note: The information on this page outdated. We are in the process of updating this page.
+  .divider5
   .scaledpadded
     h1.center UCSB's leading resource
     h3.center for data analysis, machine learning, and more
@@ -72,6 +76,25 @@ block scripts
     app.trackPos();
     window.addEventListener("scroll", app.trackPos, false);
     window.addEventListener("resize", app.trackPos, false);
+  script.
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    // Loop through all close buttons
+    for (i = 0; i < close.length; i++) {
+      // When someone clicks on a close button
+      close[i].onclick = function(){
+
+        // Get the parent of <span class="closebtn"> (<div class="alert">)
+        var div = this.parentElement;
+
+        // Set the opacity of div to 0 (transparent)
+        div.style.opacity = "0";
+
+        // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+      }
+    }
 block styles
   link(rel='stylesheet', href='/stylesheets/about.css')
   

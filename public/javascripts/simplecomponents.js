@@ -58,7 +58,7 @@ Vue.component('login', {
           <a.loginToggleButton @click="newUser = true">Or sign up instead</a>
         </form>
         <form class="center vertical vcentercontainer" action="/register" method="post" v-if="newUser">
-          <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="ucsb.edu email">
+          <input class="hpadded" :class="{invalidInput: !emailIsValid}" type="email" name="email" v-model="email" placeholder="@ucsb.edu email">
           <br>
           <input class="hpadded" type="password" name="password" v-model="password" placeholder="password">
           <br>
