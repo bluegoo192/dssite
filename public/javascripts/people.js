@@ -206,10 +206,21 @@ var app = new Vue({
       },
       {
         name: "Evan Altshule",
-        file: "placeholder.png",
+        file: "evan_altshule.jpeg",
         position: "Operations",
-        description: "",
+        description: "I'm a third year computer science major who enjoys exercising and bagels!",
         contactinfo: {
+          email: "ealtshule@ucsb.edu"
+        },
+        current: false
+      },
+      {
+        name: "Katie Huynh",
+        file: "katie_huynh.jpeg",
+        position: "Operations",
+        description: "I’m a first year computer science major interested in data science and its applicability to the real world. In my free time, I love trying new boba milk tea spots (despite my lactose intolerance) and adventuring with my friends.",
+        contactinfo: {
+          linkedin: "http://linkedin.com/in/katie-huynh-34bb88191"
         },
         current: false
       },
@@ -240,6 +251,15 @@ var app = new Vue({
       },
       {
         name: "Matthew Ho",
+        file: "placeholder.png",
+        position: "Website Engineer",
+        description: "",
+        contactinfo: {
+        },
+        current: false
+      },
+      {
+        name: "Amelia Meyer",
         file: "placeholder.png",
         position: "Website Engineer",
         description: "",
