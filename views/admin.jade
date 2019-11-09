@@ -29,12 +29,10 @@ block content
       p(v-if="loading") Loading...
       table(v-if="currentDirectory != null")
         tr
-          th Timestamp
           th First name 
           th Last name 
           th Email
         tr(v-for="member in currentDirectory")
-          th {{ member.timestamp }}
           th {{ member.firstName }}
           th {{ member.lastName }}
           th {{ member.email }}
