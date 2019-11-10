@@ -167,9 +167,8 @@ router.post('/api/v1/onNotificationAcknowledged', isAuthenticated, async functio
 
 router.get('/api/v1/paidMembers', isOfficer, async function (req, res, next) {
   const getPayingMembersQuery = db.members
-    .select(db.payments.timestamp, db.members.firstName, db.members.lastName, db.members.email, db.payments.amount)
-    .from(db.members.join(db.payments).on(db.members.id.equals(db.payments.memberId)))
-    .order(db.payments.timestamp.desc)
+    .select(db.members.firstName, db.members.lastName, db.members.email, db.payments.amount)
+    .from(db.members.join(db.payments).on(db.members.id.equals(db.payments.memberId)).and(payments.timestamp.gte('2019-09-15')).and(payments.timestamp.lt('2019-12-15')))
     .toQuery();
   console.log(db.payments.timestamp);
   try {
