@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.335.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.0",
     "body-parser": "~1.13.2",
     "connect-dynamodb": "^2.0.3",
